@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MudanzasGuaymasDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Total" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="Cliente" Type="nvarchar" MaxLength="50" />
+    <Property Name="Detalle" Type="text" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="50" />
+    <Property Name="Encargado" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Factura_Servicios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Factura" Type="int" />
+    <Property Name="Id_Servicio" Type="int" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Paquete">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Precio" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="text" />
+    <Property Name="Mostrar" Type="bit" />
+    <Property Name="Imagen" Type="image" />
+  </EntityType>
+  <EntityType Name="Servicio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="ntext" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mostrar" Type="bit" />
+    <Property Name="Imagen" Type="image" />
+  </EntityType>
+  <EntityType Name="Servicio_Paquetes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Servicio" Type="int" />
+    <Property Name="Id_Paquete" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Apellido" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tipo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Factura_Servicios_Factura">
+    <End Role="Factura" Type="Self.Factura" Multiplicity="0..1" />
+    <End Role="Factura_Servicios" Type="Self.Factura_Servicios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Factura">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Factura_Servicios">
+        <PropertyRef Name="Id_Factura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Factura_Servicios_Servicio">
+    <End Role="Servicio" Type="Self.Servicio" Multiplicity="0..1" />
+    <End Role="Factura_Servicios" Type="Self.Factura_Servicios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servicio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Factura_Servicios">
+        <PropertyRef Name="Id_Servicio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Servicio_Paquetes_Paquete">
+    <End Role="Paquete" Type="Self.Paquete" Multiplicity="0..1" />
+    <End Role="Servicio_Paquetes" Type="Self.Servicio_Paquetes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paquete">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Servicio_Paquetes">
+        <PropertyRef Name="Id_Paquete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Servicio_Paquetes_Servicio">
+    <End Role="Servicio" Type="Self.Servicio" Multiplicity="0..1" />
+    <End Role="Servicio_Paquetes" Type="Self.Servicio_Paquetes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servicio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Servicio_Paquetes">
+        <PropertyRef Name="Id_Servicio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MudanzasGuaymasDbModelStoreContainer">
+    <EntitySet Name="Factura" EntityType="Self.Factura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Factura_Servicios" EntityType="Self.Factura_Servicios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Paquete" EntityType="Self.Paquete" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Servicio" EntityType="Self.Servicio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Servicio_Paquetes" EntityType="Self.Servicio_Paquetes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Factura_Servicios_Factura" Association="Self.FK_Factura_Servicios_Factura">
+      <End Role="Factura" EntitySet="Factura" />
+      <End Role="Factura_Servicios" EntitySet="Factura_Servicios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Factura_Servicios_Servicio" Association="Self.FK_Factura_Servicios_Servicio">
+      <End Role="Servicio" EntitySet="Servicio" />
+      <End Role="Factura_Servicios" EntitySet="Factura_Servicios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Servicio_Paquetes_Paquete" Association="Self.FK_Servicio_Paquetes_Paquete">
+      <End Role="Paquete" EntitySet="Paquete" />
+      <End Role="Servicio_Paquetes" EntitySet="Servicio_Paquetes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Servicio_Paquetes_Servicio" Association="Self.FK_Servicio_Paquetes_Servicio">
+      <End Role="Servicio" EntitySet="Servicio" />
+      <End Role="Servicio_Paquetes" EntitySet="Servicio_Paquetes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
