@@ -1,0 +1,8 @@
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\Test_MudanzasGuaymas\bin\Test_MudanzasGuaymas.dll.config
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\Test_MudanzasGuaymas\bin\Test_MudanzasGuaymas.dll
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\Test_MudanzasGuaymas\bin\Test_MudanzasGuaymas.pdb
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\Test_MudanzasGuaymas\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\Test_MudanzasGuaymas\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\Test_MudanzasGuaymas\obj\Debug\Test_MudanzasGuaymas.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\Test_MudanzasGuaymas\obj\Debug\Test_MudanzasGuaymas.dll
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\Test_MudanzasGuaymas\obj\Debug\Test_MudanzasGuaymas.pdb

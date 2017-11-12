@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MudanzasGuaymasDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Total" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="Cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Detalle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Encargado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Hecho" Type="Boolean" />
+    <NavigationProperty Name="Factura_Paquetes" Relationship="Self.FK_Factura_Paquetes_Factura" FromRole="Factura" ToRole="Factura_Paquetes" />
+  </EntityType>
+  <EntityType Name="Factura_Paquetes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Factura" Type="Int32" />
+    <Property Name="Id_Paquete" Type="Int32" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="Factura" Relationship="Self.FK_Factura_Paquetes_Factura" FromRole="Factura_Paquetes" ToRole="Factura" />
+    <NavigationProperty Name="Paquete" Relationship="Self.FK_Factura_Paquetes_Paquete" FromRole="Factura_Paquetes" ToRole="Paquete" />
+  </EntityType>
+  <EntityType Name="Paquete">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Precio" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Mostrar" Type="Boolean" />
+    <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Id_Servicio" Type="Int32" />
+    <NavigationProperty Name="Factura_Paquetes" Relationship="Self.FK_Factura_Paquetes_Paquete" FromRole="Paquete" ToRole="Factura_Paquetes" />
+    <NavigationProperty Name="Servicio" Relationship="Self.FK_Paquete_Servicio" FromRole="Paquete" ToRole="Servicio" />
+  </EntityType>
+  <EntityType Name="Servicio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mostrar" Type="Boolean" />
+    <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Paquete" Relationship="Self.FK_Paquete_Servicio" FromRole="Servicio" ToRole="Paquete" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Factura_Paquetes_Factura">
+    <End Role="Factura" Type="Self.Factura" Multiplicity="0..1" />
+    <End Role="Factura_Paquetes" Type="Self.Factura_Paquetes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Factura">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Factura_Paquetes">
+        <PropertyRef Name="Id_Factura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Factura_Paquetes_Paquete">
+    <End Role="Paquete" Type="Self.Paquete" Multiplicity="0..1" />
+    <End Role="Factura_Paquetes" Type="Self.Factura_Paquetes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paquete">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Factura_Paquetes">
+        <PropertyRef Name="Id_Paquete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Paquete_Servicio">
+    <End Role="Servicio" Type="Self.Servicio" Multiplicity="0..1" />
+    <End Role="Paquete" Type="Self.Paquete" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servicio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Paquete">
+        <PropertyRef Name="Id_Servicio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MudanzasGuaymasDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Factura" EntityType="Self.Factura" />
+    <EntitySet Name="Factura_Paquetes" EntityType="Self.Factura_Paquetes" />
+    <EntitySet Name="Paquete" EntityType="Self.Paquete" />
+    <EntitySet Name="Servicio" EntityType="Self.Servicio" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <AssociationSet Name="FK_Factura_Paquetes_Factura" Association="Self.FK_Factura_Paquetes_Factura">
+      <End Role="Factura" EntitySet="Factura" />
+      <End Role="Factura_Paquetes" EntitySet="Factura_Paquetes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Factura_Paquetes_Paquete" Association="Self.FK_Factura_Paquetes_Paquete">
+      <End Role="Paquete" EntitySet="Paquete" />
+      <End Role="Factura_Paquetes" EntitySet="Factura_Paquetes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Paquete_Servicio" Association="Self.FK_Paquete_Servicio">
+      <End Role="Servicio" EntitySet="Servicio" />
+      <End Role="Paquete" EntitySet="Paquete" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
