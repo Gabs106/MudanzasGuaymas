@@ -6,3 +6,5 @@ C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\Test_MudanzasGuaymas\bin\M
 C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\Test_MudanzasGuaymas\obj\Debug\Test_MudanzasGuaymas.csproj.CoreCompileInputs.cache
 C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\Test_MudanzasGuaymas\obj\Debug\Test_MudanzasGuaymas.dll
 C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\Test_MudanzasGuaymas\obj\Debug\Test_MudanzasGuaymas.pdb
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\Test_MudanzasGuaymas\bin\Newtonsoft.Json.dll
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\Test_MudanzasGuaymas\bin\Newtonsoft.Json.xml

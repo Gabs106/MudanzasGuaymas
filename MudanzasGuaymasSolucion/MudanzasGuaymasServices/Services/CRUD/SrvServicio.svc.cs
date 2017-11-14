@@ -1,10 +1,10 @@
-﻿using System;
+﻿using MudanzasGuaymasServices.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using MudanzasGuaymasServices.Entity;
 
 namespace MudanzasGuaymasServices.Services
 {
@@ -13,26 +13,35 @@ namespace MudanzasGuaymasServices.Services
     public class SrvServicio : ISrvServicio
     {
         MudanzasGuaymasDbEntities DataBase = new MudanzasGuaymasDbEntities();
-        public Servicio ConsultarPorId(int id)
+        public Servicio ConsultarPorId(string id)
         {
-            Servicio objeto = new Servicio();
-            objeto = DataBase.Servicio.Find(id);
-            return objeto;
+            Servicio ser = new Servicio();
+            int ID = int.Parse(id);
+            var Query = from servicio in DataBase.Servicio
+                        where servicio.Id == ID
+                        select servicio;
+
+            foreach (var result in Query)
+            {
+                ser = result;
+            }
+
+            return ser;
         }
 
         public List<Servicio> ConsultarPorNombre(string nombre)
         {
             List<Servicio> lista = new List<Servicio>();
 
-            var Query = from objeto in DataBase.Servicio
-                        where objeto.Nombre == nombre
-                        select objeto;
+            var Query = from servicio in DataBase.Servicio
+                        where servicio.Nombre == nombre
+                        select servicio;
 
             foreach (var result in Query)
             {
                 lista.Add(result);
             }
-            
+            Console.WriteLine("Resultado " + lista.First());
             return lista;
         }
 
@@ -40,41 +49,42 @@ namespace MudanzasGuaymasServices.Services
         {
             List<Servicio> lista = new List<Servicio>();
 
-            var Query = from objeto in DataBase.Servicio
-                        select objeto;
+            var Query = from servicio in DataBase.Servicio
+                        select servicio;
 
             foreach (var result in Query)
             {
                 lista.Add(result);
             }
-           
+            Console.WriteLine("Resultado " + lista.First());
             return lista;
         }
 
-        public void Editar(int id, string descripcion, string nombre, bool mostrar, string imagen)
+        public void Editar(Servicio servicio)
         {
-            var objeto = DataBase.Servicio.FirstOrDefault(x => x.Id == id);
 
-            objeto.Nombre = nombre;
-            objeto.Descripcion = descripcion;
+            var ser = DataBase.Servicio.FirstOrDefault(x => x.Id == servicio.Id);
+
+            ser = servicio;
             DataBase.SaveChanges();
+
+
         }
 
-        public bool Eliminar(int id)
+        public bool Eliminar(Servicio ser)
         {
-            Servicio objeto = DataBase.Servicio.Find(id);
-            DataBase.Servicio.Remove(objeto);
+            Servicio servicio = DataBase.Servicio.Find(ser.Id);
+            DataBase.Servicio.Remove(servicio);
             DataBase.SaveChanges();
             return true;
         }
 
-        public bool Insertar(string descripcion, string nombre, bool mostrar, string imagen)
+        public bool Insertar(Servicio servicio)
         {
             //Contruccion del objeto
-            Servicio objeto = new Servicio();
-            objeto.Nombre = nombre;
-            
-            DataBase.Servicio.Add(objeto);
+
+
+            DataBase.Servicio.Add(servicio);
             DataBase.SaveChanges();
             return true;
         }

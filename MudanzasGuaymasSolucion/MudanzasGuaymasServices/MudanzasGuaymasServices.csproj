@@ -55,9 +55,13 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -102,9 +106,14 @@
       <DependentUpon>Modelo.edmx</DependentUpon>
       <LastGenOutput>Modelo.cs</LastGenOutput>
     </Content>
-    <Content Include="Services\SrvServicio.svc" />
-    <Content Include="Services\SrvUsuario.svc" />
-    <Content Include="Web.config" />
+    <Content Include="Services\CRUD\SrvPaquete.svc" />
+    <Content Include="Services\CRUD\SrvServicio.svc" />
+    <Content Include="Services\CRUD\SrvUsuario.svc" />
+    <Content Include="Services\Operaciones\Factura.svc" />
+    <Content Include="Services\Seguridad\SrvSesion.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\Factura.cs">
@@ -141,13 +150,25 @@
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ISrvServicio.cs" />
-    <Compile Include="Services\ISrvUsuario.cs" />
-    <Compile Include="Services\SrvServicio.svc.cs">
+    <Compile Include="Services\CRUD\ISrvPaquete.cs" />
+    <Compile Include="Services\CRUD\ISrvServicio.cs" />
+    <Compile Include="Services\CRUD\ISrvUsuario.cs" />
+    <Compile Include="Services\CRUD\SrvPaquete.svc.cs">
+      <DependentUpon>SrvPaquete.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\CRUD\SrvServicio.svc.cs">
       <DependentUpon>SrvServicio.svc</DependentUpon>
     </Compile>
-    <Compile Include="Services\SrvUsuario.svc.cs">
+    <Compile Include="Services\CRUD\SrvUsuario.svc.cs">
       <DependentUpon>SrvUsuario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Operaciones\Factura.svc.cs">
+      <DependentUpon>Factura.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Operaciones\IFactura.cs" />
+    <Compile Include="Services\Seguridad\ISrvSesion.cs" />
+    <Compile Include="Services\Seguridad\SrvSesion.svc.cs">
+      <DependentUpon>SrvSesion.svc</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

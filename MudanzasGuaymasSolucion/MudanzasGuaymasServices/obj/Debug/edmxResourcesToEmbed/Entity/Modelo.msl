@@ -33,8 +33,8 @@
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
           <ScalarProperty Name="Mostrar" ColumnName="Mostrar" />
-          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
           <ScalarProperty Name="Id_Servicio" ColumnName="Id_Servicio" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

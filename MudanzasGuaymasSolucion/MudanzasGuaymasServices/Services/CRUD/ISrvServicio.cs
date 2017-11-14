@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Web;
 using System.Text;
 
 namespace MudanzasGuaymasServices.Services
@@ -13,16 +14,21 @@ namespace MudanzasGuaymasServices.Services
     public interface ISrvServicio
     {
         [OperationContract]
-        bool Insertar(string descripcion, string nombre, bool mostrar, string imagen);
+        [WebInvoke(UriTemplate = "create", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, Method = "POST")]
+        bool Insertar(Servicio servicio);
         [OperationContract]
-        void Editar(int id, string descripcion, string nombre, bool mostrar, string imagen);
+        [WebInvoke(UriTemplate = "edit", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, Method = "PUT")]
+        void Editar(Servicio servicio);
         [OperationContract]
-        bool Eliminar(int id);
+        [WebInvoke(UriTemplate = "delete", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, Method = "DELETE")]
+        bool Eliminar(Servicio servicio);
         [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "getAll", ResponseFormat = WebMessageFormat.Json)]
         List<Servicio> ConsultarTodos();
         [OperationContract]
         List<Servicio> ConsultarPorNombre(string nombre);
         [OperationContract]
-        Servicio ConsultarPorId(int id);
+        [WebInvoke(Method = "GET", UriTemplate = "get/{id}", ResponseFormat = WebMessageFormat.Json)]
+        Servicio ConsultarPorId(string id);
     }
 }

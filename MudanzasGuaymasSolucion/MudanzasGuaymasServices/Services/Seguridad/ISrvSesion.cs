@@ -12,6 +12,9 @@ namespace MudanzasGuaymasServices.Services.Seguridad
     public interface ISrvSesion
     {
         [OperationContract]
-        void DoWork();
+        bool Login();
+
+        [OperationContract]
+        bool Logout();
     }
 }

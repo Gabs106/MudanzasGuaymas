@@ -34,8 +34,8 @@
     <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Mostrar" Type="Boolean" />
-    <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="Id_Servicio" Type="Int32" />
+    <Property Name="Imagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Factura_Paquetes" Relationship="Self.FK_Factura_Paquetes_Paquete" FromRole="Paquete" ToRole="Factura_Paquetes" />
     <NavigationProperty Name="Servicio" Relationship="Self.FK_Paquete_Servicio" FromRole="Paquete" ToRole="Servicio" />
   </EntityType>
@@ -47,7 +47,7 @@
     <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Mostrar" Type="Boolean" />
-    <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Imagen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Paquete" Relationship="Self.FK_Paquete_Servicio" FromRole="Servicio" ToRole="Paquete" />
   </EntityType>
   <EntityType Name="sysdiagrams">
