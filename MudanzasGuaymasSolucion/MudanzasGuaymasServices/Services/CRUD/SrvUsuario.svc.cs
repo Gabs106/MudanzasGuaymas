@@ -66,12 +66,9 @@ namespace MudanzasGuaymasServices.Services.CRUD
 
             var user = DataBase.Usuario.FirstOrDefault(x => x.Id == usuario.Id);
 
-            user.Nombre = usuario.Nombre;
             user.Apellido = usuario.Apellido;
-            user.Password = usuario.Password;
-            user.Telefono = usuario.Telefono;
-            user.Telefono = usuario.Tipo;
-            user.Email = usuario.Email;
+            user.Nombre = usuario.Nombre;
+
             DataBase.SaveChanges();
 
 

@@ -5,28 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="MudanzasGuaymasDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Factura">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Total" Type="nvarchar" MaxLength="50" />
-          <Property Name="Fecha" Type="datetime" />
-          <Property Name="Cliente" Type="nvarchar" MaxLength="50" />
-          <Property Name="Detalle" Type="text" />
-          <Property Name="Direccion" Type="nvarchar" MaxLength="50" />
-          <Property Name="Encargado" Type="nvarchar" MaxLength="50" />
-          <Property Name="Hecho" Type="bit" />
-        </EntityType>
-        <EntityType Name="Factura_Paquetes">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Id_Factura" Type="int" />
-          <Property Name="Id_Paquete" Type="int" />
-          <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
-        </EntityType>
         <EntityType Name="Paquete">
           <Key>
             <PropertyRef Name="Id" />
@@ -38,6 +16,27 @@
           <Property Name="Mostrar" Type="bit" />
           <Property Name="Id_Servicio" Type="int" />
           <Property Name="Imagen" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="preCita">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Detalle" Type="text" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="50" />
+          <Property Name="Hecho" Type="bit" />
+          <Property Name="id_usuario" Type="int" />
+          <Property Name="Terminado" Type="bit" />
+        </EntityType>
+        <EntityType Name="preCita_Paquetes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_preCita" Type="int" />
+          <Property Name="Id_Paquete" Type="int" />
+          <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="Servicio">
           <Key>
@@ -70,31 +69,8 @@
           <Property Name="Password" Type="nvarchar" MaxLength="50" />
           <Property Name="Tipo" Type="nvarchar" MaxLength="50" />
           <Property Name="Telefono" Type="nvarchar" MaxLength="50" />
+          <Property Name="Llave" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK_Factura_Paquetes_Factura">
-          <End Role="Factura" Type="Self.Factura" Multiplicity="0..1" />
-          <End Role="Factura_Paquetes" Type="Self.Factura_Paquetes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Factura">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Factura_Paquetes">
-              <PropertyRef Name="Id_Factura" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Factura_Paquetes_Paquete">
-          <End Role="Paquete" Type="Self.Paquete" Multiplicity="0..1" />
-          <End Role="Factura_Paquetes" Type="Self.Factura_Paquetes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Paquete">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Factura_Paquetes">
-              <PropertyRef Name="Id_Paquete" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Paquete_Servicio">
           <End Role="Servicio" Type="Self.Servicio" Multiplicity="0..1" />
           <End Role="Paquete" Type="Self.Paquete" Multiplicity="*" />
@@ -107,24 +83,64 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_preCita_Paquetes_Paquete">
+          <End Role="Paquete" Type="Self.Paquete" Multiplicity="0..1" />
+          <End Role="preCita_Paquetes" Type="Self.preCita_Paquetes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paquete">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="preCita_Paquetes">
+              <PropertyRef Name="Id_Paquete" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_preCita_Paquetes_preCita">
+          <End Role="preCita" Type="Self.preCita" Multiplicity="0..1" />
+          <End Role="preCita_Paquetes" Type="Self.preCita_Paquetes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="preCita">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="preCita_Paquetes">
+              <PropertyRef Name="Id_preCita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_preCita_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="preCita" Type="Self.preCita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="preCita">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="MudanzasGuaymasDbModelStoreContainer">
-          <EntitySet Name="Factura" EntityType="Self.Factura" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Factura_Paquetes" EntityType="Self.Factura_Paquetes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Paquete" EntityType="Self.Paquete" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="preCita" EntityType="Self.preCita" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="preCita_Paquetes" EntityType="Self.preCita_Paquetes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Servicio" EntityType="Self.Servicio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Factura_Paquetes_Factura" Association="Self.FK_Factura_Paquetes_Factura">
-            <End Role="Factura" EntitySet="Factura" />
-            <End Role="Factura_Paquetes" EntitySet="Factura_Paquetes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Factura_Paquetes_Paquete" Association="Self.FK_Factura_Paquetes_Paquete">
-            <End Role="Paquete" EntitySet="Paquete" />
-            <End Role="Factura_Paquetes" EntitySet="Factura_Paquetes" />
-          </AssociationSet>
           <AssociationSet Name="FK_Paquete_Servicio" Association="Self.FK_Paquete_Servicio">
             <End Role="Servicio" EntitySet="Servicio" />
             <End Role="Paquete" EntitySet="Paquete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_preCita_Paquetes_Paquete" Association="Self.FK_preCita_Paquetes_Paquete">
+            <End Role="Paquete" EntitySet="Paquete" />
+            <End Role="preCita_Paquetes" EntitySet="preCita_Paquetes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_preCita_Paquetes_preCita" Association="Self.FK_preCita_Paquetes_preCita">
+            <End Role="preCita" EntitySet="preCita" />
+            <End Role="preCita_Paquetes" EntitySet="preCita_Paquetes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_preCita_Usuario" Association="Self.FK_preCita_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="preCita" EntitySet="preCita" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -132,31 +148,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MudanzasGuaymasDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Factura">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Total" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Fecha" Type="DateTime" Precision="3" />
-          <Property Name="Cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Detalle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Encargado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Hecho" Type="Boolean" />
-          <NavigationProperty Name="Factura_Paquetes" Relationship="Self.FK_Factura_Paquetes_Factura" FromRole="Factura" ToRole="Factura_Paquetes" />
-        </EntityType>
-        <EntityType Name="Factura_Paquetes">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Id_Factura" Type="Int32" />
-          <Property Name="Id_Paquete" Type="Int32" />
-          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
-          <NavigationProperty Name="Factura" Relationship="Self.FK_Factura_Paquetes_Factura" FromRole="Factura_Paquetes" ToRole="Factura" />
-          <NavigationProperty Name="Paquete" Relationship="Self.FK_Factura_Paquetes_Paquete" FromRole="Factura_Paquetes" ToRole="Paquete" />
-        </EntityType>
         <EntityType Name="Paquete">
           <Key>
             <PropertyRef Name="Id" />
@@ -168,8 +159,33 @@
           <Property Name="Mostrar" Type="Boolean" />
           <Property Name="Id_Servicio" Type="Int32" />
           <Property Name="Imagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Factura_Paquetes" Relationship="Self.FK_Factura_Paquetes_Paquete" FromRole="Paquete" ToRole="Factura_Paquetes" />
           <NavigationProperty Name="Servicio" Relationship="Self.FK_Paquete_Servicio" FromRole="Paquete" ToRole="Servicio" />
+          <NavigationProperty Name="preCita_Paquetes" Relationship="Self.FK_preCita_Paquetes_Paquete" FromRole="Paquete" ToRole="preCita_Paquetes" />
+        </EntityType>
+        <EntityType Name="preCita">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Detalle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Hecho" Type="Boolean" />
+          <Property Name="id_usuario" Type="Int32" />
+          <Property Name="Terminado" Type="Boolean" />
+          <NavigationProperty Name="preCita_Paquetes" Relationship="Self.FK_preCita_Paquetes_preCita" FromRole="preCita" ToRole="preCita_Paquetes" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_preCita_Usuario" FromRole="preCita" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="preCita_Paquetes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_preCita" Type="Int32" />
+          <Property Name="Id_Paquete" Type="Int32" />
+          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Paquete" Relationship="Self.FK_preCita_Paquetes_Paquete" FromRole="preCita_Paquetes" ToRole="Paquete" />
+          <NavigationProperty Name="preCita" Relationship="Self.FK_preCita_Paquetes_preCita" FromRole="preCita_Paquetes" ToRole="preCita" />
         </EntityType>
         <EntityType Name="Servicio">
           <Key>
@@ -203,31 +219,9 @@
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Llave" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="preCita" Relationship="Self.FK_preCita_Usuario" FromRole="Usuario" ToRole="preCita" />
         </EntityType>
-        <Association Name="FK_Factura_Paquetes_Factura">
-          <End Role="Factura" Type="Self.Factura" Multiplicity="0..1" />
-          <End Role="Factura_Paquetes" Type="Self.Factura_Paquetes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Factura">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Factura_Paquetes">
-              <PropertyRef Name="Id_Factura" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Factura_Paquetes_Paquete">
-          <End Role="Paquete" Type="Self.Paquete" Multiplicity="0..1" />
-          <End Role="Factura_Paquetes" Type="Self.Factura_Paquetes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Paquete">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Factura_Paquetes">
-              <PropertyRef Name="Id_Paquete" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Paquete_Servicio">
           <End Role="Servicio" Type="Self.Servicio" Multiplicity="0..1" />
           <End Role="Paquete" Type="Self.Paquete" Multiplicity="*" />
@@ -240,24 +234,64 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_preCita_Paquetes_Paquete">
+          <End Role="Paquete" Type="Self.Paquete" Multiplicity="0..1" />
+          <End Role="preCita_Paquetes" Type="Self.preCita_Paquetes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paquete">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="preCita_Paquetes">
+              <PropertyRef Name="Id_Paquete" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_preCita_Paquetes_preCita">
+          <End Role="preCita" Type="Self.preCita" Multiplicity="0..1" />
+          <End Role="preCita_Paquetes" Type="Self.preCita_Paquetes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="preCita">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="preCita_Paquetes">
+              <PropertyRef Name="Id_preCita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_preCita_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="preCita" Type="Self.preCita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="preCita">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="MudanzasGuaymasDbEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Factura" EntityType="Self.Factura" />
-          <EntitySet Name="Factura_Paquetes" EntityType="Self.Factura_Paquetes" />
           <EntitySet Name="Paquete" EntityType="Self.Paquete" />
+          <EntitySet Name="preCita" EntityType="Self.preCita" />
+          <EntitySet Name="preCita_Paquetes" EntityType="Self.preCita_Paquetes" />
           <EntitySet Name="Servicio" EntityType="Self.Servicio" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" />
-          <AssociationSet Name="FK_Factura_Paquetes_Factura" Association="Self.FK_Factura_Paquetes_Factura">
-            <End Role="Factura" EntitySet="Factura" />
-            <End Role="Factura_Paquetes" EntitySet="Factura_Paquetes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Factura_Paquetes_Paquete" Association="Self.FK_Factura_Paquetes_Paquete">
-            <End Role="Paquete" EntitySet="Paquete" />
-            <End Role="Factura_Paquetes" EntitySet="Factura_Paquetes" />
-          </AssociationSet>
           <AssociationSet Name="FK_Paquete_Servicio" Association="Self.FK_Paquete_Servicio">
             <End Role="Servicio" EntitySet="Servicio" />
             <End Role="Paquete" EntitySet="Paquete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_preCita_Paquetes_Paquete" Association="Self.FK_preCita_Paquetes_Paquete">
+            <End Role="Paquete" EntitySet="Paquete" />
+            <End Role="preCita_Paquetes" EntitySet="preCita_Paquetes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_preCita_Paquetes_preCita" Association="Self.FK_preCita_Paquetes_preCita">
+            <End Role="preCita" EntitySet="preCita" />
+            <End Role="preCita_Paquetes" EntitySet="preCita_Paquetes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_preCita_Usuario" Association="Self.FK_preCita_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="preCita" EntitySet="preCita" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -266,30 +300,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="MudanzasGuaymasDbModelStoreContainer" CdmEntityContainer="MudanzasGuaymasDbEntities">
-          <EntitySetMapping Name="Factura">
-            <EntityTypeMapping TypeName="MudanzasGuaymasDbModel.Factura">
-              <MappingFragment StoreEntitySet="Factura">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Total" ColumnName="Total" />
-                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
-                <ScalarProperty Name="Detalle" ColumnName="Detalle" />
-                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
-                <ScalarProperty Name="Encargado" ColumnName="Encargado" />
-                <ScalarProperty Name="Hecho" ColumnName="Hecho" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Factura_Paquetes">
-            <EntityTypeMapping TypeName="MudanzasGuaymasDbModel.Factura_Paquetes">
-              <MappingFragment StoreEntitySet="Factura_Paquetes">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Id_Factura" ColumnName="Id_Factura" />
-                <ScalarProperty Name="Id_Paquete" ColumnName="Id_Paquete" />
-                <ScalarProperty Name="Total" ColumnName="Total" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Paquete">
             <EntityTypeMapping TypeName="MudanzasGuaymasDbModel.Paquete">
               <MappingFragment StoreEntitySet="Paquete">
@@ -300,6 +310,29 @@
                 <ScalarProperty Name="Mostrar" ColumnName="Mostrar" />
                 <ScalarProperty Name="Id_Servicio" ColumnName="Id_Servicio" />
                 <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="preCita">
+            <EntityTypeMapping TypeName="MudanzasGuaymasDbModel.preCita">
+              <MappingFragment StoreEntitySet="preCita">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Hecho" ColumnName="Hecho" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="Terminado" ColumnName="Terminado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="preCita_Paquetes">
+            <EntityTypeMapping TypeName="MudanzasGuaymasDbModel.preCita_Paquetes">
+              <MappingFragment StoreEntitySet="preCita_Paquetes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Id_preCita" ColumnName="Id_preCita" />
+                <ScalarProperty Name="Id_Paquete" ColumnName="Id_Paquete" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -335,6 +368,7 @@
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Tipo" ColumnName="Tipo" />
                 <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Llave" ColumnName="Llave" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

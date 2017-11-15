@@ -25,9 +25,9 @@ namespace MudanzasGuaymasServices.Entity
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Factura> Factura { get; set; }
-        public virtual DbSet<Factura_Paquetes> Factura_Paquetes { get; set; }
         public virtual DbSet<Paquete> Paquete { get; set; }
+        public virtual DbSet<preCita> preCita { get; set; }
+        public virtual DbSet<preCita_Paquetes> preCita_Paquetes { get; set; }
         public virtual DbSet<Servicio> Servicio { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }

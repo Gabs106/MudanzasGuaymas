@@ -4,16 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0f2a3310e5a44371b9283ca36f1c7845" Name="Diagram1">
-        <EntityTypeShape EntityType="MudanzasGuaymasDbModel.Factura" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MudanzasGuaymasDbModel.Factura_Paquetes" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+      <Diagram DiagramId="eb44611b0c6c4a3fa1b5acf2e78a5a09" Name="Diagram1">
         <EntityTypeShape EntityType="MudanzasGuaymasDbModel.Paquete" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MudanzasGuaymasDbModel.preCita" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MudanzasGuaymasDbModel.preCita_Paquetes" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="MudanzasGuaymasDbModel.Servicio" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="MudanzasGuaymasDbModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MudanzasGuaymasDbModel.Usuario" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="MudanzasGuaymasDbModel.FK_Factura_Paquetes_Factura" ManuallyRouted="false" />
-        <AssociationConnector Association="MudanzasGuaymasDbModel.FK_Factura_Paquetes_Paquete" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MudanzasGuaymasDbModel.Usuario" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
         <AssociationConnector Association="MudanzasGuaymasDbModel.FK_Paquete_Servicio" ManuallyRouted="false" />
+        <AssociationConnector Association="MudanzasGuaymasDbModel.FK_preCita_Paquetes_Paquete" ManuallyRouted="false" />
+        <AssociationConnector Association="MudanzasGuaymasDbModel.FK_preCita_Paquetes_preCita" ManuallyRouted="false" />
+        <AssociationConnector Association="MudanzasGuaymasDbModel.FK_preCita_Usuario" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

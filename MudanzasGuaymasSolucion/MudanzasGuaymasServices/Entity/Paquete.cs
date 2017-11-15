@@ -17,7 +17,7 @@ namespace MudanzasGuaymasServices.Entity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Paquete()
         {
-            this.Factura_Paquetes = new HashSet<Factura_Paquetes>();
+            this.preCita_Paquetes = new HashSet<preCita_Paquetes>();
         }
     
         public int Id { get; set; }
@@ -28,8 +28,8 @@ namespace MudanzasGuaymasServices.Entity
         public Nullable<int> Id_Servicio { get; set; }
         public string Imagen { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Factura_Paquetes> Factura_Paquetes { get; set; }
         public virtual Servicio Servicio { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<preCita_Paquetes> preCita_Paquetes { get; set; }
     }
 }

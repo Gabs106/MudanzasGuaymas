@@ -1,27 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="MudanzasGuaymasDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="Factura">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Total" Type="nvarchar" MaxLength="50" />
-    <Property Name="Fecha" Type="datetime" />
-    <Property Name="Cliente" Type="nvarchar" MaxLength="50" />
-    <Property Name="Detalle" Type="text" />
-    <Property Name="Direccion" Type="nvarchar" MaxLength="50" />
-    <Property Name="Encargado" Type="nvarchar" MaxLength="50" />
-    <Property Name="Hecho" Type="bit" />
-  </EntityType>
-  <EntityType Name="Factura_Paquetes">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Id_Factura" Type="int" />
-    <Property Name="Id_Paquete" Type="int" />
-    <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
-  </EntityType>
   <EntityType Name="Paquete">
     <Key>
       <PropertyRef Name="Id" />
@@ -33,6 +11,27 @@
     <Property Name="Mostrar" Type="bit" />
     <Property Name="Id_Servicio" Type="int" />
     <Property Name="Imagen" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="preCita">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Detalle" Type="text" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="50" />
+    <Property Name="Hecho" Type="bit" />
+    <Property Name="id_usuario" Type="int" />
+    <Property Name="Terminado" Type="bit" />
+  </EntityType>
+  <EntityType Name="preCita_Paquetes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_preCita" Type="int" />
+    <Property Name="Id_Paquete" Type="int" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
   </EntityType>
   <EntityType Name="Servicio">
     <Key>
@@ -65,31 +64,8 @@
     <Property Name="Password" Type="nvarchar" MaxLength="50" />
     <Property Name="Tipo" Type="nvarchar" MaxLength="50" />
     <Property Name="Telefono" Type="nvarchar" MaxLength="50" />
+    <Property Name="Llave" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <Association Name="FK_Factura_Paquetes_Factura">
-    <End Role="Factura" Type="Self.Factura" Multiplicity="0..1" />
-    <End Role="Factura_Paquetes" Type="Self.Factura_Paquetes" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Factura">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Factura_Paquetes">
-        <PropertyRef Name="Id_Factura" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Factura_Paquetes_Paquete">
-    <End Role="Paquete" Type="Self.Paquete" Multiplicity="0..1" />
-    <End Role="Factura_Paquetes" Type="Self.Factura_Paquetes" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Paquete">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Factura_Paquetes">
-        <PropertyRef Name="Id_Paquete" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Paquete_Servicio">
     <End Role="Servicio" Type="Self.Servicio" Multiplicity="0..1" />
     <End Role="Paquete" Type="Self.Paquete" Multiplicity="*" />
@@ -102,24 +78,64 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_preCita_Paquetes_Paquete">
+    <End Role="Paquete" Type="Self.Paquete" Multiplicity="0..1" />
+    <End Role="preCita_Paquetes" Type="Self.preCita_Paquetes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paquete">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="preCita_Paquetes">
+        <PropertyRef Name="Id_Paquete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_preCita_Paquetes_preCita">
+    <End Role="preCita" Type="Self.preCita" Multiplicity="0..1" />
+    <End Role="preCita_Paquetes" Type="Self.preCita_Paquetes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="preCita">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="preCita_Paquetes">
+        <PropertyRef Name="Id_preCita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_preCita_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="preCita" Type="Self.preCita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="preCita">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="MudanzasGuaymasDbModelStoreContainer">
-    <EntitySet Name="Factura" EntityType="Self.Factura" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Factura_Paquetes" EntityType="Self.Factura_Paquetes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Paquete" EntityType="Self.Paquete" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="preCita" EntityType="Self.preCita" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="preCita_Paquetes" EntityType="Self.preCita_Paquetes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Servicio" EntityType="Self.Servicio" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_Factura_Paquetes_Factura" Association="Self.FK_Factura_Paquetes_Factura">
-      <End Role="Factura" EntitySet="Factura" />
-      <End Role="Factura_Paquetes" EntitySet="Factura_Paquetes" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Factura_Paquetes_Paquete" Association="Self.FK_Factura_Paquetes_Paquete">
-      <End Role="Paquete" EntitySet="Paquete" />
-      <End Role="Factura_Paquetes" EntitySet="Factura_Paquetes" />
-    </AssociationSet>
     <AssociationSet Name="FK_Paquete_Servicio" Association="Self.FK_Paquete_Servicio">
       <End Role="Servicio" EntitySet="Servicio" />
       <End Role="Paquete" EntitySet="Paquete" />
+    </AssociationSet>
+    <AssociationSet Name="FK_preCita_Paquetes_Paquete" Association="Self.FK_preCita_Paquetes_Paquete">
+      <End Role="Paquete" EntitySet="Paquete" />
+      <End Role="preCita_Paquetes" EntitySet="preCita_Paquetes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_preCita_Paquetes_preCita" Association="Self.FK_preCita_Paquetes_preCita">
+      <End Role="preCita" EntitySet="preCita" />
+      <End Role="preCita_Paquetes" EntitySet="preCita_Paquetes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_preCita_Usuario" Association="Self.FK_preCita_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="preCita" EntitySet="preCita" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

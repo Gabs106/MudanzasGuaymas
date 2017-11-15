@@ -1,30 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="MudanzasGuaymasDbModelStoreContainer" CdmEntityContainer="MudanzasGuaymasDbEntities">
-    <EntitySetMapping Name="Factura">
-      <EntityTypeMapping TypeName="MudanzasGuaymasDbModel.Factura">
-        <MappingFragment StoreEntitySet="Factura">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Total" ColumnName="Total" />
-          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
-          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
-          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
-          <ScalarProperty Name="Encargado" ColumnName="Encargado" />
-          <ScalarProperty Name="Hecho" ColumnName="Hecho" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Factura_Paquetes">
-      <EntityTypeMapping TypeName="MudanzasGuaymasDbModel.Factura_Paquetes">
-        <MappingFragment StoreEntitySet="Factura_Paquetes">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Id_Factura" ColumnName="Id_Factura" />
-          <ScalarProperty Name="Id_Paquete" ColumnName="Id_Paquete" />
-          <ScalarProperty Name="Total" ColumnName="Total" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Paquete">
       <EntityTypeMapping TypeName="MudanzasGuaymasDbModel.Paquete">
         <MappingFragment StoreEntitySet="Paquete">
@@ -35,6 +11,29 @@
           <ScalarProperty Name="Mostrar" ColumnName="Mostrar" />
           <ScalarProperty Name="Id_Servicio" ColumnName="Id_Servicio" />
           <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="preCita">
+      <EntityTypeMapping TypeName="MudanzasGuaymasDbModel.preCita">
+        <MappingFragment StoreEntitySet="preCita">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Hecho" ColumnName="Hecho" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="Terminado" ColumnName="Terminado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="preCita_Paquetes">
+      <EntityTypeMapping TypeName="MudanzasGuaymasDbModel.preCita_Paquetes">
+        <MappingFragment StoreEntitySet="preCita_Paquetes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_preCita" ColumnName="Id_preCita" />
+          <ScalarProperty Name="Id_Paquete" ColumnName="Id_Paquete" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -70,6 +69,7 @@
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Tipo" ColumnName="Tipo" />
           <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Llave" ColumnName="Llave" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
