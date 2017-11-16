@@ -13,6 +13,7 @@ namespace MudanzasGuaymasServices.Services
     public class SrvPaquete : ISrvPaquete
     {
         MudanzasGuaymasDbEntities DataBase = new MudanzasGuaymasDbEntities();
+        //Consulta un paquete por id
         public Paquete ConsultarPorId(string id)
         {
             Paquete pack = new Paquete();
@@ -28,7 +29,7 @@ namespace MudanzasGuaymasServices.Services
 
             return pack;
         }
-
+        //Consulta una lista de paquetes por nombre
         public List<Paquete> ConsultarPorNombre(string nombre)
         {
             List<Paquete> lista = new List<Paquete>();
@@ -44,7 +45,7 @@ namespace MudanzasGuaymasServices.Services
             Console.WriteLine("Resultado " + lista.First());
             return lista;
         }
-
+        //Trae todos los paquetes existentes
         public List<Paquete> ConsultarTodos()
         {
             List<Paquete> lista = new List<Paquete>();

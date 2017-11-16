@@ -11,8 +11,6 @@
     <Property Name="Mostrar" Type="Boolean" />
     <Property Name="Id_Servicio" Type="Int32" />
     <Property Name="Imagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Servicio" Relationship="Self.FK_Paquete_Servicio" FromRole="Paquete" ToRole="Servicio" />
-    <NavigationProperty Name="preCita_Paquetes" Relationship="Self.FK_preCita_Paquetes_Paquete" FromRole="Paquete" ToRole="preCita_Paquetes" />
   </EntityType>
   <EntityType Name="preCita">
     <Key>
@@ -25,8 +23,6 @@
     <Property Name="Hecho" Type="Boolean" />
     <Property Name="id_usuario" Type="Int32" />
     <Property Name="Terminado" Type="Boolean" />
-    <NavigationProperty Name="preCita_Paquetes" Relationship="Self.FK_preCita_Paquetes_preCita" FromRole="preCita" ToRole="preCita_Paquetes" />
-    <NavigationProperty Name="Usuario" Relationship="Self.FK_preCita_Usuario" FromRole="preCita" ToRole="Usuario" />
   </EntityType>
   <EntityType Name="preCita_Paquetes">
     <Key>
@@ -36,8 +32,6 @@
     <Property Name="Id_preCita" Type="Int32" />
     <Property Name="Id_Paquete" Type="Int32" />
     <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
-    <NavigationProperty Name="Paquete" Relationship="Self.FK_preCita_Paquetes_Paquete" FromRole="preCita_Paquetes" ToRole="Paquete" />
-    <NavigationProperty Name="preCita" Relationship="Self.FK_preCita_Paquetes_preCita" FromRole="preCita_Paquetes" ToRole="preCita" />
   </EntityType>
   <EntityType Name="Servicio">
     <Key>
@@ -48,7 +42,6 @@
     <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Mostrar" Type="Boolean" />
     <Property Name="Imagen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Paquete" Relationship="Self.FK_Paquete_Servicio" FromRole="Servicio" ToRole="Paquete" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -72,56 +65,7 @@
     <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Llave" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="preCita" Relationship="Self.FK_preCita_Usuario" FromRole="Usuario" ToRole="preCita" />
   </EntityType>
-  <Association Name="FK_Paquete_Servicio">
-    <End Role="Servicio" Type="Self.Servicio" Multiplicity="0..1" />
-    <End Role="Paquete" Type="Self.Paquete" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Servicio">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Paquete">
-        <PropertyRef Name="Id_Servicio" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_preCita_Paquetes_Paquete">
-    <End Role="Paquete" Type="Self.Paquete" Multiplicity="0..1" />
-    <End Role="preCita_Paquetes" Type="Self.preCita_Paquetes" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Paquete">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="preCita_Paquetes">
-        <PropertyRef Name="Id_Paquete" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_preCita_Paquetes_preCita">
-    <End Role="preCita" Type="Self.preCita" Multiplicity="0..1" />
-    <End Role="preCita_Paquetes" Type="Self.preCita_Paquetes" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="preCita">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="preCita_Paquetes">
-        <PropertyRef Name="Id_preCita" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_preCita_Usuario">
-    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
-    <End Role="preCita" Type="Self.preCita" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Usuario">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="preCita">
-        <PropertyRef Name="id_usuario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="MudanzasGuaymasDbEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Paquete" EntityType="Self.Paquete" />
     <EntitySet Name="preCita" EntityType="Self.preCita" />
@@ -129,21 +73,5 @@
     <EntitySet Name="Servicio" EntityType="Self.Servicio" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="Usuario" EntityType="Self.Usuario" />
-    <AssociationSet Name="FK_Paquete_Servicio" Association="Self.FK_Paquete_Servicio">
-      <End Role="Servicio" EntitySet="Servicio" />
-      <End Role="Paquete" EntitySet="Paquete" />
-    </AssociationSet>
-    <AssociationSet Name="FK_preCita_Paquetes_Paquete" Association="Self.FK_preCita_Paquetes_Paquete">
-      <End Role="Paquete" EntitySet="Paquete" />
-      <End Role="preCita_Paquetes" EntitySet="preCita_Paquetes" />
-    </AssociationSet>
-    <AssociationSet Name="FK_preCita_Paquetes_preCita" Association="Self.FK_preCita_Paquetes_preCita">
-      <End Role="preCita" EntitySet="preCita" />
-      <End Role="preCita_Paquetes" EntitySet="preCita_Paquetes" />
-    </AssociationSet>
-    <AssociationSet Name="FK_preCita_Usuario" Association="Self.FK_preCita_Usuario">
-      <End Role="Usuario" EntitySet="Usuario" />
-      <End Role="preCita" EntitySet="preCita" />
-    </AssociationSet>
   </EntityContainer>
 </Schema>

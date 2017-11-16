@@ -14,12 +14,6 @@ namespace MudanzasGuaymasServices.Entity
     
     public partial class preCita
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public preCita()
-        {
-            this.preCita_Paquetes = new HashSet<preCita_Paquetes>();
-        }
-    
         public int Id { get; set; }
         public Nullable<decimal> Total { get; set; }
         public string Detalle { get; set; }
@@ -27,9 +21,5 @@ namespace MudanzasGuaymasServices.Entity
         public Nullable<bool> Hecho { get; set; }
         public Nullable<int> id_usuario { get; set; }
         public Nullable<bool> Terminado { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<preCita_Paquetes> preCita_Paquetes { get; set; }
-        public virtual Usuario Usuario { get; set; }
     }
 }

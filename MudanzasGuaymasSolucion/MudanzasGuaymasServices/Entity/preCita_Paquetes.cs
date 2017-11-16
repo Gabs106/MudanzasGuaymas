@@ -18,8 +18,5 @@ namespace MudanzasGuaymasServices.Entity
         public Nullable<int> Id_preCita { get; set; }
         public Nullable<int> Id_Paquete { get; set; }
         public Nullable<decimal> Total { get; set; }
-    
-        public virtual Paquete Paquete { get; set; }
-        public virtual preCita preCita { get; set; }
     }
 }
