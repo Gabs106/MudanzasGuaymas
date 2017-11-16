@@ -21,5 +21,7 @@ namespace MudanzasGuaymasServices.Entity
         public Nullable<bool> Hecho { get; set; }
         public Nullable<int> id_usuario { get; set; }
         public Nullable<bool> Terminado { get; set; }
+        public string Latitud { get; set; }
+        public string Longitud { get; set; }
     }
 }

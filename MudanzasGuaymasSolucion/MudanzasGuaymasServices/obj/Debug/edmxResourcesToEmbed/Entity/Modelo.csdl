@@ -10,7 +10,7 @@
     <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Mostrar" Type="Boolean" />
     <Property Name="Id_Servicio" Type="Int32" />
-    <Property Name="Imagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="preCita">
     <Key>
@@ -41,7 +41,7 @@
     <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Mostrar" Type="Boolean" />
-    <Property Name="Imagen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>

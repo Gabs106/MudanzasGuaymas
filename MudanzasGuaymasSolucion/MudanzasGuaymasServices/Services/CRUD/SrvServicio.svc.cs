@@ -13,6 +13,14 @@ namespace MudanzasGuaymasServices.Services
     public class SrvServicio : ISrvServicio
     {
         MudanzasGuaymasDbEntities DataBase = new MudanzasGuaymasDbEntities();
+
+        public void agregarImagen(Servicio servicio)
+        {
+            Servicio s = ConsultarPorId(servicio.Id.ToString());
+            s.Imagen = servicio.Imagen;
+            DataBase.SaveChanges();
+        }
+
         public Servicio ConsultarPorId(string id)
         {
             Servicio ser = new Servicio();
@@ -56,7 +64,6 @@ namespace MudanzasGuaymasServices.Services
             {
                 lista.Add(result);
             }
-            Console.WriteLine("Resultado " + lista.First());
             return lista;
         }
 

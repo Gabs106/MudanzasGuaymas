@@ -57,7 +57,7 @@ namespace MudanzasGuaymasServices.Services
             {
                 lista.Add(result);
             }
-            Console.WriteLine("Resultado " + lista.First());
+  
             return lista;
         }
 

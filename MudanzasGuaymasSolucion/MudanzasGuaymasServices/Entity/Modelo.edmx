@@ -15,7 +15,7 @@
           <Property Name="Descripcion" Type="text" />
           <Property Name="Mostrar" Type="bit" />
           <Property Name="Id_Servicio" Type="int" />
-          <Property Name="Imagen" Type="nvarchar(max)" />
+          <Property Name="Imagen" Type="text" />
         </EntityType>
         <EntityType Name="preCita">
           <Key>
@@ -28,6 +28,8 @@
           <Property Name="Hecho" Type="bit" />
           <Property Name="id_usuario" Type="int" />
           <Property Name="Terminado" Type="bit" />
+          <Property Name="Latitud" Type="varchar" MaxLength="50" />
+          <Property Name="Longitud" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="preCita_Paquetes">
           <Key>
@@ -46,7 +48,7 @@
           <Property Name="Descripcion" Type="ntext" />
           <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
           <Property Name="Mostrar" Type="bit" />
-          <Property Name="Imagen" Type="nvarchar" MaxLength="50" />
+          <Property Name="Imagen" Type="text" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -94,7 +96,7 @@
           <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Mostrar" Type="Boolean" />
           <Property Name="Id_Servicio" Type="Int32" />
-          <Property Name="Imagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Imagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="preCita">
           <Key>
@@ -107,6 +109,8 @@
           <Property Name="Hecho" Type="Boolean" />
           <Property Name="id_usuario" Type="Int32" />
           <Property Name="Terminado" Type="Boolean" />
+          <Property Name="Latitud" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Longitud" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="preCita_Paquetes">
           <Key>
@@ -125,7 +129,7 @@
           <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Mostrar" Type="Boolean" />
-          <Property Name="Imagen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Imagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -187,6 +191,8 @@
                 <ScalarProperty Name="Hecho" ColumnName="Hecho" />
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
                 <ScalarProperty Name="Terminado" ColumnName="Terminado" />
+                <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+                <ScalarProperty Name="Longitud" ColumnName="Longitud" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

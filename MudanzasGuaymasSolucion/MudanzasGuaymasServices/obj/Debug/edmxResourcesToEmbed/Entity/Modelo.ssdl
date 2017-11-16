@@ -10,7 +10,7 @@
     <Property Name="Descripcion" Type="text" />
     <Property Name="Mostrar" Type="bit" />
     <Property Name="Id_Servicio" Type="int" />
-    <Property Name="Imagen" Type="nvarchar(max)" />
+    <Property Name="Imagen" Type="image" />
   </EntityType>
   <EntityType Name="preCita">
     <Key>
@@ -41,7 +41,7 @@
     <Property Name="Descripcion" Type="ntext" />
     <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
     <Property Name="Mostrar" Type="bit" />
-    <Property Name="Imagen" Type="nvarchar" MaxLength="50" />
+    <Property Name="Imagen" Type="image" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>

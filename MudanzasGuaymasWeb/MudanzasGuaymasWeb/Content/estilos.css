@@ -1,0 +1,255 @@
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+*{
+	font-family: 'Open Sans', sans-serif;
+}
+a{
+	text-decoration: none;
+	color:black;
+
+}
+
+#wrapperMain{
+	width: 100%;
+	margin: 0 auto;
+}
+
+#wrapperHeader{
+	width: 980px;
+    height: 110px;
+    display: block;
+    float: none;
+    clear: both;
+    margin: 0 auto;
+    text-align: left;
+    padding: 5px 0 0 0;
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#wrapperHeader p{
+	height: 25px;
+    display: block;
+    float: right;
+    clear: none;
+    overflow: hidden;
+    padding: 0;
+    line-height: 25px;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 16px;
+    text-align: right;
+    margin: 0;
+    margin-right: 10px;
+    margin-top: -80px;
+}
+
+#wrapperHeader img{
+	width: 226px;
+    height: 185px;
+    display: block;
+    float: left;
+    clear: none;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    left: 0;
+}
+
+#wrapperHeader nav{
+	width: 75%;
+    height: auto;
+    float: right;
+    clear: none;
+    margin-top:80px;
+}
+#wrapperHeader ul{
+	font-size: 14px;
+    margin: 0;
+    padding: 0;
+    display: block;
+    float: none;
+    clear: both;
+    height: 38px;
+}
+#wrapperHeader li{
+	display: inline-block;
+    position: relative;
+    margin: 0 10px;
+    line-height: 38px;
+    text-transform: uppercase;
+    height: 38px;
+}
+#wrapperHeader li a{
+
+}
+#wrapperHeader li a:hover{
+    color: #FF001E;
+    background: url("https://animagehub.com/wp-content/uploads/2016/10/triangle-vector-1.png") bottom center no-repeat;
+}
+#wrapperBanner .background{
+	background: rgba(76,76,76,1);
+background: rgba(166,166,166,1);
+background: -moz-linear-gradient(-45deg, rgba(166,166,166,1) 17%, rgba(166,166,166,1) 22%, rgba(166,166,166,1) 33%, rgba(161,161,161,1) 59%, rgba(153,153,153,1) 70%, rgba(167,167,167,1) 83%, rgba(173,173,173,1) 88%, rgba(186,186,186,1) 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(17%, rgba(166,166,166,1)), color-stop(22%, rgba(166,166,166,1)), color-stop(33%, rgba(166,166,166,1)), color-stop(59%, rgba(161,161,161,1)), color-stop(70%, rgba(153,153,153,1)), color-stop(83%, rgba(167,167,167,1)), color-stop(88%, rgba(173,173,173,1)), color-stop(100%, rgba(186,186,186,1)));
+background: -webkit-linear-gradient(-45deg, rgba(166,166,166,1) 17%, rgba(166,166,166,1) 22%, rgba(166,166,166,1) 33%, rgba(161,161,161,1) 59%, rgba(153,153,153,1) 70%, rgba(167,167,167,1) 83%, rgba(173,173,173,1) 88%, rgba(186,186,186,1) 100%);
+background: -o-linear-gradient(-45deg, rgba(166,166,166,1) 17%, rgba(166,166,166,1) 22%, rgba(166,166,166,1) 33%, rgba(161,161,161,1) 59%, rgba(153,153,153,1) 70%, rgba(167,167,167,1) 83%, rgba(173,173,173,1) 88%, rgba(186,186,186,1) 100%);
+background: -ms-linear-gradient(-45deg, rgba(166,166,166,1) 17%, rgba(166,166,166,1) 22%, rgba(166,166,166,1) 33%, rgba(161,161,161,1) 59%, rgba(153,153,153,1) 70%, rgba(167,167,167,1) 83%, rgba(173,173,173,1) 88%, rgba(186,186,186,1) 100%);
+background: linear-gradient(135deg, rgba(166,166,166,1) 17%, rgba(166,166,166,1) 22%, rgba(166,166,166,1) 33%, rgba(161,161,161,1) 59%, rgba(153,153,153,1) 70%, rgba(167,167,167,1) 83%, rgba(173,173,173,1) 88%, rgba(186,186,186,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6a6a6', endColorstr='#bababa', GradientType=1 );
+}
+#wrapperBanner .banner{
+	width: 900px;
+	margin: 0 auto;
+}
+#wrapperBanner .raya{
+     width: 100%;
+     height: 10px;
+     background: black;
+}
+#wrapperBanner h2{
+	margin: 0;
+	font-size: 40px;
+	color:white;
+	text-align: center;
+
+}
+#wrapperBanner .slogan{
+	background: #FF001E;
+	width: 100%;
+	padding-top:20px;
+	padding-bottom: 20px;
+}
+#wrapperBanner .slogan p{
+	 color:white;
+	 text-align: center;
+}
+#wrapperArticle{
+width: 961px;
+align-items: center;
+margin: 0 auto;
+text-align: center;
+}
+#wrapperArticle article{
+	display: inline-block;
+	float: left;
+	margin:0 10px;
+	border-radius: 10px;
+	
+}
+#wrapperArticle img{
+    width: 300px;
+    height: 200px;
+    display: block;
+    float: none;
+    clear: both;
+    margin: 10px 0;
+    overflow: hidden;
+    box-shadow: inset 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+#wrapperArticle article{
+	width: 300px;
+	height: 350px;
+}
+#wrapperArticle h2{
+	color:red;
+	text-align: center;
+	font-size: 18px
+}
+#wrapperArticle p{
+	text-align: center;
+	font-size: 12px
+}
+.limpiar{
+clear: both;
+}
+
+.separar img{
+    width: 1000px;
+    height: 10px;
+    padding: 0;
+    display: block;
+    float: none;
+    clear: both;
+    background: url(http://www.atmosphera.cl/portal/wp-content/uploads/2012/07/separador.png) 
+}
+
+.separar2 img{
+    width: 980px;
+    height: 10px;
+    padding: 0;
+    display: block;
+    float: none;
+    clear: both;
+    background: url(http://www.atmosphera.cl/portal/wp-content/uploads/2012/07/separador.png) 
+}
+
+#wrapperArticle .subTitulo h2{
+     margin-top: -80px;
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    display: block;
+    color: #FF001E;
+    margin: 0px auto;
+    text-align: center;
+    font-style: italic;
+}
+
+#wrapperArticle .letrasSubTitulo p{
+    font-size: 16px;
+    margin-bottom: 9px;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: none;
+    display: block;
+    margin: 0px auto;
+    text-align: center;
+    color: black;
+    height: auto;
+    padding-bottom: 10px;
+}
+
+#wrapperArticleSeparar img {
+    width: 1000px;
+    height: 10px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+#wrapperArticle .subTitulo2 h2{
+     margin-top: -80px;
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    display: block;
+    color: #FF001E;
+    margin: 0px auto;
+    text-align: left;
+    font-style: italic;
+}
+
+#wrapperArticle2 img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    float: none;
+    clear: both;
+    margin: 10px 0;
+    overflow: hidden;
+    box-shadow: inset 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 80%;
+}
+#wrapperArticle2 article{
+   width: 300px;
+height: 500px;
+    
+}
+
+.mid {
+    width: 50%;
+    }

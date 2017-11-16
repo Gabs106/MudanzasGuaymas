@@ -12,4 +12,3 @@ C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\ob
 C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\obj\Debug\MudanzasGuaymasServices.pdb
 C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\Newtonsoft.Json.dll
 C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\Newtonsoft.Json.xml
-C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\obj\Debug\MudanzasGuaymasServices.csprojResolveAssemblyReference.cache
