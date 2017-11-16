@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
+        <dex dex="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.1.1_f1e019f13c895f452a377744bb5eb4c7eb06ac92\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e43296129c31b49b09fda8294caaeb4e95d8573d">
+        <dex dex="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_3c0e0194b17169185f45ea2ba8e4017bb51f4ac6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
+        <dex dex="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.1.1_43ff39f26af9697bfe37f28fe56e1beec25abba9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\exploded-aar\com.android.support\design\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
+        <dex dex="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.1.1_dcf5e7970cb3eec1caf8edc095e6bd7bc7ace406\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
+        <dex dex="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.1.1_f8b1b42d710a515cb79309f217958d6e202df2af\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
+        <dex dex="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.1.1_27f04afcc47b53e42bdd78fb8521c10a694454c1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
+        <dex dex="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.1.1_eddd4fa24389a222177bd2469e03b6c924739f6f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.1_82446ce05fa8f023190f6514ae3879b04234bcbe\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="22cbc360a319a7fed968c6ec9ac205c57eb32246">
+        <dex dex="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_65cf0b13f55188ccec79302d28212dae9fc52213\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\kevin\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
+        <dex dex="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.1.1_1a260389bda21e257bbee62e798357c4b054877b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
+        <dex dex="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.1.1_f87583262ccd406447c71a5249d837f1d1aa0702\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.1.1_5723915988eed518fbcbe9896c913b4c69158b2e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
+        <dex dex="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.1.1_610a2eadd7088fdcf391e9580712de7aee0f26dd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
+        <dex dex="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.1.1_59081299cccb670c5bb018d074eb900917e4e84d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.1.1_20a85538a57ad9a414c3b3bacb39098ed9a78d99\classes.dex" />
+    </item>
+
+</items>

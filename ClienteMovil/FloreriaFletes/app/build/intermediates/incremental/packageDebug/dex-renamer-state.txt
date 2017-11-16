@@ -1,0 +1,7 @@
+#Wed Nov 15 22:35:26 MST 2017
+base.0=D\:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_65cf0b13f55188ccec79302d28212dae9fc52213
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=D\:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_3c0e0194b17169185f45ea2ba8e4017bb51f4ac6\\classes.dex
+base.1=D\:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_3c0e0194b17169185f45ea2ba8e4017bb51f4ac6
+file.0=D\:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_65cf0b13f55188ccec79302d28212dae9fc52213\\classes.dex
