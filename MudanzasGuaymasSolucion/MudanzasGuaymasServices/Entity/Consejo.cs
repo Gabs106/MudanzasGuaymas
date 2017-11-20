@@ -12,11 +12,11 @@ namespace MudanzasGuaymasServices.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class preCita_Paquetes
+    public partial class Consejo
     {
-        public int Id { get; set; }
-        public Nullable<int> Id_preCita { get; set; }
-        public Nullable<int> Id_Paquete { get; set; }
-        public Nullable<decimal> Total { get; set; }
+        public int id { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public string imagen { get; set; }
     }
 }

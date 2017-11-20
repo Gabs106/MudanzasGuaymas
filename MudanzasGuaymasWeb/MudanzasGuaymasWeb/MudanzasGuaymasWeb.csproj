@@ -144,6 +144,20 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Clientes\ClientePaquete.cs" />
+    <Compile Include="Clientes\ClienteServicio.cs" />
+    <Compile Include="Clientes\ClienteSesion.cs" />
+    <Compile Include="Clientes\ClienteUsuario.cs" />
+    <Compile Include="Connected Services\SrvPaquete\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SrvPreCita\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\SrvServicio\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -159,6 +173,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\CitaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PaqueteController.cs" />
     <Compile Include="Controllers\ServicioController.cs" />
@@ -170,8 +185,36 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\SrvPaquete\configuration91.svcinfo" />
+    <None Include="Connected Services\SrvPaquete\configuration.svcinfo" />
+    <Content Include="Connected Services\SrvPaquete\MudanzasGuaymasWeb.SrvPaquete.Paquete.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\SrvPaquete\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\SrvPreCita\MudanzasGuaymasWeb.SrvPreCita.preCita.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\SrvPreCita\SrvPreCita.wsdl" />
+    <None Include="Connected Services\SrvPreCita\SrvPreCita.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SrvPreCita\SrvPreCita1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SrvPreCita\SrvPreCita2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\SrvServicio\configuration91.svcinfo" />
     <None Include="Connected Services\SrvServicio\configuration.svcinfo" />
+    <None Include="Connected Services\SrvPreCita\configuration91.svcinfo" />
+    <None Include="Connected Services\SrvPreCita\configuration.svcinfo" />
+    <None Include="Connected Services\SrvPreCita\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Connected Services\SrvServicio\MudanzasGuaymasWeb.SrvServicio.Servicio.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -182,16 +225,6 @@
     <Content Include="Connected Services\SrvSesion\MudanzasGuaymasWeb.SrvSesion.Usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\SrvServicio\SrvServicio.wsdl" />
-    <None Include="Connected Services\SrvServicio\SrvServicio.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\SrvServicio\SrvServicio1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\SrvServicio\SrvServicio2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Connected Services\SrvSesion\SrvSesion.wsdl" />
     <None Include="Connected Services\SrvSesion\SrvSesion.xsd">
       <SubType>Designer</SubType>
@@ -217,7 +250,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Content\depositphotos_112286722-stock-illustration-customer-service-icon.jpg" />
+    <Content Include="Content\edge-candy.svg" />
+    <Content Include="Content\edge-cream.svg" />
     <Content Include="Content\estilos.css" />
+    <Content Include="Content\Formulario.css" />
+    <Content Include="Content\Logo Completo.png" />
+    <Content Include="Content\separator.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -226,6 +265,26 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Connected Services\SrvPaquete\SrvPaquete.wsdl" />
+    <None Include="Connected Services\SrvPaquete\SrvPaquete.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SrvPaquete\SrvPaquete1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SrvPaquete\SrvPaquete2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SrvServicio\SrvServicio.wsdl" />
+    <None Include="Connected Services\SrvServicio\SrvServicio.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SrvServicio\SrvServicio1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SrvServicio\SrvServicio2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\SrvUsuario\SrvUsuario.wsdl" />
     <None Include="Connected Services\SrvUsuario\SrvUsuario.xsd">
       <SubType>Designer</SubType>
@@ -240,6 +299,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.2.1.min %281%29.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -247,6 +307,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\TruncarTexto.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -267,11 +328,15 @@
     <Content Include="Views\Servicio\Create.cshtml" />
     <Content Include="Views\Servicio\Index.cshtml" />
     <Content Include="Views\Servicio\Details.cshtml" />
+    <Content Include="Views\Paquete\Index.cshtml" />
+    <Content Include="Views\Paquete\Create.cshtml" />
+    <Content Include="Views\Servicio\Prueba.cshtml" />
+    <Content Include="Views\Paquete\Post.cshtml" />
+    <Content Include="Views\Cita\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Paquete\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -290,6 +355,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\SrvPaquete\" />
+    <WCFMetadataStorage Include="Connected Services\SrvPreCita\" />
     <WCFMetadataStorage Include="Connected Services\SrvServicio\" />
     <WCFMetadataStorage Include="Connected Services\SrvSesion\" />
     <WCFMetadataStorage Include="Connected Services\SrvUsuario\" />

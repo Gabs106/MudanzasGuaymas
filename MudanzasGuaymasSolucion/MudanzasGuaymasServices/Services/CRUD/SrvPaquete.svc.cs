@@ -12,7 +12,8 @@ namespace MudanzasGuaymasServices.Services
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione SrvPaquete.svc o SrvPaquete.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class SrvPaquete : ISrvPaquete
     {
-        MudanzasGuaymasDbEntities DataBase = new MudanzasGuaymasDbEntities();
+       
+        MGEntidades DataBase = new MGEntidades();
         //Consulta un paquete por id
         public Paquete ConsultarPorId(string id)
         {
@@ -42,20 +43,21 @@ namespace MudanzasGuaymasServices.Services
             {
                 lista.Add(result);
             }
-            Console.WriteLine("Resultado " + lista.First());
+            
             return lista;
         }
         //Trae todos los paquetes existentes
-        public List<Paquete> ConsultarTodos()
+        public List<Paquete> ConsultarTodos(string id)
         {
             List<Paquete> lista = new List<Paquete>();
-
-            var Query = from servicio in DataBase.Paquete
-                        select servicio;
-
+            int ID = int.Parse(id);
+            var Query = from paquete in DataBase.Paquete
+                        where paquete.Id_Servicio == ID
+                        select paquete;
             foreach (var result in Query)
             {
-                lista.Add(result);
+            
+            lista.Add(result);
             }
   
             return lista;

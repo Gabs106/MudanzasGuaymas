@@ -14,10 +14,11 @@ namespace MudanzasGuaymasWeb.Controllers
 {
     public class UsuarioController : Controller
     {
+        Clientes.ClienteUsuario CU = new Clientes.ClienteUsuario();
         // GET: Usuario
         public ActionResult Index()
         {
-            ViewBag.usuario = verTodos();
+            ViewBag.usuario = CU.verTodos();
             return View();
         }
         public ActionResult Agregar()
@@ -28,89 +29,35 @@ namespace MudanzasGuaymasWeb.Controllers
         public bool Delete(int id)
         {
             string ID = id.ToString();
-            Usuario usuario = encontrarUno(ID);
+            Usuario usuario = CU.encontrarUno(ID);
             eliminar(usuario);
             return true;
         }
         public ActionResult Details(int id)
         {
             string ID = id.ToString();
-            ViewBag.usuario = encontrarUno(ID);
+            ViewBag.usuario = CU.encontrarUno(ID);
             return View();
         }
         public ActionResult Edit(int id)
         {
             string ID = id.ToString();
-            ViewBag.usuario = encontrarUno(ID);
+            ViewBag.usuario = CU.encontrarUno(ID);
             return View();
         }
-        private string BASE_URL = "http://localhost:49727/Services/CRUD/SrvUsuario.svc/";
 
-        //Consulta todos los usuarios dentro de la tabla
-        public List<Usuario> verTodos()
-        {
-            var synClient = new WebClient();
-            var content = synClient.DownloadString(BASE_URL + "getAll");
-            var json_serializer = new JavaScriptSerializer();
-            return json_serializer.Deserialize<List<Usuario>>(content);
-        }
-        public string encriptar(string password)
-        {
-            BASE_URL = "http://localhost:49727/Services/Seguridad/SrvSesion.svc/";
-            var synClient = new WebClient();
-            string url = string.Format(BASE_URL + "encriptar/{0},", password);
-            var content = synClient.DownloadString(url);
-            var json_serializer = new JavaScriptSerializer();
-            return json_serializer.Deserialize<string>(content);
-        }
+
         public bool subir(Usuario usuario)
         {
-            //Encriptar password
-            string password = encriptar(usuario.Password);
-            usuario.Password = password;
-            //Agregar al usuario
-            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(SrvUsuario.Usuario));
-            MemoryStream mem = new MemoryStream();
-            ser.WriteObject(mem, usuario);
-            string data = Encoding.UTF8.GetString(mem.ToArray(), 0, (int)mem.Length);
-            WebClient webClient = new WebClient();
-            webClient.Headers["Content-type"] = "application/json";
-            webClient.Encoding = Encoding.UTF8;
-            BASE_URL = "http://localhost:49727/Services/CRUD/SrvUsuario.svc/";
-            webClient.UploadString(BASE_URL + "create", "POST", data);
-
-
+            CU.subir(usuario);
             return true;
         }
 
-        public SrvUsuario.Usuario encontrarUno(string id)
-        {
-            var synClient = new WebClient();
-            string url = string.Format(BASE_URL + "get/{0}", id);
-            var content = synClient.DownloadString(url);
-            var json_serializer = new JavaScriptSerializer();
-            return json_serializer.Deserialize<SrvUsuario.Usuario>(content);
 
-        }
         //Agrega una fila a la tabla
         public void eliminar(SrvUsuario.Usuario usuario)
         {
-            try
-            {
-                DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(SrvUsuario.Usuario));
-                MemoryStream mem = new MemoryStream();
-                ser.WriteObject(mem, usuario);
-                string data = Encoding.UTF8.GetString(mem.ToArray(), 0, (int)mem.Length);
-                WebClient webClient = new WebClient();
-                webClient.Headers["Content-type"] = "application/json";
-                webClient.Encoding = Encoding.UTF8;
-                webClient.UploadString(BASE_URL + "delete", "DELETE", data);
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            CU.eliminar(usuario);
             RedirectToAction("Consultar", "Usuario");
 
         }
@@ -118,15 +65,7 @@ namespace MudanzasGuaymasWeb.Controllers
         public void editar(SrvUsuario.Usuario usuario)
         {
 
-            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(SrvUsuario.Usuario));
-            MemoryStream mem = new MemoryStream();
-            ser.WriteObject(mem, usuario);
-            string data = Encoding.UTF8.GetString(mem.ToArray(), 0, (int)mem.Length);
-            WebClient webClient = new WebClient();
-            webClient.Headers["Content-type"] = "application/json";
-            webClient.Encoding = Encoding.UTF8;
-            webClient.UploadString(BASE_URL + "edit", "PUT", data);
-
+            CU.editar(usuario);
 
 
         }

@@ -16,13 +16,25 @@ namespace MudanzasGuaymasWeb.Controllers
         }
         public RedirectToRouteResult Logout()
         {
-            Session["usuario"] = null;
-            return RedirectToAction("Index", "Home", new { mensaje = "OLA KE ASE" });
+            if (Session["usuario"] != null)
+            {
+                Session["usuario"] = null;
+                Session["nombre"] = null;
+                Session["id"] = null;
+                Session["email"] = null;
+            }
+                return RedirectToAction("Index", "Home");
         }
         public ActionResult Registrarse()
         {
-
-            return View();
+            if (Session["usuario"] == null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         public void Logueart()
@@ -48,13 +60,13 @@ namespace MudanzasGuaymasWeb.Controllers
                 Session["nombre"] = TraerPorCorreo(email).Nombre;
                 Session["id"] = TraerPorCorreo(email).Id;
                 Session["email"] = TraerPorCorreo(email).Email;
-                return RedirectToAction("Index", "Home", new { mensaje = "OLA KE ASE" });
+                return RedirectToAction("Index", "Home");
             }
             else
             {
 
             }
-            return RedirectToAction("Index", "Home", new { mensaje = "OLA KE ASE" });
+            return RedirectToAction("Index", "Home");
         }
         public SrvUsuario.Usuario TraerPorCorreo(string email)
         {

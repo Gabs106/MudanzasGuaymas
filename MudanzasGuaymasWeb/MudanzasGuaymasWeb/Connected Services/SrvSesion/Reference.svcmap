@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="797226d1-e999-40b2-acd3-8080760d409e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e4606f50-885c-4231-94c9-3b75d8bbf0e7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,10 +22,10 @@
     <MetadataSource Address="http://localhost:49727/Services/Seguridad/SrvSesion.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SrvSesion.wsdl" MetadataType="Wsdl" ID="828502fe-a212-4aea-838a-e9890fb6f837" SourceId="1" SourceUrl="http://localhost:49727/Services/Seguridad/SrvSesion.svc?wsdl" />
-    <MetadataFile FileName="SrvSesion.xsd" MetadataType="Schema" ID="5c640536-e0e5-4197-b940-c40c916fb83a" SourceId="1" SourceUrl="http://localhost:49727/Services/Seguridad/SrvSesion.svc?xsd=xsd0" />
-    <MetadataFile FileName="SrvSesion1.xsd" MetadataType="Schema" ID="454d5154-9974-4341-a8e1-8ed11311ecec" SourceId="1" SourceUrl="http://localhost:49727/Services/Seguridad/SrvSesion.svc?xsd=xsd2" />
-    <MetadataFile FileName="SrvSesion2.xsd" MetadataType="Schema" ID="b3deedcf-b600-4cbd-804f-d2ff55e262c4" SourceId="1" SourceUrl="http://localhost:49727/Services/Seguridad/SrvSesion.svc?xsd=xsd1" />
+    <MetadataFile FileName="SrvSesion.wsdl" MetadataType="Wsdl" ID="daeecf23-d4b6-4a69-850f-5f2c131582b4" SourceId="1" SourceUrl="http://localhost:49727/Services/Seguridad/SrvSesion.svc?wsdl" />
+    <MetadataFile FileName="SrvSesion.xsd" MetadataType="Schema" ID="a2b94dae-f059-4b51-ba69-4f9036f43658" SourceId="1" SourceUrl="http://localhost:49727/Services/Seguridad/SrvSesion.svc?xsd=xsd0" />
+    <MetadataFile FileName="SrvSesion1.xsd" MetadataType="Schema" ID="f1cdcbf3-835d-4e6e-af6c-a1c4f80e7c81" SourceId="1" SourceUrl="http://localhost:49727/Services/Seguridad/SrvSesion.svc?xsd=xsd2" />
+    <MetadataFile FileName="SrvSesion2.xsd" MetadataType="Schema" ID="1a15fed9-d622-46a1-af38-d8436de25b62" SourceId="1" SourceUrl="http://localhost:49727/Services/Seguridad/SrvSesion.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

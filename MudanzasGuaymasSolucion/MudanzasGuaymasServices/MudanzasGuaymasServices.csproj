@@ -109,12 +109,16 @@
     <Content Include="Services\CRUD\SrvPaquete.svc" />
     <Content Include="Services\CRUD\SrvServicio.svc" />
     <Content Include="Services\CRUD\SrvUsuario.svc" />
+    <Content Include="Services\Operaciones\SrvPreCita.svc" />
     <Content Include="Services\Seguridad\SrvSesion.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\Consejo.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\Modelo.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,9 +138,6 @@
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\preCita.cs">
-      <DependentUpon>Modelo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\preCita_Paquetes.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\Servicio.cs">
@@ -161,6 +162,10 @@
     <Compile Include="Services\CRUD\SrvUsuario.svc.cs">
       <DependentUpon>SrvUsuario.svc</DependentUpon>
     </Compile>
+    <Compile Include="Services\Operaciones\ISrvPreCita.cs" />
+    <Compile Include="Services\Operaciones\SrvPreCita.svc.cs">
+      <DependentUpon>SrvPreCita.svc</DependentUpon>
+    </Compile>
     <Compile Include="Services\Seguridad\ISrvSesion.cs" />
     <Compile Include="Services\Seguridad\SrvSesion.svc.cs">
       <DependentUpon>SrvSesion.svc</DependentUpon>
@@ -169,9 +174,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\Operaciones\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -13,10 +13,10 @@ namespace MudanzasGuaymasServices.Entity
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MudanzasGuaymasDbEntities : DbContext
+    public partial class MGEntidades : DbContext
     {
-        public MudanzasGuaymasDbEntities()
-            : base("name=MudanzasGuaymasDbEntities")
+        public MGEntidades()
+            : base("name=MGEntidades")
         {
         }
     
@@ -25,9 +25,9 @@ namespace MudanzasGuaymasServices.Entity
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Consejo> Consejo { get; set; }
         public virtual DbSet<Paquete> Paquete { get; set; }
         public virtual DbSet<preCita> preCita { get; set; }
-        public virtual DbSet<preCita_Paquetes> preCita_Paquetes { get; set; }
         public virtual DbSet<Servicio> Servicio { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }

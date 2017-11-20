@@ -5,6 +5,15 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="MudanzasGuaymasDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Consejo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Descripcion" Type="text" />
+          <Property Name="imagen" Type="text" />
+        </EntityType>
         <EntityType Name="Paquete">
           <Key>
             <PropertyRef Name="Id" />
@@ -16,6 +25,7 @@
           <Property Name="Mostrar" Type="bit" />
           <Property Name="Id_Servicio" Type="int" />
           <Property Name="Imagen" Type="text" />
+          <Property Name="Unidad" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="preCita">
           <Key>
@@ -25,20 +35,14 @@
           <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Detalle" Type="text" />
           <Property Name="Direccion" Type="nvarchar" MaxLength="50" />
-          <Property Name="Hecho" Type="bit" />
+          <Property Name="Aceptado" Type="bit" />
           <Property Name="id_usuario" Type="int" />
           <Property Name="Terminado" Type="bit" />
           <Property Name="Latitud" Type="varchar" MaxLength="50" />
           <Property Name="Longitud" Type="varchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="preCita_Paquetes">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Id_preCita" Type="int" />
-          <Property Name="Id_Paquete" Type="int" />
-          <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="Cantidad" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="id_Paquete" Type="int" />
         </EntityType>
         <EntityType Name="Servicio">
           <Key>
@@ -74,9 +78,9 @@
           <Property Name="Llave" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="MudanzasGuaymasDbModelStoreContainer">
+          <EntitySet Name="Consejo" EntityType="Self.Consejo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Paquete" EntityType="Self.Paquete" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="preCita" EntityType="Self.preCita" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="preCita_Paquetes" EntityType="Self.preCita_Paquetes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Servicio" EntityType="Self.Servicio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
@@ -86,6 +90,15 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MudanzasGuaymasDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Consejo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="imagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="Paquete">
           <Key>
             <PropertyRef Name="Id" />
@@ -97,6 +110,7 @@
           <Property Name="Mostrar" Type="Boolean" />
           <Property Name="Id_Servicio" Type="Int32" />
           <Property Name="Imagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Unidad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="preCita">
           <Key>
@@ -106,20 +120,14 @@
           <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Detalle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Hecho" Type="Boolean" />
+          <Property Name="Aceptado" Type="Boolean" />
           <Property Name="id_usuario" Type="Int32" />
           <Property Name="Terminado" Type="Boolean" />
           <Property Name="Latitud" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Longitud" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="preCita_Paquetes">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Id_preCita" Type="Int32" />
-          <Property Name="Id_Paquete" Type="Int32" />
-          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="Cantidad" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="id_Paquete" Type="Int32" />
         </EntityType>
         <EntityType Name="Servicio">
           <Key>
@@ -154,10 +162,10 @@
           <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Llave" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="MudanzasGuaymasDbEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MGEntidades" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Consejo" EntityType="Self.Consejo" />
           <EntitySet Name="Paquete" EntityType="Self.Paquete" />
           <EntitySet Name="preCita" EntityType="Self.preCita" />
-          <EntitySet Name="preCita_Paquetes" EntityType="Self.preCita_Paquetes" />
           <EntitySet Name="Servicio" EntityType="Self.Servicio" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" />
@@ -167,7 +175,17 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MudanzasGuaymasDbModelStoreContainer" CdmEntityContainer="MudanzasGuaymasDbEntities">
+        <EntityContainerMapping StorageEntityContainer="MudanzasGuaymasDbModelStoreContainer" CdmEntityContainer="MGEntidades">
+          <EntitySetMapping Name="Consejo">
+            <EntityTypeMapping TypeName="MudanzasGuaymasDbModel.Consejo">
+              <MappingFragment StoreEntitySet="Consejo">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Paquete">
             <EntityTypeMapping TypeName="MudanzasGuaymasDbModel.Paquete">
               <MappingFragment StoreEntitySet="Paquete">
@@ -178,6 +196,7 @@
                 <ScalarProperty Name="Mostrar" ColumnName="Mostrar" />
                 <ScalarProperty Name="Id_Servicio" ColumnName="Id_Servicio" />
                 <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="Unidad" ColumnName="Unidad" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -188,21 +207,14 @@
                 <ScalarProperty Name="Total" ColumnName="Total" />
                 <ScalarProperty Name="Detalle" ColumnName="Detalle" />
                 <ScalarProperty Name="Direccion" ColumnName="Direccion" />
-                <ScalarProperty Name="Hecho" ColumnName="Hecho" />
+                <ScalarProperty Name="Aceptado" ColumnName="Aceptado" />
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
                 <ScalarProperty Name="Terminado" ColumnName="Terminado" />
                 <ScalarProperty Name="Latitud" ColumnName="Latitud" />
                 <ScalarProperty Name="Longitud" ColumnName="Longitud" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="preCita_Paquetes">
-            <EntityTypeMapping TypeName="MudanzasGuaymasDbModel.preCita_Paquetes">
-              <MappingFragment StoreEntitySet="preCita_Paquetes">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Id_preCita" ColumnName="Id_preCita" />
-                <ScalarProperty Name="Id_Paquete" ColumnName="Id_Paquete" />
-                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="id_Paquete" ColumnName="id_Paquete" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

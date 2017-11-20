@@ -12,7 +12,7 @@ namespace MudanzasGuaymasServices.Services.Seguridad
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione SrvSesion.svc o SrvSesion.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class SrvSesion : ISrvSesion
     {
-        MudanzasGuaymasDbEntities DataBase = new MudanzasGuaymasDbEntities();
+        MGEntidades DataBase = new MGEntidades();
         public Usuario ConsultarPorEmail(string email)
         {
             Usuario user = new Usuario();
@@ -59,7 +59,7 @@ namespace MudanzasGuaymasServices.Services.Seguridad
                 user = result;
             }
             p = Desencriptar(user.Password);
-            if (p.Equals(password+","))
+            if (p.Equals(password))
             {
                 correcto = true;
             }

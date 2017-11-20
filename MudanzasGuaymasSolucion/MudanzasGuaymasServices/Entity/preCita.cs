@@ -18,10 +18,13 @@ namespace MudanzasGuaymasServices.Entity
         public Nullable<decimal> Total { get; set; }
         public string Detalle { get; set; }
         public string Direccion { get; set; }
-        public Nullable<bool> Hecho { get; set; }
+        public Nullable<bool> Aceptado { get; set; }
         public Nullable<int> id_usuario { get; set; }
         public Nullable<bool> Terminado { get; set; }
         public string Latitud { get; set; }
         public string Longitud { get; set; }
+        public Nullable<System.DateTime> Fecha { get; set; }
+        public Nullable<decimal> Cantidad { get; set; }
+        public Nullable<int> id_Paquete { get; set; }
     }
 }

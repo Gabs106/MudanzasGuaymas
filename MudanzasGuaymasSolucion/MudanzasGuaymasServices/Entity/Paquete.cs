@@ -21,5 +21,6 @@ namespace MudanzasGuaymasServices.Entity
         public Nullable<bool> Mostrar { get; set; }
         public Nullable<int> Id_Servicio { get; set; }
         public string Imagen { get; set; }
+        public string Unidad { get; set; }
     }
 }

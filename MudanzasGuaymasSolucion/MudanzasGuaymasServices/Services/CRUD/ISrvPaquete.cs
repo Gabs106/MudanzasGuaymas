@@ -24,12 +24,13 @@ namespace MudanzasGuaymasServices.Services
         [WebInvoke(UriTemplate = "delete", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, Method = "DELETE")]
         bool Eliminar(Paquete paquete);
         [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "getAll", ResponseFormat = WebMessageFormat.Json)]
-        List<Paquete> ConsultarTodos();
+        [WebInvoke(Method = "GET", UriTemplate = "getAll/{id}", ResponseFormat = WebMessageFormat.Json)]
+        List<Paquete> ConsultarTodos(string id);
         [OperationContract]
         List<Paquete> ConsultarPorNombre(string nombre);
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "get/{id}", ResponseFormat = WebMessageFormat.Json)]
         Paquete ConsultarPorId(string id);
+        
     }
 }

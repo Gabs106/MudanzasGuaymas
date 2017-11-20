@@ -1,21 +1,24 @@
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-*{
-	font-family: 'Open Sans', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+* {
+    font-family: 'Montserrat', sans-serif;
 }
 a{
 	text-decoration: none;
 	color:black;
 
 }
-
+body{
+   
+}
 #wrapperMain{
 	width: 100%;
 	margin: 0 auto;
 }
 
 #wrapperHeader{
-	width: 980px;
+	width: 1200px;
     height: 110px;
     display: block;
     float: none;
@@ -45,8 +48,7 @@ a{
 }
 
 #wrapperHeader img{
-	width: 226px;
-    height: 185px;
+	width: 250px;
     display: block;
     float: left;
     clear: none;
@@ -82,31 +84,30 @@ a{
     text-transform: uppercase;
     height: 38px;
 }
-#wrapperHeader li a{
-
+#wrapperHeader li a {
+        font-weight: 900;
 }
-#wrapperHeader li a:hover{
-    color: #FF001E;
-    background: url("https://animagehub.com/wp-content/uploads/2016/10/triangle-vector-1.png") bottom center no-repeat;
-}
-#wrapperBanner .background{
-	background: rgba(76,76,76,1);
-background: rgba(166,166,166,1);
-background: -moz-linear-gradient(-45deg, rgba(166,166,166,1) 17%, rgba(166,166,166,1) 22%, rgba(166,166,166,1) 33%, rgba(161,161,161,1) 59%, rgba(153,153,153,1) 70%, rgba(167,167,167,1) 83%, rgba(173,173,173,1) 88%, rgba(186,186,186,1) 100%);
-background: -webkit-gradient(left top, right bottom, color-stop(17%, rgba(166,166,166,1)), color-stop(22%, rgba(166,166,166,1)), color-stop(33%, rgba(166,166,166,1)), color-stop(59%, rgba(161,161,161,1)), color-stop(70%, rgba(153,153,153,1)), color-stop(83%, rgba(167,167,167,1)), color-stop(88%, rgba(173,173,173,1)), color-stop(100%, rgba(186,186,186,1)));
-background: -webkit-linear-gradient(-45deg, rgba(166,166,166,1) 17%, rgba(166,166,166,1) 22%, rgba(166,166,166,1) 33%, rgba(161,161,161,1) 59%, rgba(153,153,153,1) 70%, rgba(167,167,167,1) 83%, rgba(173,173,173,1) 88%, rgba(186,186,186,1) 100%);
-background: -o-linear-gradient(-45deg, rgba(166,166,166,1) 17%, rgba(166,166,166,1) 22%, rgba(166,166,166,1) 33%, rgba(161,161,161,1) 59%, rgba(153,153,153,1) 70%, rgba(167,167,167,1) 83%, rgba(173,173,173,1) 88%, rgba(186,186,186,1) 100%);
-background: -ms-linear-gradient(-45deg, rgba(166,166,166,1) 17%, rgba(166,166,166,1) 22%, rgba(166,166,166,1) 33%, rgba(161,161,161,1) 59%, rgba(153,153,153,1) 70%, rgba(167,167,167,1) 83%, rgba(173,173,173,1) 88%, rgba(186,186,186,1) 100%);
-background: linear-gradient(135deg, rgba(166,166,166,1) 17%, rgba(166,166,166,1) 22%, rgba(166,166,166,1) 33%, rgba(161,161,161,1) 59%, rgba(153,153,153,1) 70%, rgba(167,167,167,1) 83%, rgba(173,173,173,1) 88%, rgba(186,186,186,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6a6a6', endColorstr='#bababa', GradientType=1 );
+    #wrapperHeader li a:hover {
+        color: #e94a4f;
+        background: url("https://animagehub.com/wp-content/uploads/2016/10/triangle-vector-1.png") bottom center no-repeat;
+    }
+#wrapperBanner .background {
+    background: rgba(226,226,226,1);
+    background: -moz-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(50%, rgba(219,219,219,1)), color-stop(51%, rgba(209,209,209,1)), color-stop(100%, rgba(254,254,254,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+    background: linear-gradient(135deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=1 );
 }
 #wrapperBanner .banner{
-	width: 900px;
+    text-align: center;
+	width: 100%;
 	margin: 0 auto;
 }
 #wrapperBanner .raya{
      width: 100%;
-     height: 10px;
+     height: 7px;
      background: black;
 }
 #wrapperBanner h2{
@@ -116,140 +117,230 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6a6a6', end
 	text-align: center;
 
 }
-#wrapperBanner .slogan{
-	background: #FF001E;
-	width: 100%;
-	padding-top:20px;
-	padding-bottom: 20px;
+#wrapperBanner .slogan {
+    background: #e94a4f;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 #wrapperBanner .slogan p{
 	 color:white;
 	 text-align: center;
 }
-#wrapperArticle{
-width: 961px;
-align-items: center;
-margin: 0 auto;
-text-align: center;
-}
-#wrapperArticle article{
-	display: inline-block;
-	float: left;
-	margin:0 10px;
-	border-radius: 10px;
-	
-}
-#wrapperArticle img{
-    width: 300px;
-    height: 200px;
-    display: block;
-    float: none;
-    clear: both;
-    margin: 10px 0;
-    overflow: hidden;
-    box-shadow: inset 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-#wrapperArticle article{
-	width: 300px;
-	height: 350px;
-}
-#wrapperArticle h2{
-	color:red;
-	text-align: center;
-	font-size: 18px
-}
-#wrapperArticle p{
-	text-align: center;
-	font-size: 12px
-}
-.limpiar{
-clear: both;
-}
-
-.separar img{
-    width: 1000px;
-    height: 10px;
-    padding: 0;
-    display: block;
-    float: none;
-    clear: both;
-    background: url(http://www.atmosphera.cl/portal/wp-content/uploads/2012/07/separador.png) 
-}
-
-.separar2 img{
-    width: 980px;
-    height: 10px;
-    padding: 0;
-    display: block;
-    float: none;
-    clear: both;
-    background: url(http://www.atmosphera.cl/portal/wp-content/uploads/2012/07/separador.png) 
-}
-
-#wrapperArticle .subTitulo h2{
-     margin-top: -80px;
-    font-size: 24px;
-    font-weight: 900;
-    text-transform: uppercase;
-    display: block;
-    color: #FF001E;
-    margin: 0px auto;
+#wrapperServicios {
+    width: 100%;
     text-align: center;
-    font-style: italic;
-}
-
-#wrapperArticle .letrasSubTitulo p{
-    font-size: 16px;
-    margin-bottom: 9px;
-    font-weight: normal;
-    font-style: normal;
-    text-transform: none;
-    display: block;
-    margin: 0px auto;
+    margin: 0 auto;
     text-align: center;
-    color: black;
-    height: auto;
-    padding-bottom: 10px;
+    margin-top: 60px;
+    position: relative;
+}
+.fondoAmarillo {
+    background-color: #fef8e9;
+    position:absolute;
+    bottom:0;
+    left:0px;
+    width:100%;
+    height:400px;
+    z-index:-10;
 }
 
-#wrapperArticleSeparar img {
-    width: 1000px;
-    height: 10px;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
+#wrapperServicios article {
+        display: inline-block;
+        width: 365px;
+        height: 510px;
+        margin: 20px 14px;
+        background-color: white;
+        position: relative;
 }
-
-#wrapperArticle .subTitulo2 h2{
-     margin-top: -80px;
-    font-size: 20px;
-    font-weight: 900;
-    text-transform: uppercase;
-    display: block;
-    color: #FF001E;
-    margin: 0px auto;
-    text-align: left;
-    font-style: italic;
-}
-
-#wrapperArticle2 img {
-    width: 100px;
-    height: 100px;
-    display: block;
-    float: none;
-    clear: both;
-    margin: 10px 0;
-    overflow: hidden;
-    box-shadow: inset 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
-    border-radius: 80%;
-}
-#wrapperArticle2 article{
-   width: 300px;
-height: 500px;
+#wrapperServicios .imagen{
+    width:365px;
+    height:250px;
     
 }
-
-.mid {
-    width: 50%;
+#wrapperServicios .marco {
+    height: 18px;
+    width: 100%;
+    background: #e94a4f;
+    margin-top: -5px;
+}
+.fondoAmarillo img {
+    position: absolute;
+    bottom: 54%;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+    #wrapperServicios article h4 {
+        text-align: justify;
+        height: 200px;
+        width: 325px;
+        display: inline-grid;
+        margin-top: 0px;
+        padding-top: 0px;
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1.75rem;
+        text-decoration: none;
+        color: #215e7f;
     }
+    
+    #wrapperServicios article h2 {
+        color: #e94a4f;
+        font-weight: 100;
+        font-style: italic;
+        font-family: 'Montserrat', sans-serif;
+    }
+    #wrapperServicios span {
+        font-weight: bold;
+    }
+    #wrapperServicios h1 {
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+        color: #e94a4f;
+        font-style: italic;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+#wrapperServicios h1 img{
+    display:none;
+    width:40px;
+    height:40px;
+}
+#wrapperServicios h6 {
+        font-size: 20px;
+        position: absolute;
+        bottom: 0;
+        right: 75px;
+        color: #FF001E;
+        width:100px;
+}
+#wrapperPresentacion {
+    width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 60px;
+
+}
+.separador {
+    width: 1200px;
+    height: 10px;
+    padding: 0;
+    display: block;
+    float: none;
+    clear: both;
+    background: url("separator.png") repeat-x;
+    margin: 0px auto;
+}
+
+#wrapperPaquetes {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 60px;
+}
+
+#wrapperPaquetes article {
+        display: inline-block;
+        width: 350px;
+        height: 570px;
+        margin: 0 22px;
+        background-color: white;
+        position: relative;
+        margin: 20px;
+}
+
+#wrapperPaquetes img {
+        width: 350px;
+        height: 250px;
+}
+
+#wrapperPaquetes article h4 {
+        text-align: center;
+        display: inline-grid;
+}
+
+    #wrapperPaquetes article h2 {
+        color: #FF001E;
+        margin: 0;
+    }
+    #wrapperPaquetes .descripcion {
+        top: 348px;
+        height: 136px;
+        padding: 10px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background:rgb(240, 244, 233);
+    }
+        #wrapperPaquetes .descripcion p {
+            font-family: 'Montserrat', sans-serif;
+            font-style: italic;
+            height: 80px;
+            text-align: justify;
+            padding: 0px 16px;
+        }
+    #wrapperPaquetes .descripcion:hover {
+
+       
+       
+    }
+    #wrapperPaquetes h1 {
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+        color: #FF001E;
+        font-style: italic;
+    }
+
+        #wrapperPaquetes h1 img {
+            display: none;
+            width: 40px;
+            height: 40px;
+        }
+
+    #wrapper h6 {
+        font-size: 20px;
+        position: absolute;
+        bottom: 0;
+        right: 75px;
+        color: #FF001E;
+        width: 100px;
+    }
+
+    #wrapperPost{
+        width:100%;
+    }
+    #wrapperPost article .articulo img{
+        width:50%;
+        float:left
+    }
+    #wrapperPost article .articulo h2 {
+           width: 46%;
+           float:left;
+           margin-left:2%;
+           font-size:1.4em;
+    }
+    #wrapperPost article .articulo p {
+            width: 46%;
+            float: right;
+            margin-left: 2%;
+            font-size: 1em;
+    }
+        #wrapperPost article .articulo p a {
+            background-color: #e94a4f;
+            color: white;
+            padding: 10px 20px;
+            border: 2px groove;
+            border-color: #e94a4f;
+
+        }
+            #wrapperPost article .articulo p a:hover {
+                background-color:white;
+                color: #e94a4f;
+                padding: 10px 20px;
+                border: 2px groove;
+                border-color: #e94a4f;
+            }

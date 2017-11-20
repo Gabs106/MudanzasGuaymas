@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="874efeb7-9910-467b-971f-36dd40e72d41" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ebbc2d66-0057-4221-a147-dc200db9c148" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,10 +22,10 @@
     <MetadataSource Address="http://localhost:49727/Services/CRUD/SrvUsuario.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SrvUsuario.xsd" MetadataType="Schema" ID="e6d37d3f-5eba-4647-b481-2b72527ee26b" SourceId="1" SourceUrl="http://localhost:49727/Services/CRUD/SrvUsuario.svc?xsd=xsd2" />
-    <MetadataFile FileName="SrvUsuario1.xsd" MetadataType="Schema" ID="0fd6d8dd-7f8d-4cc0-9b33-8c853242e628" SourceId="1" SourceUrl="http://localhost:49727/Services/CRUD/SrvUsuario.svc?xsd=xsd0" />
-    <MetadataFile FileName="SrvUsuario.wsdl" MetadataType="Wsdl" ID="f2264393-4dfb-4d98-a7d5-348793e81fd5" SourceId="1" SourceUrl="http://localhost:49727/Services/CRUD/SrvUsuario.svc?wsdl" />
-    <MetadataFile FileName="SrvUsuario2.xsd" MetadataType="Schema" ID="de902f25-cb28-41c4-8632-2059c2aa2505" SourceId="1" SourceUrl="http://localhost:49727/Services/CRUD/SrvUsuario.svc?xsd=xsd1" />
+    <MetadataFile FileName="SrvUsuario.xsd" MetadataType="Schema" ID="499b8c57-6bb9-4f02-91dd-26ba00cc0a34" SourceId="1" SourceUrl="http://localhost:49727/Services/CRUD/SrvUsuario.svc?xsd=xsd2" />
+    <MetadataFile FileName="SrvUsuario1.xsd" MetadataType="Schema" ID="a2af2921-45e8-4a1c-b158-7a4946ffdcf5" SourceId="1" SourceUrl="http://localhost:49727/Services/CRUD/SrvUsuario.svc?xsd=xsd0" />
+    <MetadataFile FileName="SrvUsuario.wsdl" MetadataType="Wsdl" ID="863c394f-6dbf-4dda-9091-0a2934dfceb8" SourceId="1" SourceUrl="http://localhost:49727/Services/CRUD/SrvUsuario.svc?wsdl" />
+    <MetadataFile FileName="SrvUsuario2.xsd" MetadataType="Schema" ID="c1e68c81-4388-4ff2-9db3-cbff7c63d980" SourceId="1" SourceUrl="http://localhost:49727/Services/CRUD/SrvUsuario.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

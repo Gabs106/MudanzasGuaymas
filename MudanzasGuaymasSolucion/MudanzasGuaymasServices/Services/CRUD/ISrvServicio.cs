@@ -31,7 +31,7 @@ namespace MudanzasGuaymasServices.Services
         [WebInvoke(Method = "GET", UriTemplate = "get/{id}", ResponseFormat = WebMessageFormat.Json)]
         Servicio ConsultarPorId(string id);
         [OperationContract]
-        [WebInvoke(UriTemplate = "edi", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, Method = "PUT")]
-        void agregarImagen(Servicio servicio);
+        [WebInvoke(Method = "GET", UriTemplate = "imagen/{id},{imagenBase64}", ResponseFormat = WebMessageFormat.Json)]
+        void agregarImagen(string id, string imagenBase64);
     }
 }

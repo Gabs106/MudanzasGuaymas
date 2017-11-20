@@ -29,7 +29,7 @@ namespace MudanzasGuaymasWeb.SrvServicio {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private byte[] ImagenField;
+        private string ImagenField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> MostrarField;
@@ -74,7 +74,7 @@ namespace MudanzasGuaymasWeb.SrvServicio {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte[] Imagen {
+        public string Imagen {
             get {
                 return this.ImagenField;
             }
@@ -163,10 +163,10 @@ namespace MudanzasGuaymasWeb.SrvServicio {
         System.Threading.Tasks.Task<MudanzasGuaymasWeb.SrvServicio.Servicio> ConsultarPorIdAsync(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISrvServicio/agregarImagen", ReplyAction="http://tempuri.org/ISrvServicio/agregarImagenResponse")]
-        void agregarImagen(MudanzasGuaymasWeb.SrvServicio.Servicio servicio);
+        void agregarImagen(string id, string imagenBase64);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISrvServicio/agregarImagen", ReplyAction="http://tempuri.org/ISrvServicio/agregarImagenResponse")]
-        System.Threading.Tasks.Task agregarImagenAsync(MudanzasGuaymasWeb.SrvServicio.Servicio servicio);
+        System.Threading.Tasks.Task agregarImagenAsync(string id, string imagenBase64);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -244,12 +244,12 @@ namespace MudanzasGuaymasWeb.SrvServicio {
             return base.Channel.ConsultarPorIdAsync(id);
         }
         
-        public void agregarImagen(MudanzasGuaymasWeb.SrvServicio.Servicio servicio) {
-            base.Channel.agregarImagen(servicio);
+        public void agregarImagen(string id, string imagenBase64) {
+            base.Channel.agregarImagen(id, imagenBase64);
         }
         
-        public System.Threading.Tasks.Task agregarImagenAsync(MudanzasGuaymasWeb.SrvServicio.Servicio servicio) {
-            return base.Channel.agregarImagenAsync(servicio);
+        public System.Threading.Tasks.Task agregarImagenAsync(string id, string imagenBase64) {
+            return base.Channel.agregarImagenAsync(id, imagenBase64);
         }
     }
 }

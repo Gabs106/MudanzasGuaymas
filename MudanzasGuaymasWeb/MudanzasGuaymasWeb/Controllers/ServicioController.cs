@@ -15,89 +15,102 @@ namespace MudanzasGuaymasWeb.Controllers
 {
     public class ServicioController : Controller
     {
+        Clientes.ClienteServicio CS = new Clientes.ClienteServicio();
         // GET: Servicio
         public ActionResult Index()
         {
-            ViewBag.servicio = verTodos();
+            ViewBag.servicio = CS.verTodos();
             return View();
         }
         
         public ActionResult Create()
         {
+            if (Session["usuario"] != null)
+            {
 
-            return View();
+                if (Session["usuario"].Equals("Admin"))
+                {
+                    return View();
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+           
         }
 
         public ActionResult Edit()
         {
-            return View();
+            if (Session["usuario"] != null)
+            {
+
+                if (Session["usuario"].Equals("Admin"))
+                {
+                    return View();
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
         public ActionResult Delete(int id)
         {
-            string ID = id.ToString();
-            Servicio servicio = encontrarUno(ID);
-            return View();
+            if (Session["usuario"] !=null)
+            {
+                if (Session["usuario"].Equals("Admin"))
+                {
+                    string ID = id.ToString();
+                    Servicio servicio = CS.encontrarUno(ID);
+                }
+            }
+            return RedirectToAction("Home", "Index");
         }
         public ActionResult Details(int id)
         {
             string ID = id.ToString();
-            Servicio servicio = encontrarUno(ID);
+            Servicio servicio = CS.encontrarUno(ID);
             ViewBag.servicio = servicio;
             return View();
         }
 
         //Parte del cliente
-        private string BASE_URL = "http://localhost:49727/Services/CRUD/SrvServicio.svc/";
 
-        public List<Servicio> verTodos()
-        {
-            var synClient = new WebClient();
-            var content = synClient.DownloadString(BASE_URL + "getAll");
-            var json_serializer = new JavaScriptSerializer();
-            return json_serializer.Deserialize<List<Servicio>>(content);
-
-        }
-        public Servicio encontrarUno(string id)
-        {
-            var synClient = new WebClient();
-            string url = string.Format(BASE_URL + "get/{0}", id);
-            var content = synClient.DownloadString(url);
-            var json_serializer = new JavaScriptSerializer();
-            return json_serializer.Deserialize<Servicio>(content);
-
-        }
         [HttpPost]
         public RedirectToRouteResult subir(Servicio servicio, HttpPostedFileBase image)
         {
-
-            //Agregar al servicio
-            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Servicio));
-            MemoryStream mem = new MemoryStream();
-            ser.WriteObject(mem, servicio);
-            string data = Encoding.UTF8.GetString(mem.ToArray(), 0, (int)mem.Length);
-            WebClient webClient = new WebClient();
-            webClient.Headers["Content-type"] = "application/json";
-            webClient.Encoding = Encoding.UTF8;
-            webClient.UploadString(BASE_URL + "create", "POST", data);
-
-            if (image != null)
+            if (Session["usuario"] != null)
             {
-                string nombre = image.ContentType;
-                int length = image.ContentLength;
-                byte[] buffer = new byte[length];
-                image.InputStream.Read(buffer, 0, length);
-                servicio.Imagen = buffer;
-                SrvServicio.SrvServicioClient c = new SrvServicio.SrvServicioClient();
-                c.agregarImagen(servicio);
-            }
-            
-                return RedirectToAction("Index", "Home", new { mensaje = "OLA KE ASE" });
-        }
 
-        public string imagenServidor()
+                if (Session["usuario"].Equals("Admin"))
+                {
+                    //Agregar al servicio
+                    CS.subir(servicio, image);
+                }
+
+            }       
+            return RedirectToAction("Index", "Home");
+        }
+        [HttpPost]
+        public string imagenServidor(string id, HttpPostedFileBase image)
+        { 
+            //CS.imagenServidor(id,image);
+            return "";
+        }
+        public ActionResult Prueba()
         {
-            string ruta = null;
-            return ruta;
+            return null;
         }
 
     }

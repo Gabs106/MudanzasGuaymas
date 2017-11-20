@@ -1,23 +1,24 @@
-﻿using MudanzasGuaymasServices.Entity;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-
+using MudanzasGuaymasServices.Entity;
 namespace MudanzasGuaymasServices.Services
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "SrvServicio" en el código, en svc y en el archivo de configuración a la vez.
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione SrvServicio.svc o SrvServicio.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class SrvServicio : ISrvServicio
     {
-        MudanzasGuaymasDbEntities DataBase = new MudanzasGuaymasDbEntities();
+        MGEntidades DataBase = new MGEntidades();
 
-        public void agregarImagen(Servicio servicio)
+
+        public void agregarImagen(string id, string imagenBase64)
         {
-            Servicio s = ConsultarPorId(servicio.Id.ToString());
-            s.Imagen = servicio.Imagen;
+            Servicio s = ConsultarPorId(id);
+            s.Imagen = s.Imagen+imagenBase64;
             DataBase.SaveChanges();
         }
 

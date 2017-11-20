@@ -84,7 +84,8 @@
   <xs:element name="agregarImagen">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MudanzasGuaymasServices.Entity" minOccurs="0" name="servicio" nillable="true" type="q7:Servicio" />
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="imagenBase64" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

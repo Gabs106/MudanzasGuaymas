@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="MudanzasGuaymasDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Consejo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="text" />
+    <Property Name="imagen" Type="text" />
+  </EntityType>
   <EntityType Name="Paquete">
     <Key>
       <PropertyRef Name="Id" />
@@ -10,7 +19,8 @@
     <Property Name="Descripcion" Type="text" />
     <Property Name="Mostrar" Type="bit" />
     <Property Name="Id_Servicio" Type="int" />
-    <Property Name="Imagen" Type="image" />
+    <Property Name="Imagen" Type="text" />
+    <Property Name="Unidad" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="preCita">
     <Key>
@@ -20,18 +30,14 @@
     <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
     <Property Name="Detalle" Type="text" />
     <Property Name="Direccion" Type="nvarchar" MaxLength="50" />
-    <Property Name="Hecho" Type="bit" />
+    <Property Name="Aceptado" Type="bit" />
     <Property Name="id_usuario" Type="int" />
     <Property Name="Terminado" Type="bit" />
-  </EntityType>
-  <EntityType Name="preCita_Paquetes">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Id_preCita" Type="int" />
-    <Property Name="Id_Paquete" Type="int" />
-    <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Latitud" Type="varchar" MaxLength="50" />
+    <Property Name="Longitud" Type="varchar" MaxLength="50" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="Cantidad" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="id_Paquete" Type="int" />
   </EntityType>
   <EntityType Name="Servicio">
     <Key>
@@ -41,7 +47,7 @@
     <Property Name="Descripcion" Type="ntext" />
     <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
     <Property Name="Mostrar" Type="bit" />
-    <Property Name="Imagen" Type="image" />
+    <Property Name="Imagen" Type="text" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -67,9 +73,9 @@
     <Property Name="Llave" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityContainer Name="MudanzasGuaymasDbModelStoreContainer">
+    <EntitySet Name="Consejo" EntityType="Self.Consejo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Paquete" EntityType="Self.Paquete" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="preCita" EntityType="Self.preCita" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="preCita_Paquetes" EntityType="Self.preCita_Paquetes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Servicio" EntityType="Self.Servicio" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />

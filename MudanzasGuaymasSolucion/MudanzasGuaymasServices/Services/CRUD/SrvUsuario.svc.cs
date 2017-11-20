@@ -12,7 +12,7 @@ namespace MudanzasGuaymasServices.Services.CRUD
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione SrvUsuario.svc o SrvUsuario.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class SrvUsuario : ISrvUsuario
     {
-        MudanzasGuaymasDbEntities DataBase = new MudanzasGuaymasDbEntities();
+        MGEntidades DataBase = new MGEntidades();
 
         public Usuario ConsultarPorId(string id)
         {
