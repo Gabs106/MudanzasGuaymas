@@ -14,22 +14,10 @@ namespace MudanzasGuaymasServices.Entity
     
     public partial class Servicio
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Servicio()
-        {
-            this.Factura_Servicios = new HashSet<Factura_Servicios>();
-            this.Servicio_Paquetes = new HashSet<Servicio_Paquetes>();
-        }
-    
         public int Id { get; set; }
         public string Descripcion { get; set; }
         public string Nombre { get; set; }
         public Nullable<bool> Mostrar { get; set; }
-        public byte[] Imagen { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Factura_Servicios> Factura_Servicios { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Servicio_Paquetes> Servicio_Paquetes { get; set; }
+        public string Imagen { get; set; }
     }
 }

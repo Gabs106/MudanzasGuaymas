@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="wrapperPaquete">
+    <section>
+        <div id="wrapperBanner">
+            <div class="background">
+                <div class="banner">
+                    <img src="http://mudalia.com/wp-content/files_mf/cache/th_89addcaab11e02421fc7d7edf27d0305_1450351953bannermudalia.png" />
+                </div>
+            </div>
+            <div class="raya"></div>
+            <div class="slogan">
+                <h2>@ViewBag.nombre</h2>
+                <P>@Html.ActionLink("Agregar Paquete", "Create", "Paquete", new { id = ViewBag.id }, null)</P>
+            </div>
+        </div>
+    </section>
+    <div class="separador"></div>
+    <section>
+        <div id="wrapperPaquetes">
+           
+            @foreach (var item in ViewBag.paquete)
+            {
+                <article>
+                    <img src="@item.Imagen" />
+                    <div class="hover">
+                        <h2>@item.Nombre</h2>
+                        <h4>$@item.Precio X @item.Unidad</h4>
+                        <div class="@item.Id descripcion">
+                            @if (item.Descripcion.Length > 100)
+                            {<p>@item.Descripcion.ToString().Substring(0, 99) →</p>}
+                            else
+                            {
+                                {<p>@item.Descripcion.ToString() →</p>}
+                            }
+                            <h6>@Html.ActionLink("Ver Mas", "Post", "Paquete", new { id = item.Id }, null)</h6>
+                        </div>
+                    </div>
+                </article>
+            }
+        </div>
+        <div style="clear:both"></div>
+    </section>
+</div>

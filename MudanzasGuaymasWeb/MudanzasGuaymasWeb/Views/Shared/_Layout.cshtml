@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/jquery-3.2.1.min (1).js"></script>
+</head>
+<body>
+    <div id="wrapperMain">
+        <header>
+            <div id="wrapperHeader">
+                <div class="logo">
+                    <img src="~/Content/Logo Completo.png" />
+                    <div class="izquierdo">
+                        <nav>
+                            <p>Mándenos un Mail: <strong>info@mudalia.com</strong> / Llámenos al Teléfono:<strong>91 367 91 72</strong></p>
+                            <ul>
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li><a href="">¿Quienes somos?</a></li>
+                                <li><a href="">Servicios</a></li>
+                                <li><a href="">Consejos</a></li>
+                                <li><a href="">Donde Estamos</a></li>
+                                @if (Session["usuario"] == null)
+                                {
+                                    <li>@Html.ActionLink("Login", "Login", "Sesion")</li>
+                                    <li>@Html.ActionLink("Registrarse", "Registrarse", "Sesion")</li>
+
+                                }
+                                else
+                                {
+                                    <li>@Html.ActionLink("Logout", "Logout", "Sesion")</li>
+                                    if (Session["usuario"].Equals("Admin"))
+                                    {
+                                        <li>@Html.ActionLink("Usuarios", "Index", "Usuario")</li>
+                                        <li>@Html.ActionLink("Servicios", "Index", "Servicio")</li>
+                                    }
+                                }
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            </footer>
+        </div>
+   </div>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+</body>
+</html>
