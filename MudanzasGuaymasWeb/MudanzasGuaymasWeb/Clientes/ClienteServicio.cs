@@ -69,5 +69,17 @@ namespace MudanzasGuaymasWeb.Clientes
             }
             return imagenBase64;
         }
+
+        public void Editar(Servicio s)
+        {
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Servicio));
+            MemoryStream mem = new MemoryStream();
+            ser.WriteObject(mem, s);
+            string data = Encoding.UTF8.GetString(mem.ToArray(), 0, (int)mem.Length);
+            WebClient webClient = new WebClient();
+            webClient.Headers["Content-type"] = "application/json";
+            webClient.Encoding = Encoding.UTF8;
+            webClient.UploadString(BASE_URL + "edit", "PUT", data);
+        }
     }
 }

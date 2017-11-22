@@ -1,7 +1,6 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
 <section>
     <div id="wrapperBanner">
         <div class="background">
@@ -21,9 +20,15 @@
     <div id="wrapperServicios">
 
         <h1>Nuestros Servicios</h1>
-       
+        @if (Session["usuario"] != null)
+        {
+            if (Session["usuario"].Equals("Admin"))
+            {<p>@Html.ActionLink("Crear Nuevo Servicio", "Create", "Servicio")</p> }
+
+        }
         @foreach (var item in ViewBag.servicio)
-        {       
+        {
+            if (item.Mostrar || (Session["usuario"] != null&&Session["usuario"].Equals("Admin"))) {
         <article>
             <img class="imagen" src="@item.Imagen"/>
             <div class="@item.Id marco" ></div>
@@ -33,6 +38,25 @@
             else
             {<h4>@item.Descripcion.ToString()→</h4>}
             <h6>@Html.ActionLink("Ver Mas", "Index","Paquete", new { id = item.Id, nombre = item.Nombre }, null)</h6>
+            <div class="Controles">
+                @if (Session["usuario"] != null)
+                {
+                    if (Session["usuario"].Equals("Admin"))
+                    {
+                        <p>@Html.ActionLink("[Editar]", "Edit", "Servicio", new { id = item.Id}, null)</p>
+                        if (item.Mostrar)
+                        {
+                            <p>@Html.ActionLink("[No Mostrar]", "NoMostrar", "Servicio", new { id = item.Id }, null)</p>
+                        }
+                        else
+                        {
+                            <p>@Html.ActionLink("[Mostrar]", "Mostrar", "Servicio", new { id = item.Id }, null)</p>
+                        }
+                        <p>@Html.ActionLink("[Add Paquete]", "Create", "Paquete", new { id = item.Id}, null)</p>
+                    }
+                }
+                
+            </div>
             <script>
                 $(function () {
 
@@ -48,7 +72,9 @@
 
                 });
             </script>
-        </article>        
+            
+        </article>   
+            }
         }
         
         <div class="fondoAmarillo">

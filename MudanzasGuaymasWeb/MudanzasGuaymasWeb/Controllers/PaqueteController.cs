@@ -52,6 +52,28 @@ namespace MudanzasGuaymasWeb.Controllers
             }
 
         }
+        public ActionResult Edit(string id)
+        {
+            if (Session["usuario"] != null)
+            {
+
+                if (Session["usuario"].Equals("Admin"))
+                {
+                    Paquete p = c.encontrarUno(id);
+                    return View(p);
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+        }
 
         [HttpPost]
         public ActionResult subir(Paquete paquete, string id_Servicio, HttpPostedFileBase image)
@@ -74,6 +96,26 @@ namespace MudanzasGuaymasWeb.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
+        }
+        public RedirectToRouteResult NoMostrar(string id)
+        {
+            Paquete s = c.encontrarUno(id);
+            s.Mostrar = false;
+            c.Editar(s);
+            return RedirectToAction("Index", "Home");
+        }
+        public RedirectToRouteResult Mostrar(string id)
+        {
+            Paquete s =c.encontrarUno(id);
+            s.Mostrar = true;
+            c.Editar(s);
+            return RedirectToAction("Index", "Home");
+        }
+        public RedirectToRouteResult Editar(Paquete paquete)
+        {
+            
+            c.Editar(paquete);
+            return RedirectToAction("Index", "Home");
         }
     }
 }

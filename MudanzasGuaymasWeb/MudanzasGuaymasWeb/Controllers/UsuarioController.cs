@@ -49,6 +49,9 @@ namespace MudanzasGuaymasWeb.Controllers
 
         public bool subir(Usuario usuario)
         {
+            Random r = new Random();
+            int azar = r.Next(1000, 9999);
+            usuario.Llave = azar.ToString();
             CU.subir(usuario);
             return true;
         }

@@ -66,9 +66,12 @@ namespace MudanzasGuaymasServices.Services
         public void Editar(Paquete paquete)
         {
 
-            var pack = DataBase.Paquete.FirstOrDefault(x => x.Id == paquete.Id);
-
-            pack = paquete;
+            var pack = DataBase.Paquete.FirstOrDefault(x => x.Id == paquete.Id);  
+            pack.Descripcion = paquete.Descripcion;
+            pack.Imagen = paquete.Imagen;
+            pack.Mostrar = paquete.Mostrar;
+            pack.Precio = paquete.Precio;
+            pack.Unidad = paquete.Unidad;
             DataBase.SaveChanges();
 
 

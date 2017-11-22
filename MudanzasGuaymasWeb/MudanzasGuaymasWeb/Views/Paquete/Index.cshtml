@@ -14,16 +14,23 @@
             <div class="raya"></div>
             <div class="slogan">
                 <h2>@ViewBag.nombre</h2>
-                <P>@Html.ActionLink("Agregar Paquete", "Create", "Paquete", new { id = ViewBag.id }, null)</P>
+               
             </div>
         </div>
     </section>
     <div class="separador"></div>
     <section>
         <div id="wrapperPaquetes">
-           
+            @if (Session["usuario"] != null)
+            {
+                if (Session["usuario"].Equals("Admin"))
+                {<p> @Html.ActionLink("Agregar Paquete", "Create", "Paquete", new { id = ViewBag.id }, null)</p> }
+
+            }
             @foreach (var item in ViewBag.paquete)
             {
+                if (item.Mostrar || (Session["usuario"] != null && Session["usuario"].Equals("Admin")))
+                {
                 <article>
                     <img src="@item.Imagen" />
                     <div class="hover">
@@ -37,9 +44,29 @@
                                 {<p>@item.Descripcion.ToString() →</p>}
                             }
                             <h6>@Html.ActionLink("Ver Mas", "Post", "Paquete", new { id = item.Id }, null)</h6>
+
                         </div>
+                        <div class="Controles">
+                            @if (Session["usuario"] != null)
+                            {
+                                if (Session["usuario"].Equals("Admin"))
+                                {
+                                    <p>@Html.ActionLink("[Editar]", "Edit", "Paquete", new { id = item.Id }, null)</p>
+                                    if (item.Mostrar)
+                                    {
+                                        <p>@Html.ActionLink("[No Mostrar]", "NoMostrar", "Paquete", new { id = item.Id }, null)</p>
+                                    }
+                                    else
+                                    {
+                                        <p>@Html.ActionLink("[Mostrar]", "Mostrar", "Paquete", new { id = item.Id }, null)</p>
+                                    }
+                                }
+                            }
+                        </div>
+
                     </div>
                 </article>
+                }
             }
         </div>
         <div style="clear:both"></div>

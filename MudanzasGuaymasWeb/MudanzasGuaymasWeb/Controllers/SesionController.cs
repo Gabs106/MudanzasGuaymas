@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Net.Mail;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 
@@ -37,9 +38,27 @@ namespace MudanzasGuaymasWeb.Controllers
             }
         }
 
-        public void Logueart()
+        public ActionResult Recuperar()
         {
 
+            return View();
+        }
+        public void EnviarCorreo(string email)
+        {
+            MailMessage m;
+            m = new MailMessage();
+            m.To.Add(new MailAddress(email));
+            m.From = new MailAddress("gabriel.106@hotmail.es");
+            m.Subject = "Recuperar Contraseña";
+            m.Body = "Url de recuperacion";
+            m.IsBodyHtml = true;
+            SmtpClient cliente = new SmtpClient("smtp.live.com",587);
+            using (cliente)
+            {
+                cliente.Credentials = new System.Net.NetworkCredential("mudanzasGuaymas@gmail.com", "Chingayamaye");
+                cliente.EnableSsl = true;
+                cliente.Send(m);
+            }
         }
         //Clientes
         private string BASE_URL = "http://localhost:49727/Services/Seguridad/SrvSesion.svc/";

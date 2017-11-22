@@ -10,11 +10,12 @@ a{
 
 }
 body{
-   
+   margin:0 auto;
 }
-#wrapperMain{
-	width: 100%;
-	margin: 0 auto;
+#wrapperMain {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 2000px;
 }
 
 #wrapperHeader{
@@ -270,7 +271,6 @@ body{
         top: 348px;
         height: 136px;
         padding: 10px;
-        position: absolute;
         bottom: 0;
         left: 0;
         background:rgb(240, 244, 233);
@@ -301,46 +301,54 @@ body{
             height: 40px;
         }
 
-    #wrapper h6 {
-        font-size: 20px;
-        position: absolute;
-        bottom: 0;
-        right: 75px;
-        color: #FF001E;
-        width: 100px;
-    }
+#wrapperPaquetes h6 {
+    margin-bottom: unset;
+    font-size:14px;
+}
 
-    #wrapperPost{
+#wrapperPost{
         width:100%;
-    }
-    #wrapperPost article .articulo img{
+ }
+#wrapperPost article .articulo img{
         width:50%;
         float:left
-    }
-    #wrapperPost article .articulo h2 {
+}
+#wrapperPost article .articulo h2 {
            width: 46%;
            float:left;
            margin-left:2%;
            font-size:1.4em;
     }
-    #wrapperPost article .articulo p {
+#wrapperPost article .articulo p {
             width: 46%;
             float: right;
             margin-left: 2%;
             font-size: 1em;
-    }
-        #wrapperPost article .articulo p a {
+}
+#wrapperPost article .articulo p a {
             background-color: #e94a4f;
             color: white;
             padding: 10px 20px;
             border: 2px groove;
             border-color: #e94a4f;
 
-        }
-            #wrapperPost article .articulo p a:hover {
+}
+ #wrapperPost article .articulo p a:hover {
                 background-color:white;
                 color: #e94a4f;
                 padding: 10px 20px;
                 border: 2px groove;
                 border-color: #e94a4f;
-            }
+ }
+.Controles p{
+    display:inline-block;
+}
+.Controles{
+    position: absolute;
+    left: 40px;
+    bottom: 0;
+    text-align: center;
+}
+ a:hover{
+     color:red;
+ }

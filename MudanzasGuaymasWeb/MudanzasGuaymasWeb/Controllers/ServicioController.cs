@@ -45,14 +45,16 @@ namespace MudanzasGuaymasWeb.Controllers
            
         }
 
-        public ActionResult Edit()
+        public ActionResult Edit(string id)
         {
             if (Session["usuario"] != null)
             {
 
                 if (Session["usuario"].Equals("Admin"))
                 {
-                    return View();
+                    ViewBag.Id = id;
+                    Servicio  servicio = CS.encontrarUno(id);
+                    return View(servicio);
                 }
                 else
                 {
@@ -100,6 +102,27 @@ namespace MudanzasGuaymasWeb.Controllers
                 }
 
             }       
+            return RedirectToAction("Index", "Home");
+        }
+
+        public RedirectToRouteResult NoMostrar(string id)
+        {
+            Servicio s = CS.encontrarUno(id);
+            s.Mostrar = false;
+            CS.Editar(s);
+            return RedirectToAction("Index", "Home");
+        }
+        public RedirectToRouteResult Mostrar(string id)
+        {
+            Servicio s = CS.encontrarUno(id);
+            s.Mostrar = true;
+            CS.Editar(s);
+            return RedirectToAction("Index", "Home");
+        }
+        public RedirectToRouteResult Editar(string id, Servicio servicio)
+        {
+            servicio.Id = int.Parse(id);
+            CS.Editar(servicio);
             return RedirectToAction("Index", "Home");
         }
         [HttpPost]

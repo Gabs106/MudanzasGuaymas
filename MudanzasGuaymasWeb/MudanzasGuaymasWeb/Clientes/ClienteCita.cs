@@ -1,4 +1,4 @@
-﻿using MudanzasGuaymasWeb.SrvPaquete;
+﻿using MudanzasGuaymasWeb.SrvPreCita;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,36 +11,36 @@ using System.Web.Script.Serialization;
 
 namespace MudanzasGuaymasWeb.Clientes
 {
-    public class ClientePaquete
+    public class ClienteCita
     {
-        private string BASE_URL = "http://localhost:49727/Services/CRUD/SrvPaquete.svc/";
+        private string BASE_URL = "http://localhost:49727/Services/Operaciones/SrvPreCita.svc/";
 
-        public Paquete encontrarUno(string id)
+        public preCita encontrarUno(string id)
         {
             var synClient = new WebClient();
             string url = string.Format(BASE_URL + "get/{0}", id);
             var content = synClient.DownloadString(url);
             var json_serializer = new JavaScriptSerializer();
-            return json_serializer.Deserialize<Paquete>(content);
+            return json_serializer.Deserialize<preCita>(content);
 
         }
-        public List<Paquete> verTodos(string id)
+        public List<preCita> verTodos(string id)
         {
             var synClient = new WebClient();
             string url = string.Format(BASE_URL + "getAll/{0}", id);
             var content = synClient.DownloadString(url);
             var json_serializer = new JavaScriptSerializer();
-            return json_serializer.Deserialize<List<Paquete>>(content);
+            return json_serializer.Deserialize<List<preCita>>(content);
 
         }
 
-        public bool subir(Paquete paquete, string id_Servicio, HttpPostedFileBase image)
+        public bool subir(preCita cita)
         {
-            paquete.Id_Servicio = int.Parse(id_Servicio);
+            
             //Agregar al usuario
-            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(SrvPaquete.Paquete));
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(preCita));
             MemoryStream mem = new MemoryStream();
-            ser.WriteObject(mem, paquete);
+            ser.WriteObject(mem, cita);
             string data = Encoding.UTF8.GetString(mem.ToArray(), 0, (int)mem.Length);
             WebClient webClient = new WebClient();
             webClient.Headers["Content-type"] = "application/json";
@@ -48,9 +48,9 @@ namespace MudanzasGuaymasWeb.Clientes
             webClient.UploadString(BASE_URL + "create", "POST", data);
             return true;
         }
-        public void Editar(Paquete s)
+        public void Editar(preCita s)
         {
-            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Paquete));
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(preCita));
             MemoryStream mem = new MemoryStream();
             ser.WriteObject(mem, s);
             string data = Encoding.UTF8.GetString(mem.ToArray(), 0, (int)mem.Length);

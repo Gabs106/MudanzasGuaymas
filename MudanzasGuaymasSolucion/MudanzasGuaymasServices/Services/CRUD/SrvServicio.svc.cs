@@ -73,7 +73,10 @@ namespace MudanzasGuaymasServices.Services
 
             var ser = DataBase.Servicio.FirstOrDefault(x => x.Id == servicio.Id);
 
-            ser = servicio;
+            ser.Nombre = servicio.Nombre;
+            ser.Imagen = servicio.Imagen;
+            ser.Mostrar = servicio.Mostrar;
+            ser.Descripcion = servicio.Descripcion;
             DataBase.SaveChanges();
 
 
