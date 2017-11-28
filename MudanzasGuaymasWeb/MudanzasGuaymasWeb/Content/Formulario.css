@@ -1,58 +1,49 @@
-﻿.Formulario {
-    width: 74%;
-    padding: 8% 12%;
-    text-align: center;
-    background: rgba(128, 128, 128, 0.10196078431372549);
-    margin: 0 auto;
-}
-.Formulario2 {
-    border-radius: 20px;
-    background-color: white;
-    width: 90%;
-    margin: 0 auto;
-    text-align: left;
-}
-.Formulario h2 {
-    background-color: #ff7a7a;
-    width: 100%;
-    height: 60px;
-    padding-top: 10px;
-    margin-bottom: -53px;
-    border-radius:20px 20px 0 0;
-    text-align:center;
-}
+﻿
 .Formulario h4 {
-    background-color: #ff7a7a;
     width: 100%;
     height: 17px;
     margin-bottom: 17px;
     text-align:center;
+    font-size:3em;
 }
 .BotonEstilo {
     text-align: left;
     margin-left: 20px;
-    width: 70%;
+    width: 43%;
+    height: 3em;
+    margin-bottom: 34px;
+    margin-top: 10px;
+    border: solid thin;
+    border-radius: 10px;
+    border-color: gray;
+    font-size: 1em;
+    padding: 0 1em;
 }
 .TextAEstilo {
     width: 70%;
     height: 400px;
     
 }
+hr {
+    border-color:#e94a4f;
+}
 textarea {
-    width: 70%;
+    width: 43%;
     height: 400px;
     text-align: left;
     margin-left: 20px;
 }
 .LabelEstilo {
     text-align: left;
-    margin-left: 20px;
+    margin: 0 0 0 20px;
+    font-size:1.3em;
 }
 .form-group{
 
 }
 .form-horizontal {
     padding: 5%;
+    text-align:center;
 }
 .btn {
     width: 25%;
@@ -64,7 +55,7 @@ textarea {
     border-color: #ff7a7a;
     border: 2px solid;
 }
-    .btn:hover {
+.btn:hover {
         border-color: #ff7a7a;
         border: 2px solid;
         background-color: white;

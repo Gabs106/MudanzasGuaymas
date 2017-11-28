@@ -9,6 +9,7 @@
     @Scripts.Render("~/bundles/modernizr")
     <script src="~/Scripts/jquery-3.2.1.min (1).js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
 </head>
 <body>
     <div id="wrapperMain">
@@ -17,13 +18,11 @@
                 <div class="logo">
                     <img src="~/Content/Logo Completo.png" />
                     <div class="izquierdo">
-                        <nav>
-                            <p>Mándenos un Mail: <strong>info@mudalia.com</strong> / Llámenos al Teléfono:<strong>91 367 91 72</strong></p>
+                        <nav class="menu">
+                            <p>Mándenos un Mail: <strong>mudanzasguaymas@gmail.com</strong> / Llámenos al Teléfono:<strong> 622-146-69-95</strong></p>
                             <ul>
                                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                                <li><a href="">¿Quienes somos?</a></li>
-                                <li><a href="">Servicios</a></li>
-                                <li><a href="">Consejos</a></li>
+                                <li>@Html.ActionLink("¿Quienes Somos", "Nosotros", "Home")</li>
                                 <li><a href="">Donde Estamos</a></li>
                                 @if (Session["usuario"] == null)
                                 {
@@ -46,12 +45,17 @@
                 </div>
             </div>
         </header>
-
         <div class="container body-content">
             @RenderBody()
-            <hr />
+            <br /><br /><br /><br />
             <footer>
-                <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+                <img src="~/Content/edge-candy.svg" />
+                <br />
+                <div class="redesSociales">
+                    <a href="https://www.facebook.com/MudanzasGuaymas">
+                        
+                </div>
+                <p>&copy; @DateTime.Now.Year - © Copyright 2017 Fletes y Mudanzas Económicas Flores. Creador: ISW Guaymas</p>
             </footer>
         </div>
    </div>

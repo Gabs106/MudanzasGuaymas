@@ -251,13 +251,29 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Content\BannerMudanzas.gif" />
     <Content Include="Content\depositphotos_112286722-stock-illustration-customer-service-icon.jpg" />
     <Content Include="Content\edge-candy.svg" />
     <Content Include="Content\edge-cream.svg" />
+    <Content Include="Content\embalaje.jpg" />
+    <Content Include="Content\estilo720.css" />
     <Content Include="Content\estilos.css" />
     <Content Include="Content\Formulario.css" />
+    <Content Include="Content\imagen1.png" />
+    <Content Include="Content\imagen2.jpg" />
+    <Content Include="Content\imagen2.png" />
+    <Content Include="Content\imagen3.jpg" />
+    <Content Include="Content\imagen4.jpg" />
+    <Content Include="Content\imagen5.jpg" />
+    <Content Include="Content\imagen6.jpg" />
+    <Content Include="Content\imagen7.jpg" />
+    <Content Include="Content\imagen8.jpg" />
     <Content Include="Content\Logo Completo.png" />
+    <Content Include="Content\NumeroBannerTR.gif" />
+    <Content Include="Content\offer-no-image.png" />
     <Content Include="Content\separator.png" />
+    <Content Include="Content\Tabla.css" />
+    <Content Include="Content\uso-stretch.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -339,6 +355,7 @@
     <Content Include="Views\Servicio\Edit.cshtml" />
     <Content Include="Views\Sesion\Recuperar.cshtml" />
     <Content Include="Views\Paquete\Edit.cshtml" />
+    <Content Include="Views\Home\Nosotros.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

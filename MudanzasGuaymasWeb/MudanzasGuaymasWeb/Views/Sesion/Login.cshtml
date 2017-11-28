@@ -2,9 +2,23 @@
 @{
     ViewBag.Title = "Login";
 }
+<section>
+    <div id="wrapperBanner">
+        <div class="background">
+            <div class="banner">
+                <img src="~/Content/NumeroBannerTR.gif" />
+            </div>
+        </div>
+        <div class="raya"></div>
+        <div class="slogan">
+            <h2>LOGIN</h2>
+            <P>Si no tienes cuenta registrate!!</P>
+            <img src="~/Content/edge-candy.svg" />
+        </div>
+    </div>
+</section>
 <div class="Formulario">
     <div class="Formulario2">
-        <h2>Login</h2>
         @using (Html.BeginForm("Sesion", "Sesion"))
         {
             <div class="form-horizontal">

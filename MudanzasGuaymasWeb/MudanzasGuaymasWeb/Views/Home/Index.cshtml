@@ -5,13 +5,14 @@
     <div id="wrapperBanner">
         <div class="background">
             <div class="banner">
-                <img src="http://mudalia.com/wp-content/files_mf/cache/th_89addcaab11e02421fc7d7edf27d0305_1450351953bannermudalia.png" />
+                <img src="~/Content/NumeroBannerTR.gif" />
             </div>
         </div>
         <div class="raya"></div>
         <div class="slogan">
             <h2>HACEMOS TUS MUDANZAS</h2>
             <P>Solicita tu presupuesto sin compromiso!!</P>
+            <img src="~/Content/edge-candy.svg" />
         </div>
     </div>
 </section>
@@ -20,6 +21,7 @@
     <div id="wrapperServicios">
 
         <h1>Nuestros Servicios</h1>
+        <h4>Consulta nuestros paquetes en cada servicio dando clic en el boton Ver mas.</h4>
         @if (Session["usuario"] != null)
         {
             if (Session["usuario"].Equals("Admin"))
@@ -34,9 +36,12 @@
             <div class="@item.Id marco" ></div>
             <h2><span>Servicio: </span>@item.Nombre</h2>
             @if(item.Descripcion.Length > 89)
-            { <h4>@item.Descripcion.ToString().Substring(0, 88)→</h4> }
+            { 
+                <h4>@item.Descripcion.ToString().Substring(0, 88)→</h4> }
             else
-            {<h4>@item.Descripcion.ToString()→</h4>}
+            {
+                <h4>@item.Descripcion.ToString()→</h4>
+            }
             <h6>@Html.ActionLink("Ver Mas", "Index","Paquete", new { id = item.Id, nombre = item.Nombre }, null)</h6>
             <div class="Controles">
                 @if (Session["usuario"] != null)
@@ -71,8 +76,7 @@
                     $("#colorcode").text("#" + randomColor);
 
                 });
-            </script>
-            
+            </script>    
         </article>   
             }
         }
@@ -86,13 +90,56 @@
 <br /><br />
 <div class="separador"></div>
 <section>
-    <div id="wrapperPresentacion">
+    <div class="wrapperPresentacion">
         <article>
             <h2>
-                PODEMOS OCUPARNOS DE SU MUDANZA
+                Fletes y mudanzas Residenciales
             </h2>
-            <h4>Mudanzas profesionales para empresas y oficinas, así como mudanzas de hogar baratas, así como servicio de guardamuebles. Disponemos de grúas montamuebles por fachada. También de material para mudanzas, como embalaje para objetos especiales</h4>
+            <h4>Trasladamos los muebles de tu hogar ya sea local o foráneo utilizando la técnica: origen - destino, cumpliendo con las normas fundamentales de calidad.
+
+                <br /><br />Salvaguardamos el estado de calidad de tus muebles y los llevamos a tu lugar de destino.
+
+                <br /><br />Contamos con las herramientas, habilidades y experiencia necesarias para el correcto realizamiento del servicio que ofrecemos.
+
+                <br /><br />Nuestra prioridad es tu satisfacción al momento de concluir el servicio.</h4>
         </article>
     </div>
 </section>
 <div class="separador"></div>
+<section>
+    <div class="wrapperPresentacion">
+        <article>
+            <h2>
+                Fletes y mudanzas Comerciales
+            </h2>
+            <h4>Trasladamos los muebles de tu negocio, ya sea local o foráneo, utilizando la técnica: origen - destino, cumpliendo con las normas fundamentales de calidad.
+
+                <br /><br />Salvaguardamos el estado de calidad de tus muebles y los llevamos a tu lugar de destino.
+
+                <br /><br />Contamos con las herramientas, habilidades y experiencia necesarias para el correcto realizamiento del servicio que ofrecemos.
+
+                <br /><br /> Nuestra prioridad es tu satisfacción al momento de concluir el servicio.</h4>
+        </article>
+    </div>
+</section>
+<div class="separador"></div>
+<section>
+    <div class="wrapperPresentacion">
+        <article>
+            <h2>
+               Galeria
+            </h2>
+            <p>
+                Somos una empresa responsable, que dedica su trabajo a la excelencia en tiempo y forma.
+            </p>
+            <img src="~/Content/imagen1.png" />
+            <img src="~/Content/imagen2.jpg" />
+            <img src="~/Content/imagen3.jpg" />
+            <img src="~/Content/imagen4.jpg" />
+            <img src="~/Content/imagen5.jpg" />
+            <img src="~/Content/imagen6.jpg" />
+            <img src="~/Content/imagen7.jpg" />
+            <img src="~/Content/imagen8.jpg" />
+        </article>
+    </div>
+</section>

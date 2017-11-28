@@ -3,10 +3,23 @@
 @{
     ViewBag.Title = "Edit";
 }
-
+<section>
+    <div id="wrapperBanner">
+        <div class="background">
+            <div class="banner">
+                <img src="https://s3.amazonaws.com/files.bannersnack.net/banners/bxtkyhkkg/images/jpg" />
+            </div>
+        </div>
+        <div class="raya"></div>
+        <div class="slogan">
+            <h2>Editar</h2>
+            <P>Ingrese su informacion!!</P>
+            <img src="~/Content/edge-candy.svg" />
+        </div>
+    </div>
+</section>
 <div class="Formulario">
     <div class="Formulario2">
-        <h2>Edit</h2>
 
         @using (Html.BeginForm("Editar","Servicio"))
         {

@@ -1,0 +1,20 @@
+﻿#wrapperTable{
+    width:90%;
+    margin:0 5%;
+}
+table{
+    width:100%;
+}
+#wrapperTable h2{
+    font-size:3em;
+    text-align:center;
+}
+#wrapperTable th {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #e94a4f;
+}
+#wrapperTable td {
+    font-size: 1em;
+    padding:1em;
+}

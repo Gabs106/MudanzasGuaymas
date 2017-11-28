@@ -1,0 +1,15 @@
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\MudanzasGuaymasServices.dll.config
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\MudanzasGuaymasServices.dll
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\MudanzasGuaymasServices.pdb
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\EntityFramework.dll
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\EntityFramework.SqlServer.dll
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\Newtonsoft.Json.dll
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\EntityFramework.xml
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\EntityFramework.SqlServer.xml
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\Newtonsoft.Json.xml
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\obj\Release\MudanzasGuaymasServices.csprojResolveAssemblyReference.cache
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\obj\Release\MudanzasGuaymasServices.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\obj\Release\MudanzasGuaymasServices.dll
+C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\obj\Release\MudanzasGuaymasServices.pdb

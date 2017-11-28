@@ -16,7 +16,10 @@ namespace MudanzasGuaymasWeb.Controllers
             ViewBag.servicio = verTodos();
             return View();
         }
-
+        public ActionResult Nosotros()
+        {
+            return View();
+        }
         private string BASE_URL = "http://localhost:49727/Services/CRUD/SrvServicio.svc/";
 
         public List<Servicio> verTodos()
