@@ -13,8 +13,16 @@ table{
     font-size: 1.2em;
     font-weight: bold;
     color: #e94a4f;
+    height:60px;
 }
 #wrapperTable td {
     font-size: 1em;
-    padding:1em;
+    padding: 1em;
+    height: 60px;
+    margin-top:3px;
+    border-right:groove 1px;
+}
+#wrapperTable img {
+    width: 55px;
+    height: 55px;
 }

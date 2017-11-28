@@ -16,7 +16,8 @@ namespace MudanzasGuaymasWeb.Controllers
         ClientePaquete pa = new ClientePaquete();
         public ActionResult Index()
         {
-            return View();
+            
+            return View(c.verTodos());
         }
         public ActionResult Create(string id)
         {
@@ -35,7 +36,7 @@ namespace MudanzasGuaymasWeb.Controllers
             cita.Total = cita.Cantidad * p.Precio;
                     //Agregar al servicio
             c.subir(cita);
-
+            TempData["msg"] = "<script>alert('Gracias por usar nuestros servicios, Espere una respuesta pronta.');</script>";
             return RedirectToAction("Index", "Home");
         }
     }

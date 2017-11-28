@@ -12,8 +12,33 @@
 
 </head>
 <body>
+    <div id="menuMovil">
+        <input type="checkbox" class="checkbox" id="menu-toogle" />
+        <label for="menu-toogle" class="menu-toogle"></label>
+        <nav class="nav">
+            <a href="#" class="nav__item current">@Html.ActionLink("Home", "Index", "Home")</a>
+            <a href="#" class="nav__item">@Html.ActionLink("¿Quienes Somos", "Nosotros", "Home")</a>
+            @if (Session["usuario"] == null)
+            {
+                <a href="#" class="nav__item">@Html.ActionLink("Login", "Login", "Sesion")</a>
+                    <a href="#" class="nav__item">@Html.ActionLink("Registrarse", "Registrarse", "Sesion")</a>
+            }
+            else
+            {
+
+                if (Session["usuario"].Equals("Admin"))
+                {
+                    <a href="#" class="nav__item">@Html.ActionLink("Usuarios", "Index", "Usuario")</a>
+                            <a href="#" class="nav__item">@Html.ActionLink("Servicios", "Index", "Servicio")</a>
+                }
+                <a href="#" class="nav__item">@Html.ActionLink("Logout", "Logout", "Sesion")</a>
+            }
+        </nav>
+    </div>
+
     <div id="wrapperMain">
         <header>
+
             <div id="wrapperHeader">
                 <div class="logo">
                     <img src="~/Content/Logo Completo.png" />
@@ -32,12 +57,15 @@
                                 }
                                 else
                                 {
-                                    <li>@Html.ActionLink("Logout", "Logout", "Sesion")</li>
+                                    
                                     if (Session["usuario"].Equals("Admin"))
                                     {
                                         <li>@Html.ActionLink("Usuarios", "Index", "Usuario")</li>
                                         <li>@Html.ActionLink("Servicios", "Index", "Servicio")</li>
+                                        <li>@Html.ActionLink("Citas", "Index", "Cita")</li>
+                                        <li>@Html.ActionLink("Servicios", "Index", "Servicio")</li>
                                     }
+                                    <li>@Html.ActionLink("Logout", "Logout", "Sesion")</li>
                                 }
                             </ul>
                         </nav>
@@ -47,6 +75,7 @@
         </header>
         <div class="container body-content">
             @RenderBody()
+            @Html.Raw(TempData["msg"])
             <br /><br /><br /><br />
             <footer>
                 <img src="~/Content/edge-candy.svg" />

@@ -23,6 +23,7 @@ namespace MudanzasGuaymasWeb.Controllers
                 Session["nombre"] = null;
                 Session["id"] = null;
                 Session["email"] = null;
+                TempData["msg"] = "<script>alert('Gracias por usar nuestros servicios');</script>";
             }
                 return RedirectToAction("Index", "Home");
         }
@@ -40,7 +41,7 @@ namespace MudanzasGuaymasWeb.Controllers
 
         public ActionResult Recuperar()
         {
-
+            TempData["msg"] = "<script>alert('Ingrese su Email para enviarle como puede recuperar su cuenta muy sencillo');</script>";
             return View();
         }
         public void EnviarCorreo(string email)
@@ -79,6 +80,7 @@ namespace MudanzasGuaymasWeb.Controllers
                 Session["nombre"] = TraerPorCorreo(email).Nombre;
                 Session["id"] = TraerPorCorreo(email).Id;
                 Session["email"] = TraerPorCorreo(email).Email;
+                TempData["msg"] = "<script>alert('Bienvenido: " + Session["nombre"] + "');</script>";
                 return RedirectToAction("Index", "Home");
             }
             else

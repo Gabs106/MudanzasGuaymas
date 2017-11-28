@@ -26,12 +26,13 @@ namespace MudanzasGuaymasWeb.Controllers
 
             return View();
         }
-        public bool Delete(int id)
+        public RedirectToRouteResult Delete(int id)
         {
             string ID = id.ToString();
             Usuario usuario = CU.encontrarUno(ID);
             eliminar(usuario);
-            return true;
+            TempData["msg"] = "<script>alert('El usuario: " + usuario.Nombre+" "+usuario.Apellido + " ha sido Eliminado');</script>";
+            return RedirectToAction("Index", "Home");
         }
         public ActionResult Details(int id)
         {
@@ -47,13 +48,15 @@ namespace MudanzasGuaymasWeb.Controllers
         }
 
 
-        public bool subir(Usuario usuario)
+        public RedirectToRouteResult subir(Usuario usuario)
         {
             Random r = new Random();
             int azar = r.Next(1000, 9999);
             usuario.Llave = azar.ToString();
+            usuario.Tipo = "normal";
             CU.subir(usuario);
-            return true;
+            TempData["msg"] = "<script>alert('Registrado con exito');</script>";
+            return RedirectToAction("Index", "Home");
         }
 
 
@@ -65,12 +68,12 @@ namespace MudanzasGuaymasWeb.Controllers
 
         }
         //Agrega una fila a la tabla
-        public void editar(SrvUsuario.Usuario usuario)
+        public RedirectToRouteResult editar(SrvUsuario.Usuario usuario)
         {
 
             CU.editar(usuario);
-
-
+            TempData["msg"] = "<script>alert('El usuario: " + usuario.Nombre + " " + usuario.Apellido + " ha sido Editado');</script>";
+            return RedirectToAction("Index", "Home");
         }
     }
 }

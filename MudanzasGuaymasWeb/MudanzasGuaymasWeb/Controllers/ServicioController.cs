@@ -75,6 +75,7 @@ namespace MudanzasGuaymasWeb.Controllers
                 {
                     string ID = id.ToString();
                     Servicio servicio = CS.encontrarUno(ID);
+                    TempData["msg"] = "<script>alert('Se ha eliminado con exito');</script>";
                 }
             }
             return RedirectToAction("Home", "Index");
@@ -99,6 +100,7 @@ namespace MudanzasGuaymasWeb.Controllers
                 {
                     //Agregar al servicio
                     CS.subir(servicio, image);
+                    TempData["msg"] = "<script>alert('El servicio fue agregado correctamente');</script>";
                 }
 
             }       
@@ -110,6 +112,7 @@ namespace MudanzasGuaymasWeb.Controllers
             Servicio s = CS.encontrarUno(id);
             s.Mostrar = false;
             CS.Editar(s);
+            TempData["msg"] = "<script>alert('Usted ha cambiado a no mostrar el servicio: " + s.Nombre + "');</script>";
             return RedirectToAction("Index", "Home");
         }
         public RedirectToRouteResult Mostrar(string id)
@@ -117,12 +120,14 @@ namespace MudanzasGuaymasWeb.Controllers
             Servicio s = CS.encontrarUno(id);
             s.Mostrar = true;
             CS.Editar(s);
+            TempData["msg"] = "<script>alert('Usted ha cambiado a mostrar el servicio: " + s.Nombre + "');</script>";
             return RedirectToAction("Index", "Home");
         }
         public RedirectToRouteResult Editar(string id, Servicio servicio)
         {
             servicio.Id = int.Parse(id);
             CS.Editar(servicio);
+            TempData["msg"] = "<script>alert('Servicio editado con exito');</script>";
             return RedirectToAction("Index", "Home");
         }
         [HttpPost]

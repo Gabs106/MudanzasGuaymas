@@ -269,8 +269,10 @@
     <Content Include="Content\imagen7.jpg" />
     <Content Include="Content\imagen8.jpg" />
     <Content Include="Content\Logo Completo.png" />
+    <Content Include="Content\movil.css" />
     <Content Include="Content\NumeroBannerTR.gif" />
     <Content Include="Content\offer-no-image.png" />
+    <Content Include="Content\path4498.png" />
     <Content Include="Content\separator.png" />
     <Content Include="Content\Tabla.css" />
     <Content Include="Content\uso-stretch.jpg" />
@@ -356,6 +358,7 @@
     <Content Include="Views\Sesion\Recuperar.cshtml" />
     <Content Include="Views\Paquete\Edit.cshtml" />
     <Content Include="Views\Home\Nosotros.cshtml" />
+    <Content Include="Views\Cita\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

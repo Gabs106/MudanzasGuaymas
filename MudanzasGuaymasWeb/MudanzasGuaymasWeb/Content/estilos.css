@@ -5,6 +5,9 @@
     font-family: 'Montserrat', sans-serif;
 }
 @media (min-width: 1200px) {
+    #menuMovil{
+        display:none;
+    }
     a {
         text-decoration: none;
         color: black;
@@ -94,6 +97,16 @@
                 font-weight: 900;
             }
 
+        #wrapperHeader ul li ul li:hover {
+            display: inline-block;
+        }
+        #wrapperHeader ul li ul {
+            display: none;
+        }
+
+        #wrapperHeader ul li a:hover + ul, .menuCSS3 ul li ul:hover {
+            display: block;
+        }
                 #wrapperHeader li a:hover {
                     color: #e94a4f;
                     background: url("https://animagehub.com/wp-content/uploads/2016/10/triangle-vector-1.png") bottom center no-repeat;

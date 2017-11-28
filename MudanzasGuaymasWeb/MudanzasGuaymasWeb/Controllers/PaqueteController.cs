@@ -84,6 +84,7 @@ namespace MudanzasGuaymasWeb.Controllers
                 if (Session["usuario"].Equals("Admin"))
                 {
                     c.subir(paquete, id_Servicio, image);
+                    TempData["msg"] = "<script>alert('El paquete ha sido creado con Exito');</script>";
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -102,6 +103,7 @@ namespace MudanzasGuaymasWeb.Controllers
             Paquete s = c.encontrarUno(id);
             s.Mostrar = false;
             c.Editar(s);
+            TempData["msg"] = "<script>alert('Usted ha cambiado a no mostrar el paquete: "+s.Nombre+"');</script>";
             return RedirectToAction("Index", "Home");
         }
         public RedirectToRouteResult Mostrar(string id)
@@ -109,12 +111,14 @@ namespace MudanzasGuaymasWeb.Controllers
             Paquete s =c.encontrarUno(id);
             s.Mostrar = true;
             c.Editar(s);
+            TempData["msg"] = "<script>alert('Usted ha cambiado a  mostrar el paquete: " + s.Nombre + "');</script>";
             return RedirectToAction("Index", "Home");
         }
         public RedirectToRouteResult Editar(Paquete paquete)
         {
             
             c.Editar(paquete);
+            TempData["msg"] = "<script>alert('El paquete se creo con exito');</script>";
             return RedirectToAction("Index", "Home");
         }
     }

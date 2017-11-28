@@ -24,15 +24,16 @@ namespace MudanzasGuaymasWeb.Clientes
             return json_serializer.Deserialize<preCita>(content);
 
         }
-        public List<preCita> verTodos(string id)
+        public List<preCita> verTodos()
         {
             var synClient = new WebClient();
-            string url = string.Format(BASE_URL + "getAll/{0}", id);
+            string url = string.Format(BASE_URL + "getAll");
             var content = synClient.DownloadString(url);
             var json_serializer = new JavaScriptSerializer();
             return json_serializer.Deserialize<List<preCita>>(content);
 
         }
+
 
         public bool subir(preCita cita)
         {
