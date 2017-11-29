@@ -14,9 +14,21 @@ namespace MudanzasGuaymasWeb.Controllers
         // GET: Cita
         ClienteCita c = new ClienteCita();
         ClientePaquete pa = new ClientePaquete();
+        ClienteUsuario u = new ClienteUsuario();
         public ActionResult Index()
         {
-            
+            List<SrvPreCita.preCita> lista = c.verTodos();
+            List<Paquete> listaPaquetes = new List<Paquete>();
+            foreach (var result in lista)
+            {
+               listaPaquetes.Add(pa.encontrarUno(result.id_Paquete.ToString()));
+            }
+            foreach (var result in lista)
+            {
+                listaPaquetes.Add(pa.encontrarUno(result.id_Paquete.ToString()));
+            }
+            ViewBag.listaPaquetes = listaPaquetes;
+            ViewBag.listaUsuarios = u.verTodos();
             return View(c.verTodos());
         }
         public ActionResult Create(string id)

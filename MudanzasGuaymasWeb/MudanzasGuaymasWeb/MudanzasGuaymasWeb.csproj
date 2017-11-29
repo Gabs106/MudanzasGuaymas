@@ -251,6 +251,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Content\agenda.css" />
     <Content Include="Content\BannerMudanzas.gif" />
     <Content Include="Content\depositphotos_112286722-stock-illustration-customer-service-icon.jpg" />
     <Content Include="Content\edge-candy.svg" />
@@ -359,6 +360,7 @@
     <Content Include="Views\Paquete\Edit.cshtml" />
     <Content Include="Views\Home\Nosotros.cshtml" />
     <Content Include="Views\Cita\Index.cshtml" />
+    <Content Include="Views\Sesion\Recuperacion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
