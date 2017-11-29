@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Recuperar";
+}
+
+
+@{
+    ViewBag.Title = "Login";
+}
+<div class="Formulario">
+    <div class="Formulario2">
+        <h2>Recuperar Contraseña</h2>
+        @using (Html.BeginForm("EnviarCorreo", "Sesion"))
+        {
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="LabelEstilo">Email</label>
+                    <div class="col-md-10">
+                        <input type="email" name="email" class="BotonEstilo" />
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-default">Enviar</button>
+            </div>
+        }
+    </div>
+</div>

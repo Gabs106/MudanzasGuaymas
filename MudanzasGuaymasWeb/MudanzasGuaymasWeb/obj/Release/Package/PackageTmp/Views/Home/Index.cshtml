@@ -1,0 +1,147 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<section>
+    <div id="wrapperBanner">
+        <div class="background">
+            <div class="banner">
+                <img src="~/Content/NumeroBannerTR.gif" />
+            </div>
+        </div>
+        <div class="raya"></div>
+        <div class="slogan">
+            <h2>HACEMOS TUS MUDANZAS</h2>
+            <P>Solicita tu presupuesto sin compromiso!!</P>
+            <img src="~/Content/edge-candy.svg" />
+        </div>
+    </div>
+</section>
+<div class="separador"></div>
+<section>
+    <div id="wrapperServicios">
+
+        <h1>Nuestros Servicios</h1>
+        <h4>Consulta nuestros paquetes en cada servicio dando clic en el boton Ver mas.</h4>
+        @if (Session["usuario"] != null)
+        {
+            if (Session["usuario"].Equals("Admin"))
+            {<p>@Html.ActionLink("Crear Nuevo Servicio", "Create", "Servicio")</p> }
+
+        }
+        @foreach (var item in ViewBag.servicio)
+        {
+            if (item.Mostrar || (Session["usuario"] != null&&Session["usuario"].Equals("Admin"))) {
+        <article>
+            <img class="imagen" src="@item.Imagen"/>
+            <div class="@item.Id marco" ></div>
+            <h2><span>Servicio: </span>@item.Nombre</h2>
+            @if(item.Descripcion.Length > 89)
+            { 
+                <h4>@item.Descripcion.ToString().Substring(0, 88)→</h4> }
+            else
+            {
+                <h4>@item.Descripcion.ToString()→</h4>
+            }
+            <h6>@Html.ActionLink("Ver Mas", "Index","Paquete", new { id = item.Id, nombre = item.Nombre }, null)</h6>
+            <div class="Controles">
+                @if (Session["usuario"] != null)
+                {
+                    if (Session["usuario"].Equals("Admin"))
+                    {
+                        <p>@Html.ActionLink("[Editar]", "Edit", "Servicio", new { id = item.Id}, null)</p>
+                        if (item.Mostrar)
+                        {
+                            <p>@Html.ActionLink("[No Mostrar]", "NoMostrar", "Servicio", new { id = item.Id }, null)</p>
+                        }
+                        else
+                        {
+                            <p>@Html.ActionLink("[Mostrar]", "Mostrar", "Servicio", new { id = item.Id }, null)</p>
+                        }
+                        <p>@Html.ActionLink("[Add Paquete]", "Create", "Paquete", new { id = item.Id}, null)</p>
+                    }
+                }
+                
+            </div>
+            <script>
+                $(function () {
+
+                    var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+
+                    $(".@item.Id").css({
+
+                        backgroundColor: '#' + randomColor
+
+                    });
+
+                    $("#colorcode").text("#" + randomColor);
+
+                });
+            </script>    
+        </article>   
+            }
+        }
+        
+        <div class="fondoAmarillo">
+            <img  src="~/Content/edge-cream.svg" />
+        </div>
+     </div>     
+    <div style="clear:both"></div>
+</section>
+<br /><br />
+<div class="separador"></div>
+<section>
+    <div class="wrapperPresentacion">
+        <article>
+            <h2>
+                Fletes y mudanzas Residenciales
+            </h2>
+            <h4>Trasladamos los muebles de tu hogar ya sea local o foráneo utilizando la técnica: origen - destino, cumpliendo con las normas fundamentales de calidad.
+
+                <br /><br />Salvaguardamos el estado de calidad de tus muebles y los llevamos a tu lugar de destino.
+
+                <br /><br />Contamos con las herramientas, habilidades y experiencia necesarias para el correcto realizamiento del servicio que ofrecemos.
+
+                <br /><br />Nuestra prioridad es tu satisfacción al momento de concluir el servicio.</h4>
+        </article>
+    </div>
+</section>
+<div class="separador"></div>
+<section>
+    <div class="wrapperPresentacion">
+        <article>
+            <h2>
+                Fletes y mudanzas Comerciales
+            </h2>
+            <h4>Trasladamos los muebles de tu negocio, ya sea local o foráneo, utilizando la técnica: origen - destino, cumpliendo con las normas fundamentales de calidad.
+
+                <br /><br />Salvaguardamos el estado de calidad de tus muebles y los llevamos a tu lugar de destino.
+
+                <br /><br />Contamos con las herramientas, habilidades y experiencia necesarias para el correcto realizamiento del servicio que ofrecemos.
+
+                <br /><br /> Nuestra prioridad es tu satisfacción al momento de concluir el servicio.</h4>
+        </article>
+    </div>
+</section>
+<div class="separador"></div>
+<section>
+    <div class="wrapperPresentacion">
+        <article>
+            <h2>
+               Galeria
+            </h2>
+            <p>
+                Somos una empresa responsable, que dedica su trabajo a la excelencia en tiempo y forma.
+            </p>
+            <img src="~/Content/imagen1.png" />
+            <img src="~/Content/imagen2.jpg" />
+            <img src="~/Content/imagen3.jpg" />
+            <img src="~/Content/imagen4.jpg" />
+            <img src="~/Content/imagen5.jpg" />
+            <img src="~/Content/imagen6.jpg" />
+            <img src="~/Content/imagen7.jpg" />
+            <img src="~/Content/imagen8.jpg" />
+        </article>
+    </div>
+</section>

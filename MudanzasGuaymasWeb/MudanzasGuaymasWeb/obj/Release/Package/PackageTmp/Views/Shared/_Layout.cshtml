@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/jquery-3.2.1.min (1).js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+</head>
+<body>
+    <div id="menuMovil">
+        <input type="checkbox" class="checkbox" id="menu-toogle" />
+        <label for="menu-toogle" class="menu-toogle"></label>
+        <nav class="nav">
+            <a href="#" class="nav__item current">@Html.ActionLink("Home", "Index", "Home")</a>
+            <a href="#" class="nav__item">@Html.ActionLink("¿Quienes Somos", "Nosotros", "Home")</a>
+            @if (Session["usuario"] == null)
+            {
+                <a href="#" class="nav__item">@Html.ActionLink("Login", "Login", "Sesion")</a>
+                    <a href="#" class="nav__item">@Html.ActionLink("Registrarse", "Registrarse", "Sesion")</a>
+            }
+            else
+            {
+
+                if (Session["usuario"].Equals("Admin"))
+                {
+                    <a href="#" class="nav__item">@Html.ActionLink("Usuarios", "Index", "Usuario")</a>
+                            <a href="#" class="nav__item">@Html.ActionLink("Servicios", "Index", "Servicio")</a>
+                }
+                <a href="#" class="nav__item">@Html.ActionLink("Logout", "Logout", "Sesion")</a>
+            }
+        </nav>
+    </div>
+
+    <div id="wrapperMain">
+        <header>
+
+            <div id="wrapperHeader">
+                <div class="logo">
+                    <img src="~/Content/Logo Completo.png" />
+                    <div class="izquierdo">
+                        <nav class="menu">
+                            <p>Mándenos un Mail: <strong>mudanzasguaymas@gmail.com</strong> / Llámenos al Teléfono:<strong> 622-146-69-95</strong></p>
+                            <ul>
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li>@Html.ActionLink("¿Quienes Somos", "Nosotros", "Home")</li>
+                                <li><a href="">Donde Estamos</a></li>
+                                @if (Session["usuario"] == null)
+                                {
+                                    <li>@Html.ActionLink("Login", "Login", "Sesion")</li>
+                                    <li>@Html.ActionLink("Registrarse", "Registrarse", "Sesion")</li>
+
+                                }
+                                else
+                                {
+                                    
+                                    if (Session["usuario"].Equals("Admin"))
+                                    {
+                                        <li>@Html.ActionLink("Usuarios", "Index", "Usuario")</li>
+                                        <li>@Html.ActionLink("Servicios", "Index", "Servicio")</li>
+                                        <li>@Html.ActionLink("Citas", "Index", "Cita")</li>
+                                        <li>@Html.ActionLink("Servicios", "Index", "Servicio")</li>
+                                    }
+                                    <li>@Html.ActionLink("Logout", "Logout", "Sesion")</li>
+                                }
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container body-content">
+            @RenderBody()
+            @Html.Raw(TempData["msg"])
+            <br /><br /><br /><br />
+            <footer>
+                <img src="~/Content/edge-candy.svg" />
+                <br />
+                <div class="redesSociales">
+                    <a href="https://www.facebook.com/MudanzasGuaymas">
+                        
+                </div>
+                <p>&copy; @DateTime.Now.Year - © Copyright 2017 Fletes y Mudanzas Económicas Flores. Creador: ISW Guaymas</p>
+            </footer>
+        </div>
+   </div>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+</body>
+</html>

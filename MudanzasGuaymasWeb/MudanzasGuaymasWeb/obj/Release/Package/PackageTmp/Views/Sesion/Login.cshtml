@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+<section>
+    <div id="wrapperBanner">
+        <div class="background">
+            <div class="banner">
+                <img src="~/Content/NumeroBannerTR.gif" />
+            </div>
+        </div>
+        <div class="raya"></div>
+        <div class="slogan">
+            <h2>LOGIN</h2>
+            <P>Si no tienes cuenta registrate!!</P>
+            <img src="~/Content/edge-candy.svg" />
+        </div>
+    </div>
+</section>
+<div class="Formulario">
+    <div class="Formulario2">
+        @using (Html.BeginForm("Sesion", "Sesion"))
+        {
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="LabelEstilo">Email</label>
+                    <div class="col-md-10">
+                        <input type="email" name="email" class="BotonEstilo" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="LabelEstilo">Password</label>
+                    <div class="col-md-10">
+                        <input type="password" name="password" class="BotonEstilo" />
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-default">Enviar</button>
+            </div>
+        }
+    </div>
+</div>
+
+
