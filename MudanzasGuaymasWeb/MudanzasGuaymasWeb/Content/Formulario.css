@@ -62,3 +62,36 @@ textarea {
         cursor:pointer;
         color: #ff7a7a;
     }
+
+@media screen and (max-width: 720px) {
+
+    .BotonEstilo {
+        text-align: left;
+        margin-left: 20px;
+        width: 93%;
+        height: 3em;
+        margin-bottom: 34px;
+        margin-top: 10px;
+        border: solid thin;
+        border-radius: 10px;
+        border-color: gray;
+        font-size: 1.2em;
+        padding: 0 1em;
+    }
+    .btn {
+        width: 35%;
+        padding: 3% 8%;
+        background-color: #ff7a7a;
+        color: white;
+        border: none;
+        margin: 5% 30%;
+        border-color: #ff7a7a;
+        border: 2px solid;
+    }
+    textarea {
+        width: 95%;
+        height: 400px;
+        text-align: left;
+        margin-left: 20px;
+    }
+}

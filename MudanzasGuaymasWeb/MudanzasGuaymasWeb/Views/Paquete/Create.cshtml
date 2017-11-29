@@ -17,14 +17,14 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "LabelEstilo" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "BotonEstilo" } })
+                        @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "BotonEstilo", @required = true } })
                         @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "LabelEstilo" })
                     <div class="col-md-10">
-                        @Html.TextAreaFor(model => model.Descripcion, new { htmlAttributes = new { cols = 35, rows = 3 } })
+                        @Html.TextAreaFor(model => model.Descripcion, new { htmlAttributes = new { cols = 35, rows = 3, @required = true } })
                         @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -32,22 +32,15 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Imagen, htmlAttributes: new { @class = "LabelEstilo" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Imagen, new { htmlAttributes = new { @class = "BotonEstilo" } })
+                        @Html.EditorFor(model => model.Imagen, new { htmlAttributes = new { @class = "BotonEstilo", @required = true } })
                         @Html.ValidationMessageFor(model => model.Imagen, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Mostrar, htmlAttributes: new { @class = "LabelEstilo" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Mostrar, new { htmlAttributes = new { @class = "BotonEstilo" } })
-                        @Html.ValidationMessageFor(model => model.Mostrar, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
                     @Html.LabelFor(model => model.Precio, htmlAttributes: new { @class = "LabelEstilo" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Precio, new { htmlAttributes = new { @class = "BotonEstilo" } })
+                        @Html.EditorFor(model => model.Precio, new { htmlAttributes = new { @class = "BotonEstilo", @required = true } })
                         @Html.ValidationMessageFor(model => model.Precio, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -55,7 +48,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Unidad, htmlAttributes: new { @class = "LabelEstilo" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Unidad, new { htmlAttributes = new { @class = "BotonEstilo" } })
+                        @Html.EditorFor(model => model.Unidad, new { htmlAttributes = new { @class = "BotonEstilo", @required = true } })
                         @Html.ValidationMessageFor(model => model.Unidad, "", new { @class = "text-danger" })
                     </div>
                 </div>

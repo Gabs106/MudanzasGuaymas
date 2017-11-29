@@ -19,8 +19,25 @@ namespace MudanzasGuaymasWeb.Controllers
         // GET: Servicio
         public ActionResult Index()
         {
-            ViewBag.servicio = CS.verTodos();
-            return View();
+            if (Session["usuario"] != null)
+            {
+
+                if (Session["usuario"].Equals("Admin"))
+                {
+                    ViewBag.servicio = CS.verTodos();
+                    return View();
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            
         }
         
         public ActionResult Create()
@@ -99,6 +116,7 @@ namespace MudanzasGuaymasWeb.Controllers
                 if (Session["usuario"].Equals("Admin"))
                 {
                     //Agregar al servicio
+                    servicio.Mostrar = true;
                     CS.subir(servicio, image);
                     TempData["msg"] = "<script>alert('El servicio fue agregado correctamente');</script>";
                 }

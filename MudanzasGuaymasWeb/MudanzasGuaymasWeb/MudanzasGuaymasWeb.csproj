@@ -252,9 +252,11 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Content\agenda.css" />
+    <Content Include="Content\Banner1.png" />
     <Content Include="Content\BannerChido.gif" />
     <Content Include="Content\BannerMudanzas.gif" />
     <Content Include="Content\depositphotos_112286722-stock-illustration-customer-service-icon.jpg" />
+    <Content Include="Content\DetallesCita.css" />
     <Content Include="Content\edge-candy.svg" />
     <Content Include="Content\edge-cream.svg" />
     <Content Include="Content\embalaje.jpg" />
@@ -275,6 +277,7 @@
     <Content Include="Content\iconos\Home.png" />
     <Content Include="Content\iconos\LogOut1.png" />
     <Content Include="Content\iconos\QuienesSomos.png" />
+    <Content Include="Content\iconos\Registrar.png" />
     <Content Include="Content\iconos\Servicios.png" />
     <Content Include="Content\iconos\Usuarios2.png" />
     <Content Include="Content\imagen1.png" />
@@ -287,6 +290,7 @@
     <Content Include="Content\imagen7.jpg" />
     <Content Include="Content\imagen8.jpg" />
     <Content Include="Content\Logo Completo.png" />
+    <Content Include="Content\logoBlanco.png" />
     <Content Include="Content\movil.css" />
     <Content Include="Content\NumeroBannerTR.gif" />
     <Content Include="Content\offer-no-image.png" />
@@ -379,6 +383,7 @@
     <Content Include="Views\Cita\Index.cshtml" />
     <Content Include="Views\Sesion\Recuperacion.cshtml" />
     <Content Include="Views\Cita\Details.cshtml" />
+    <Content Include="Views\Cita\Historial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -18,5 +18,14 @@ namespace MudanzasGuaymasWeb.Clientes
             var json_serializer = new JavaScriptSerializer();
             return json_serializer.Deserialize<string>(content);
         }
+        public SrvUsuario.Usuario TraerPorCorreo(string email)
+        {
+            string BASE = "http://localhost:49727/Services/Seguridad/SrvSesion.svc/";
+            var synClient = new WebClient();
+            string url = string.Format(BASE + "porCorreo/{0}", email);
+            var content = synClient.DownloadString(url);
+            var json_serializer = new JavaScriptSerializer();
+            return json_serializer.Deserialize<SrvUsuario.Usuario>(content);
+        }
     }
 }

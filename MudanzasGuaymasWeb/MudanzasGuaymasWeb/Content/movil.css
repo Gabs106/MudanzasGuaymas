@@ -130,4 +130,11 @@
         margin: 0% 7%;
         padding: 5px 0;
     }
+    .logo img {
+        width: 43%;
+        margin-top: -33px;
+    }
+    .logo p {
+        color:white;
+    }
 }

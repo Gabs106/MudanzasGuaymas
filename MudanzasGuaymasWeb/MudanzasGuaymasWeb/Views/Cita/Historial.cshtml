@@ -1,0 +1,74 @@
+﻿@model IEnumerable<MudanzasGuaymasWeb.SrvPreCita.preCita>
+
+@{
+    ViewBag.Title = "Index";
+}
+<section>
+    <div id="wrapperBanner">
+        <div class="background">
+            <div class="banner">
+                <img src="~/Content/NumeroBannerTR.gif" />
+            </div>
+        </div>
+        <div class="raya"></div>
+        <div class="slogan">
+            <h2>Citas</h2>
+            <P>Consulte sus citas aqui!!</P>
+            <img src="~/Content/edge-candy.svg" />
+        </div>
+    </div>
+</section>
+<h2></h2>
+<a href="@Url.Action("Index", "Cita")">
+    Citas
+</a>
+<div id="wrapperAgenda">
+
+    <div class="contenedor">
+        <h2>Historial de Citas</h2>
+        <div class="cuadro">
+            @foreach (var item in Model)
+            {
+                if (item.Terminado == true)
+                {
+                    <div class="elemento">
+                        <table>
+                            <tr>
+                                <td class="izquierdo">Fecha: </td>
+                                <td class="derecho">@Html.DisplayFor(modelItem => item.Fecha)</td>
+                            </tr>
+                            <tr>
+                                <td class="izquierdo">Paquete</td>
+                                <td class="derecho">
+                                    @foreach (var paquete in ViewBag.listaPaquetes)
+                                    {
+                                        if (paquete.Id == item.id_Paquete)
+                                        {
+                                            @paquete.Nombre
+                                            break;
+                                        }
+                                    }
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="izquierdo">Cliente</td>
+                                <td class="derecho">
+                                    @foreach (var cliente in ViewBag.listaUsuarios)
+                                    {
+                                        if (cliente.Id == item.id_usuario)
+                                        {
+                                            @cliente.Nombre
+                                            break;
+                                        }
+                                    }
+                                </td>
+                            </tr>
+                        </table>
+                        <a href="@Url.Action("Details", "Cita",new {id = item.Id}, null)"><img src="~/Content/iconos/edit schedule.png" /> </a>
+                        <a href="@Url.Action("Eliminar", "Cita",new {id = item.Id}, null)"><img src="~/Content/iconos/delete.png" /> </a>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

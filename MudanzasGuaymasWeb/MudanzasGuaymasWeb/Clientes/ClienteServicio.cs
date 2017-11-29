@@ -81,5 +81,26 @@ namespace MudanzasGuaymasWeb.Clientes
             webClient.Encoding = Encoding.UTF8;
             webClient.UploadString(BASE_URL + "edit", "PUT", data);
         }
+        public void eliminar(SrvServicio.Servicio s)
+        {
+            try
+            {
+                DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(SrvServicio.Servicio));
+                MemoryStream mem = new MemoryStream();
+                ser.WriteObject(mem, s);
+                string data = Encoding.UTF8.GetString(mem.ToArray(), 0, (int)mem.Length);
+                WebClient webClient = new WebClient();
+                webClient.Headers["Content-type"] = "application/json";
+                webClient.Encoding = Encoding.UTF8;
+                webClient.UploadString(BASE_URL + "delete", "DELETE", data);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+        }
     }
 }

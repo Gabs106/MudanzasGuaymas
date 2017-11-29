@@ -83,6 +83,7 @@ namespace MudanzasGuaymasWeb.Controllers
 
                 if (Session["usuario"].Equals("Admin"))
                 {
+                    paquete.Mostrar = true;
                     c.subir(paquete, id_Servicio, image);
                     TempData["msg"] = "<script>alert('El paquete ha sido creado con Exito');</script>";
                     return RedirectToAction("Index", "Home");

@@ -30,9 +30,11 @@ namespace MudanzasGuaymasServices.Services.Seguridad
         public string Desencriptar(string password)
         {
             string result = string.Empty;
-            byte[] decryted = Convert.FromBase64String(password);
-            //result = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
-            result = System.Text.Encoding.Unicode.GetString(decryted);
+            if (password!=null) {
+                byte[] decryted = Convert.FromBase64String(password);
+                //result = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
+                result = System.Text.Encoding.Unicode.GetString(decryted);
+            }
             return result;
         }
 
@@ -57,14 +59,18 @@ namespace MudanzasGuaymasServices.Services.Seguridad
             {
                 user = result;
             }
-            if (password.Equals(Desencriptar(user.Password)))
+            if (user!=null)
             {
-                correcto = true;
+                if (password.Equals(Desencriptar(user.Password)))
+                {
+                    correcto = true;
+                }
+                else
+                {
+                    correcto = false;
+                }
             }
-            else
-            {
-                correcto = false;
-            }
+
             return correcto;
         }
 

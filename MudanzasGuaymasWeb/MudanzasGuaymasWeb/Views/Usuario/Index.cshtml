@@ -7,7 +7,7 @@
     <div id="wrapperBanner">
         <div class="background">
             <div class="banner">
-                <img src="https://s3.amazonaws.com/files.bannersnack.net/banners/bxtkyhkkg/images/jpg" />
+                <img src="~/Content/Banner1.png" />
             </div>
         </div>
         <div class="raya"></div>
@@ -37,16 +37,7 @@
                 @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Llave)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Password)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Telefono)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tipo)
             </th>
             <th></th>
         </tr>
@@ -64,16 +55,7 @@
                     @item.Email
                 </td>
                 <td>
-                    @item.Llave
-                </td>
-                <td>
-                    @item.Password
-                </td>
-                <td>
                     @item.Telefono
-                </td>
-                <td>
-                    @item.Tipo
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |

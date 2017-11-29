@@ -15,6 +15,7 @@ namespace MudanzasGuaymasWeb.Controllers
     public class UsuarioController : Controller
     {
         Clientes.ClienteUsuario CU = new Clientes.ClienteUsuario();
+        Clientes.ClienteSesion CS = new Clientes.ClienteSesion();
         // GET: Usuario
         public ActionResult Index()
         {
@@ -50,12 +51,21 @@ namespace MudanzasGuaymasWeb.Controllers
 
         public RedirectToRouteResult subir(Usuario usuario)
         {
-            Random r = new Random();
-            int azar = r.Next(1000, 9999);
-            usuario.Llave = azar.ToString();
-            usuario.Tipo = "normal";
-            CU.subir(usuario);
-            TempData["msg"] = "<script>alert('Registrado con exito');</script>";
+            Usuario user = CS.TraerPorCorreo(usuario.Email);
+            if (user.Email!=null)
+            {
+                TempData["msg"] = "<script>alert('El correo ya esta siendo utilizado');</script>";
+            }
+            else
+            {
+                Random r = new Random();
+                int azar = r.Next(1000, 9999);
+                usuario.Llave = azar.ToString();
+                usuario.Tipo = "normal";
+                CU.subir(usuario);
+                TempData["msg"] = "<script>alert('Registrado con exito');</script>";
+            }
+            
             return RedirectToAction("Index", "Home");
         }
 

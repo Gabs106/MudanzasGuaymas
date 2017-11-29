@@ -14,6 +14,7 @@ namespace MudanzasGuaymasWeb.Controllers
     public class SesionController : Controller
     {
         ClienteUsuario c = new ClienteUsuario();
+        ClienteSesion s = new ClienteSesion();
         public ActionResult Login()
         {
             return View();
@@ -58,7 +59,7 @@ namespace MudanzasGuaymasWeb.Controllers
                     usuario = result;
                 }
             }
-            string recupera = "http://localhost:57255/Sesion/Recuperacion/?llave="+usuario.Llave+"?id="+usuario.Id; 
+            string recupera = "http://localhost:57255/Sesion/Recuperacion/?llave="+usuario.Llave+"&id="+usuario.Id; 
             MailMessage m;
             m = new MailMessage();
             m.To.Add(new MailAddress(email));
@@ -116,7 +117,7 @@ namespace MudanzasGuaymasWeb.Controllers
             SrvUsuario.Usuario usuario = c.encontrarUno(id);
             if (llave.Equals(usuario.Llave))
             {
-                return View();
+                return View(usuario);
             }
             else
             {
@@ -127,7 +128,9 @@ namespace MudanzasGuaymasWeb.Controllers
         }
         public RedirectToRouteResult cambiarPass(SrvUsuario.Usuario usuario)
         {
-            c.editar(usuario);
+            SrvUsuario.Usuario user = c.encontrarUno(usuario.Id.ToString());
+            user.Password = s.encriptar(usuario.Password);
+            c.editar(user);
             TempData["msg"] = "<script>alert('Su contraseña ha sido cambiada');</script>";
             return RedirectToAction("Index", "Home");
         }
