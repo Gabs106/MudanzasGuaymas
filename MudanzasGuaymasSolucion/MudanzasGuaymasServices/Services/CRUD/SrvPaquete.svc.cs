@@ -72,7 +72,7 @@ namespace MudanzasGuaymasServices.Services
             pack.Mostrar = paquete.Mostrar;
             pack.Precio = paquete.Precio;
             pack.Unidad = paquete.Unidad;
-            
+            pack.Nombre = paquete.Nombre;
             DataBase.SaveChanges();
 
 

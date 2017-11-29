@@ -35,6 +35,7 @@
                         @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
                     </div>
                 </div>
+                @Html.HiddenFor(model => model.Mostrar)
                 <input type="hidden" name="id" value="@ViewBag.Id" />
                 <div class="form-group">
                     @Html.LabelFor(model => model.Imagen, htmlAttributes: new { @class = "LabelEstilo" })
