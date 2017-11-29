@@ -59,7 +59,7 @@ namespace MudanzasGuaymasWeb.Controllers
                     usuario = result;
                 }
             }
-            string recupera = "http://localhost:57255/Sesion/Recuperacion/?llave="+usuario.Llave+"&id="+usuario.Id; 
+            string recupera = "http://mudanzasguaymasservices.azurewebsites.net/Sesion/Recuperacion/?llave=" + usuario.Llave+"&id="+usuario.Id; 
             MailMessage m;
             m = new MailMessage();
             m.To.Add(new MailAddress(email));
@@ -76,7 +76,7 @@ namespace MudanzasGuaymasWeb.Controllers
             }
         }
         //Clientes
-        private string BASE_URL = "http://localhost:49727/Services/Seguridad/SrvSesion.svc/";
+        private string BASE_URL = "http://mudanzasguaymasservices.azurewebsites.net/Services/Seguridad/SrvSesion.svc/";
 
         public bool Loguear(string email, string password)
         {
