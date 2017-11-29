@@ -46,8 +46,7 @@ namespace MudanzasGuaymasServices.Services.Seguridad
 
         public bool Login(string email, string password)
         {
-            string p = Encriptar(password);
-             p = p + ",";
+
             bool correcto = false;
             Usuario user = new Usuario();
             var Query = from usuario in DataBase.Usuario
@@ -58,8 +57,7 @@ namespace MudanzasGuaymasServices.Services.Seguridad
             {
                 user = result;
             }
-            p = Desencriptar(user.Password);
-            if (p.Equals(password))
+            if (password.Equals(Desencriptar(user.Password)))
             {
                 correcto = true;
             }

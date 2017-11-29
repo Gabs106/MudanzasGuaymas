@@ -20,7 +20,7 @@ namespace MudanzasGuaymasWeb.Controllers
         {
             return View();
         }
-        private string BASE_URL = "http://mudanzasguaymasservices.azurewebsites.net/Services/CRUD/SrvServicio.svc/";
+        private string BASE_URL = "http://localhost:49727/Services/CRUD/SrvServicio.svc/";
 
         public List<Servicio> verTodos()
         {

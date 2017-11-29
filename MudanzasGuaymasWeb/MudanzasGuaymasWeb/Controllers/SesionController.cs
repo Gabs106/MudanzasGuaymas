@@ -75,7 +75,7 @@ namespace MudanzasGuaymasWeb.Controllers
             }
         }
         //Clientes
-        private string BASE_URL = "http://mudanzasguaymasservices.azurewebsites.net/Services/Seguridad/SrvSesion.svc/";
+        private string BASE_URL = "http://localhost:49727/Services/Seguridad/SrvSesion.svc/";
 
         public bool Loguear(string email, string password)
         {

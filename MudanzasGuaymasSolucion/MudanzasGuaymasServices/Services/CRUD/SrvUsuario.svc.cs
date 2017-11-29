@@ -68,7 +68,11 @@ namespace MudanzasGuaymasServices.Services.CRUD
 
             user.Apellido = usuario.Apellido;
             user.Nombre = usuario.Nombre;
-
+            user.Email = usuario.Email;
+            user.Llave = usuario.Llave;
+            user.Password = usuario.Password;
+            user.Telefono = usuario.Telefono;
+            user.Tipo = usuario.Tipo;
             DataBase.SaveChanges();
 
 

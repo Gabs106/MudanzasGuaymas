@@ -94,7 +94,18 @@ namespace MudanzasGuaymasServices.Services.Operaciones
 
         public void Editar(preCita preCita)
         {
-            throw new NotImplementedException();
+            var cita = DataBase.preCita.FirstOrDefault(x => x.Id == preCita.Id);
+            cita.Aceptado = preCita.Aceptado;
+            cita.Cantidad = preCita.Cantidad;
+            cita.Detalle = preCita.Detalle;
+            cita.Direccion = preCita.Direccion;
+            cita.Fecha = preCita.Fecha;
+            cita.Id = preCita.Id;
+            cita.id_Paquete = preCita.id_Paquete;
+            cita.id_usuario = preCita.id_usuario;
+            cita.Terminado = preCita.Terminado;
+            cita.Total = preCita.Total;
+            DataBase.SaveChanges();
         }
 
         public bool Eliminar(preCita preCita)

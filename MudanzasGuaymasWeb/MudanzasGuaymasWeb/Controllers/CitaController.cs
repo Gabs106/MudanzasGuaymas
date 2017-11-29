@@ -39,7 +39,20 @@ namespace MudanzasGuaymasWeb.Controllers
             p.Cantidad = 1;
             return View(p);
         }
-        public RedirectToRouteResult subir(preCita cita)
+        public ActionResult Details(string id)
+        {
+
+            return View(c.encontrarUno(id));
+        }
+        public RedirectToRouteResult Confirmar(string id)
+        {
+            preCita cita = c.encontrarUno(id);
+            cita.Aceptado = true;
+            TempData["msg"] = "<script>alert('Usted a confirmado la cita.');</script>";
+            c.Editar(cita);
+            return RedirectToAction("Index", "Cita");
+        }
+            public RedirectToRouteResult subir(preCita cita)
         {
             Paquete p = new Paquete();
             p = pa.encontrarUno(cita.id_Paquete.ToString());
