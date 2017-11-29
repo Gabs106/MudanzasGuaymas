@@ -1,0 +1,106 @@
+﻿@model MudanzasGuaymasWeb.SrvPreCita.preCita
+
+@{
+    ViewBag.Title = "Details";
+}
+<section>
+    <div id="wrapperBanner">
+        <div class="background">
+            <div class="banner">
+
+                <img src="~/Content/BannerChido.gif" />
+            </div>
+        </div>
+        <div class="raya"></div>
+        <div class="slogan">
+            <h2>Detalles de Cita</h2>
+            <P>cita!! @Html.DisplayFor(model => model.Id)</P>
+            <img src="~/Content/edge-candy.svg" />
+        </div>
+    </div>
+</section>
+<h2>Detalles</h2>
+<div class="wrapperDetalle">
+    <h4>Cita</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Aceptado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aceptado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Detalle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Detalle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Terminado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Terminado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_Paquete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_Paquete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_usuario)
+        </dd>
+
+    </dl>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>
+

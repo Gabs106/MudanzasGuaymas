@@ -13,7 +13,7 @@ namespace MudanzasGuaymasWeb.Clientes
 {
     public class ClientePaquete
     {
-        private string BASE_URL = "http://localhost:49727/Services/CRUD/SrvPaquete.svc/";
+        private string BASE_URL = "http://mudanzasguaymasservices.azurewebsites.net/Services/CRUD/SrvPaquete.svc/";
 
         public Paquete encontrarUno(string id)
         {
