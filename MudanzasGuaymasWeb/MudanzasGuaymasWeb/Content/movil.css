@@ -36,6 +36,7 @@
         background-color: #e94a4f;
         border-right: 4px solid rgba(59, 62, 61, 1);
         transition: all .5s ease; /*Damos a la caja del menú una transición para que tenga un desplazamiento suave*/
+        z-index: 100;
     }
     /*Estilos de los li del menú*/
     .nav__item {
@@ -97,84 +98,6 @@
             color: white;
         }
 
-    /* Le damos unos estilos al contenedor principal*/
-    .main-w {
-        width: 100%;
-        height: 100vh;
-        transition: all .5s ease;
-    }
-
-    .header-w figure {
-        width: 100%;
-        height: 150px;
-        text-align: center;
-        position: relative;
-    }
-
-        .header-w figure:before {
-            content: "O";
-            width: 15px;
-            height: 15px;
-            position: absolute;
-            background-color: white;
-            border-radius: 100%;
-            color: #A9BC00;
-            font-size: 120%;
-            font-wheight: bolder;
-            font-family: verdana;
-            left: 42vw;
-            top: 9vw;
-        }
-
-        .header-w figure:after {
-            content: "O";
-            width: 15px;
-            height: 15px;
-            position: absolute;
-            background-color: white;
-            border-radius: 100%;
-            color: #A9BC00;
-            font-size: 120%;
-            font-wheight: bolder;
-            font-family: verdana;
-            left: 50.8vw;
-            top: 9vw;
-        }
-
-    .featured-img {
-        margin: 3em 6vw 0 0;
-        border: 4px solid white;
-        border-radius: 100%;
-    }
-
-    .header-w__description {
-        width: 80%;
-        height: auto;
-        margin: 0 auto;
-        padding: 1em;
-        line-height: 2;
-        text-align: center;
-        color: rgba(33, 36, 8, 1);
-    }
-
-    .header-w__title {
-        font-size: 300%;
-        font-family: Lobster;
-        margin: 1em 0 0 0;
-    }
-
-    .header-w__title2 {
-        font-size: 250%;
-        font-family: Lobster;
-        margin: 0;
-    }
-
-    .paragraph {
-        width: 80%;
-        margin: 0 auto;
-        text-align: center;
-        font-family: 'Source Sans Pro', sans-serif;
-    }
 
     /*Estos son los estilos que le dan la funcionalidad al menú*/
     /*El checkbox según esté activado o no hará que el menú aparezca o desaparezca*/
@@ -195,4 +118,16 @@
             left: 208px;
             position: fixed; /*Fijamos la hamburgues para que se desplace junto con el menú*/
         }
+    .nav a {
+        text-decoration: none;
+        color: white;
+        width: 100%;
+        padding: 5px 0;
+    }
+    .nav img {
+        display: inline-block;
+        float: left;
+        margin: 0% 7%;
+        padding: 5px 0;
+    }
 }

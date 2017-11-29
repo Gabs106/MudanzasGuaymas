@@ -6,11 +6,14 @@ using System.Web;
 using System.Net.Mail;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
+using MudanzasGuaymasWeb.Clientes;
+using MudanzasGuaymasWeb.SrvSesion;
 
 namespace MudanzasGuaymasWeb.Controllers
 {
     public class SesionController : Controller
     {
+        ClienteUsuario c = new ClienteUsuario();
         public ActionResult Login()
         {
             return View();
@@ -46,12 +49,22 @@ namespace MudanzasGuaymasWeb.Controllers
         }
         public void EnviarCorreo(string email)
         {
+           List<SrvUsuario.Usuario> lista = c.verTodos();
+            SrvUsuario.Usuario usuario = null;
+            foreach (var result in lista)
+            {
+                if (email.Equals(result.Email))
+                {
+                    usuario = result;
+                }
+            }
+            string recupera = "http://localhost:57255/Sesion/Recuperacion/?llave="+usuario.Llave+"?id="+usuario.Id; 
             MailMessage m;
             m = new MailMessage();
             m.To.Add(new MailAddress(email));
-            m.From = new MailAddress("gabriel.106@hotmail.es");
+            m.From = new MailAddress("mudanzasGuaymas@gmail.com");
             m.Subject = "Recuperar Contraseña";
-            m.Body = "Url de recuperacion";
+            m.Body = "Url de recuperacion ingrese aqui para recuperar su contraseña: <a href="+recupera+">Recupera tu contraseña aqui</a>";
             m.IsBodyHtml = true;
             SmtpClient cliente = new SmtpClient("smtp.live.com",587);
             using (cliente)
@@ -96,6 +109,27 @@ namespace MudanzasGuaymasWeb.Controllers
             var content = synClient.DownloadString(url);
             var json_serializer = new JavaScriptSerializer();
             return json_serializer.Deserialize<SrvUsuario.Usuario>(content);
+        }
+        public ActionResult Recuperacion(string llave, string id)
+        {
+            
+            SrvUsuario.Usuario usuario = c.encontrarUno(id);
+            if (llave.Equals(usuario.Llave))
+            {
+                return View();
+            }
+            else
+            {
+                TempData["msg"] = "<script>alert('Error señor');</script>";
+                return RedirectToAction("Index", "Home");
+            }
+                
+        }
+        public RedirectToRouteResult cambiarPass(SrvUsuario.Usuario usuario)
+        {
+            c.editar(usuario);
+            TempData["msg"] = "<script>alert('Su contraseña ha sido cambiada');</script>";
+            return RedirectToAction("Index", "Home");
         }
     }
 }

@@ -25,7 +25,7 @@ namespace MudanzasGuaymasWeb
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css", "~/Content/estilos.css", "~/Content/Formulario.css", "~/Content/Tabla.css", "~/Content/estilo720.css", "~/Content/movil.css"));
+                      "~/Content/site.css", "~/Content/estilos.css", "~/Content/Formulario.css", "~/Content/Tabla.css", "~/Content/estilo720.css", "~/Content/movil.css", "~/Content/agenda.css", "~/Content/estilo100.css"));
         }
     }
 }
