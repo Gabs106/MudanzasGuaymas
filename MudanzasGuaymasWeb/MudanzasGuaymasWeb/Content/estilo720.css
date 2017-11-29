@@ -1,4 +1,8 @@
 ﻿@media screen and (max-width: 1200px) and (min-width: 720px) {
+    #menuMovil {
+        display: none;
+    }
+
     a {
         text-decoration: none;
         color: black;
@@ -6,6 +10,7 @@
 
     body {
         margin: 0 auto;
+        width: 100%;
     }
 
     #wrapperMain {
@@ -15,7 +20,7 @@
     }
 
     #wrapperHeader {
-        width: 1200px;
+        width: 100%;
         height: 110px;
         display: block;
         float: none;
@@ -28,24 +33,24 @@
     }
 
         #wrapperHeader p {
-            height: 25px;
+            height: 45px;
             display: block;
             float: right;
             clear: none;
             overflow: hidden;
-            padding: 0;
+            padding: 0 0 0 20%;
             line-height: 25px;
             font-style: italic;
             font-weight: 300;
-            font-size: 16px;
+            font-size: 12px;
             text-align: right;
             margin: 0;
-            margin-right: 10px;
+            margin-right: 28px;
             margin-top: -80px;
         }
 
         #wrapperHeader img {
-            width: 250px;
+            width: 22%;
             display: block;
             float: left;
             clear: none;
@@ -58,7 +63,7 @@
         }
 
         #wrapperHeader nav {
-            width: 75%;
+            width: 72%;
             height: auto;
             float: right;
             clear: none;
@@ -78,7 +83,7 @@
         #wrapperHeader li {
             display: inline-block;
             position: relative;
-            margin: 0 10px;
+            margin: 0 4px;
             line-height: 38px;
             text-transform: uppercase;
             height: 38px;
@@ -109,6 +114,10 @@
         margin: 0 auto;
     }
 
+        #wrapperBanner .banner img {
+            width: 100%;
+        }
+
     #wrapperBanner .raya {
         width: 100%;
         height: 7px;
@@ -134,7 +143,7 @@
             position: absolute;
             width: 100%;
             left: 0;
-            bottom: -13%;
+            bottom: -8%;
             transform: rotate(180deg);
         }
 
@@ -148,7 +157,7 @@
         text-align: center;
         margin: 0 auto;
         text-align: center;
-        margin-top: 60px;
+        margin-top: 40px;
         position: relative;
     }
 
@@ -158,7 +167,7 @@
         bottom: 0;
         left: 0px;
         width: 100%;
-        height: 400px;
+        height: 90%;
         z-index: -10;
     }
 
@@ -185,9 +194,9 @@
 
     .fondoAmarillo img {
         position: absolute;
-        bottom: 53%;
+        bottom: 51%;
         width: 100%;
-        height: 100%;
+        height: 99%;
         left: 0;
     }
 
@@ -217,12 +226,12 @@
 
     #wrapperServicios h1 {
         color: #e94a4f;
-        font-size: 3em;
+        font-size: 2em;
     }
 
     #wrapperServicios h4 {
         text-align: justify;
-        font-size: 1.2em;
+        font-size: 1em;
         text-align: center;
     }
 
@@ -233,7 +242,7 @@
     }
 
     #wrapperServicios h6 {
-        font-size: 20px;
+        font-size: 18px;
         position: absolute;
         bottom: 0;
         right: 75px;
@@ -251,12 +260,12 @@
 
         .wrapperPresentacion h2 {
             color: #e94a4f;
-            font-size: 3em;
+            font-size: 2em;
         }
 
         .wrapperPresentacion h4 {
             text-align: justify;
-            font-size: 1.2em;
+            font-size: 1.0em;
         }
 
         .wrapperPresentacion p {
@@ -271,7 +280,7 @@
         }
 
     .separador {
-        width: 90%;
+        width: 100%;
         height: 10px;
         padding: 0;
         display: block;
@@ -436,6 +445,7 @@
         background: #e94a4f;
         position: relative;
         height: 200px;
+        width: 100%;
     }
 
         footer img {
@@ -451,5 +461,11 @@
 
         footer .redesSociales a img {
             filter: hue-rotate(180deg);
+        }
+
+        footer p {
+            font-size: 13px;
+            width: 100%;
+            padding-left: 2%;
         }
 }
