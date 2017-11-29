@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">FloreriaFletes</string>
+    <string name="title_activity_main">Página Principal</string>
+    <string name="title_agenda">Agenda</string>
+    <string name="title_clientes">Clientes</string>
+
+    <!-- Servicios -->
+    <string name="url_wcf_usuario">http://localhost:49727/Services/CRUD/SrvUsuario.svc/</string>
+    <string name="metodo_obtener_usuarios">getAll</string>
+    <string name="metodo_consultar_usuario">get/</string>
+    <string name="metodo_crear_usuario">create</string>
+    <string name="metodo_editar_usuario">edit</string>
+    <string name="metodo_eliminar_usuario">delete</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- Fragmentos -->
+    <string name="home_estaSemana">ESTA SEMANA</string>
+</resources>

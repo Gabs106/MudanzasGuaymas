@@ -1,0 +1,39 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mx.itson.floreriafletes.Home">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtHomeSemana"
+                android:text="@string/home_estaSemana"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"/>
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="250dp" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtHomePendientes" />
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

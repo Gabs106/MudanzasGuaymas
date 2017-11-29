@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_clientes.xml",
+        "source": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\src\\main\\res\\layout\\fragment_clientes.xml"
+    },
+    {
         "merged": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
         "source": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
@@ -24,12 +28,12 @@
         "source": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\src\\main\\res\\layout\\app_bar_main.xml"
     },
     {
-        "merged": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
-        "source": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.1.1\\res\\layout\\design_navigation_item.xml"
-    },
-    {
         "merged": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
         "source": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\layout\\abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
+        "source": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.1.1\\res\\layout\\design_navigation_item.xml"
     },
     {
         "merged": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
@@ -148,6 +152,10 @@
         "source": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
+        "merged": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_usuarios.xml",
+        "source": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\src\\main\\res\\layout\\item_usuarios.xml"
+    },
+    {
         "merged": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
         "source": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\layout\\notification_template_media.xml"
     },
@@ -220,12 +228,12 @@
         "source": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\layout\\abc_screen_content_include.xml"
     },
     {
-        "merged": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
-        "source": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
-    },
-    {
         "merged": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_home.xml",
         "source": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
         "merged": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",

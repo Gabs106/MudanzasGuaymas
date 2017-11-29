@@ -164,12 +164,12 @@
         "source": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\drawable\\abc_ic_menu_overflow_material.xml"
     },
     {
-        "merged": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
-        "source": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\drawable\\abc_btn_colored_material.xml"
-    },
-    {
         "merged": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\side_nav_bar.xml",
         "source": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\src\\main\\res\\drawable\\side_nav_bar.xml"
+    },
+    {
+        "merged": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
+        "source": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\drawable\\abc_btn_colored_material.xml"
     },
     {
         "merged": "D:\\kevin\\ProyectosAndroid\\FloreriaFletes\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",

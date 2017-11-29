@@ -16,22 +16,22 @@
         <input type="checkbox" class="checkbox" id="menu-toogle" />
         <label for="menu-toogle" class="menu-toogle"></label>
         <nav class="nav">
-            <a href="#" class="nav__item current">@Html.ActionLink("Home", "Index", "Home")</a>
-            <a href="#" class="nav__item">@Html.ActionLink("¿Quienes Somos", "Nosotros", "Home")</a>
+            <div class="nav__item current"><img src="~/Content/iconos/Home.png" />  @Html.ActionLink("Home", "Index", "Home")</div>
+            <div class="nav__item"> <img src="~/Content/iconos/QuienesSomos.png" /> @Html.ActionLink("¿Quienes Somos", "Nosotros", "Home")</div>
             @if (Session["usuario"] == null)
             {
-                <a href="#" class="nav__item">@Html.ActionLink("Login", "Login", "Sesion")</a>
-                    <a href="#" class="nav__item">@Html.ActionLink("Registrarse", "Registrarse", "Sesion")</a>
+                <div class="nav__item"> @Html.ActionLink("Login", "Login", "Sesion")</div>
+                    <div class="nav__item"> @Html.ActionLink("Registrarse", "Registrarse", "Sesion")</div>
             }
             else
             {
 
                 if (Session["usuario"].Equals("Admin"))
                 {
-                    <a href="#" class="nav__item">@Html.ActionLink("Usuarios", "Index", "Usuario")</a>
-                            <a href="#" class="nav__item">@Html.ActionLink("Servicios", "Index", "Servicio")</a>
+                    <div class="nav__item"><img src="~/Content/iconos/Usuarios2.png" /> @Html.ActionLink("Usuarios", "Index", "Usuario")</div>
+                            <div class="nav__item"><img src="~/Content/iconos/Servicios.png" /> @Html.ActionLink("Servicios", "Index", "Servicio")</div>
                 }
-                <a href="#" class="nav__item">@Html.ActionLink("Logout", "Logout", "Sesion")</a>
+                <div class="nav__item"><img src="~/Content/iconos/LogOut1.png" />@Html.ActionLink("Logout", "Logout", "Sesion")</div>
             }
         </nav>
     </div>

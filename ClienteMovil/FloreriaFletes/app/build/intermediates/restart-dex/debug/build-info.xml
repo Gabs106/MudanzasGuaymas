@@ -5,9 +5,9 @@
     density="280dpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="16456287672884"
+    timestamp="770735531954601"
     token="-60471367295031295"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
@@ -27,15 +27,15 @@
         type="RESOURCES" />
 
     <build
-        timestamp="16314243873306"
+        timestamp="770530261994335"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="16456287672884"
-        verifier="COLD_SWAP_REQUESTED" >
+        timestamp="770735531954601"
+        verifier="COMPATIBLE" >
         <artifact
             location="D:\kevin\ProyectosAndroid\FloreriaFletes\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
             type="RESOURCES" />
