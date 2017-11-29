@@ -148,6 +148,27 @@ namespace MudanzasGuaymasWeb.Controllers
             }
 
         }
+        public ActionResult Edit(string id)
+        {
+            if (Session["usuario"] != null)
+            {
+
+                if (Session["usuario"].Equals("Admin"))
+                {
+                    return View(c.encontrarUno(id));
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            
+        }
         public RedirectToRouteResult Terminar(string id)
         {
             if (Session["usuario"] != null)

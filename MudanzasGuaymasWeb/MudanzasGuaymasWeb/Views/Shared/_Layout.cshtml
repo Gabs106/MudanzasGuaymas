@@ -34,7 +34,8 @@
                 if (Session["usuario"].Equals("Admin"))
                 {
                     <div class="nav__item"><img src="~/Content/iconos/Usuarios2.png" /> @Html.ActionLink("Usuarios", "Index", "Usuario")</div>
-                            <div class="nav__item"><img src="~/Content/iconos/Servicios.png" /> @Html.ActionLink("Servicios", "Index", "Servicio")</div>
+                    <div class="nav__item"><img src="~/Content/iconos/Servicios.png" /> @Html.ActionLink("Servicios", "Index", "Servicio")</div>
+                    <div class="nav__item"><img src="~/Content/iconos/QuienesSomos.png" /> @Html.ActionLink("Citas", "Index", "Cita")</div>
                 }
                 <div class="nav__item"><img src="~/Content/iconos/LogOut1.png" />@Html.ActionLink("Logout", "Logout", "Sesion")</div>
             }

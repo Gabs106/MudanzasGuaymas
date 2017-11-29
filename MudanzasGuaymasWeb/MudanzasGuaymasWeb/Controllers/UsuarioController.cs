@@ -43,9 +43,26 @@ namespace MudanzasGuaymasWeb.Controllers
         }
         public ActionResult Edit(int id)
         {
-            string ID = id.ToString();
-            ViewBag.usuario = CU.encontrarUno(ID);
-            return View();
+            if (Session["usuario"] != null)
+            {
+
+                if (Session["usuario"].Equals("Admin"))
+                {
+                    string ID = id.ToString();
+
+                    return View(CU.encontrarUno(ID));
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
         }
 
 

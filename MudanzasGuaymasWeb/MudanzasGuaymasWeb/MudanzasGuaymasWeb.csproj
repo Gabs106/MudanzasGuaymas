@@ -384,6 +384,8 @@
     <Content Include="Views\Sesion\Recuperacion.cshtml" />
     <Content Include="Views\Cita\Details.cshtml" />
     <Content Include="Views\Cita\Historial.cshtml" />
+    <Content Include="Views\Usuario\Edit.cshtml" />
+    <Content Include="Views\Cita\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
