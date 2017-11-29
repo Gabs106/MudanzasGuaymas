@@ -13,7 +13,7 @@ namespace MudanzasGuaymasWeb.Clientes
 {
     public class ClienteUsuario
     {
-        private string BASE_URL = "http://localhost:49727/Services/CRUD/SrvUsuario.svc/";
+        private string BASE_URL = "http://mudanzasguaymasservices.azurewebsites.net/Services/CRUD/SrvUsuario.svc/";
 
         //Consulta todos los usuarios dentro de la tabla
         public List<Usuario> verTodos()

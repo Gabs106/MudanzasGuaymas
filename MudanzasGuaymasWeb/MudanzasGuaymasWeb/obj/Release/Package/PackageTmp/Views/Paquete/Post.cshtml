@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Post";
+}
+
+<div id="wrapperPost">
+    <section>
+        <div id="wrapperBanner">
+            <div class="background">
+                <div class="banner">
+                    <img src="~/Content/Banner1.png" />
+                </div>
+            </div>
+            <div class="raya"></div>
+            <div class="slogan">
+                <h2>@ViewBag.paquete.Nombre</h2>
+            </div>
+        </div>
+    </section>
+    <article>
+        <div class="articulo"> 
+            <div>
+                <img src="@ViewBag.paquete.Imagen" />
+                <h2>@ViewBag.paquete.Nombre</h2>
+                <p>@ViewBag.paquete.Descripcion</p>
+                <p><span>Precio: </span>@ViewBag.paquete.Precio por @ViewBag.paquete.Unidad</p>
+                <p>@Html.ActionLink("Establecer una cita", "Create", "Cita", new { @ViewBag.paquete.Id }, null)</p>
+             </div>
+             <div style="clear:both"></div>
+        </div>
+    </article>
+</div>
+<br /><br /><br /><br />
+<div class="separador"></div>
+<br /><br /><br /><br />
+<section>
+    <div id="wrapperServicios">
+
+        <h1>Nuestros Servicios</h1>
+
+        @foreach (var item in ViewBag.servicio)
+        {
+            <article>
+                <img class="imagen" src="@item.Imagen" />
+                <div class="@item.Id marco"></div>
+                <h2><span>Servicio: </span>@item.Nombre</h2>
+                @if (item.Descripcion.Length > 89)
+                { <h4>@item.Descripcion.ToString().Substring(0, 88)→</h4> }
+                else
+                {<h4>@item.Descripcion.ToString()→</h4>}
+                <h6>@Html.ActionLink("Ver Mas", "Index", "Paquete", new { id = item.Id, nombre = item.Nombre }, null)</h6>
+                <script>
+                $(function () {
+
+                    var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+
+                    $(".@item.Id").css({
+
+                        backgroundColor: '#' + randomColor
+
+                    });
+
+                    $("#colorcode").text("#" + randomColor);
+
+                });
+                </script>
+            </article>
+        }
+
+        <div class="fondoAmarillo">
+            <img src="~/Content/edge-cream.svg" />
+        </div>
+    </div>
+    <div style="clear:both"></div>
+</section>
+

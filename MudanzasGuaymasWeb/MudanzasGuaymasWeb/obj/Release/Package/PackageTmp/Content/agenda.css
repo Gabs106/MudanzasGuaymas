@@ -1,0 +1,119 @@
+﻿@media screen and (min-width: 720px) {
+    #wrapperAgenda {
+        width: 100%;
+        background: #ea4e4e;
+    }
+
+    .historial {
+        width: 5%;
+    }
+
+    #wrapperAgenda .contenedor {
+        width: 45%;
+        display: inline-grid;
+        /* height: 400px; */
+        text-align: center;
+        margin: 0 2%;
+        padding-bottom: 40px;
+    }
+
+    #wrapperAgenda h2 {
+        font-size: 2em;
+        color: white;
+    }
+
+    #wrapperAgenda .cuadro {
+        width: 100%;
+        background: #e4e4e4;
+        /* height: 300px; */
+    }
+
+    #wrapperAgenda .elemento {
+        border-bottom: double white;
+        padding: 1%;
+    }
+
+        #wrapperAgenda .elemento table {
+            width: 60%;
+            display: inline-block;
+        }
+
+            #wrapperAgenda .elemento table .izquierdo {
+                text-align: right;
+                font-weight: 900;
+                width: 4%;
+                padding: 1% 2%;
+            }
+
+            #wrapperAgenda .elemento table .derecho {
+                text-align: left;
+                padding: 0 4px;
+            }
+
+        #wrapperAgenda .elemento img {
+            width: 10%;
+            margin-left: 2%;
+            display: inline-block;
+        }
+}
+
+@media screen and (max-width: 720px) {
+
+    #wrapperAgenda {
+        width: 100%;
+        background: #ea4e4e;
+    }
+
+    .historial {
+        width: 8%;
+        margin: 0 30px;
+    }
+
+    #wrapperAgenda .contenedor {
+        width: 90%;
+        /* height: 400px; */
+        text-align: center;
+        margin: 0 2%;
+        padding-bottom: 40px;
+    }
+
+    #wrapperAgenda h2 {
+        font-size: 2em;
+        color: white;
+    }
+
+    #wrapperAgenda .cuadro {
+        width: 100%;
+        background: #e4e4e4;
+        font-size: .555em;
+    }
+
+    #wrapperAgenda .elemento {
+        border-bottom: double white;
+        padding: 1%;
+    }
+
+        #wrapperAgenda .elemento table {
+            width: 60%;
+            display: inline-block;
+        }
+
+            #wrapperAgenda .elemento table .izquierdo {
+                text-align: right;
+                font-weight: 900;
+                width: 4%;
+                padding: 1% 2%;
+            }
+
+            #wrapperAgenda .elemento table .derecho {
+                font-size: 1em;
+                text-align: left;
+                padding: 0 4px;
+            }
+
+        #wrapperAgenda .elemento img {
+            width: 10%;
+            margin-left: 2%;
+            display: inline-block;
+        }
+}
