@@ -1,0 +1,68 @@
+﻿@model IEnumerable<MudanzasGuaymasWeb.SrvUsuario.Usuario>
+
+@{
+    ViewBag.Title = "Index";
+}
+<section>
+    <div id="wrapperBanner">
+        <div class="background">
+            <div class="banner">
+                <img src="~/Content/Banner1.png" />
+            </div>
+        </div>
+        <div class="raya"></div>
+        <div class="slogan">
+            <h2>Usuarios</h2>
+            <P>Usuarios registrados!!</P>
+            <img src="~/Content/edge-candy.svg" />
+        </div>
+    </div>
+</section>
+
+<div id="wrapperTable">
+    <h2>Lista de Usuarios</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Agregar")
+    </p>
+    <table class="tabla usuarioTabla">
+        <tr class="Hidden">
+            <th class="Hidden">
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th class="Hidden">
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th class="Hidden">
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th class="Hidden">
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in ViewBag.usuario)
+        {
+            <tr class="todoItem">
+                <td class="apellido">
+                    @item.Apellido
+                </td>
+                <td class="nombre">
+                    @item.Nombre
+                </td>
+                <td class="email">
+                    @item.Email
+                </td>
+                <td class="Hidden">
+                    @item.Telefono
+                </td>
+                <td class="Funciones">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

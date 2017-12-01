@@ -1,0 +1,66 @@
+﻿@model IEnumerable<MudanzasGuaymasWeb.SrvServicio.Servicio>
+
+@{
+    ViewBag.Title = "Index";
+}
+<section>
+    <div id="wrapperBanner">
+        <div class="background">
+            <div class="banner">
+                <img src="~/Content/Banner1.png" />
+            </div>
+        </div>
+        <div class="raya"></div>
+        <div class="slogan">
+            <h2>Servicios</h2>
+            <P>Ingrese su informacion!!</P>
+            <img src="~/Content/edge-candy.svg" />
+        </div>
+    </div>
+</section>
+<div id="wrapperTable">
+    <h2>Servicios Administración</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th colspan="1" class="Hidden">
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+
+            <th class="Hidden">
+                @Html.DisplayNameFor(model => model.Mostrar)
+            </th>
+
+            <th class="Hidden">
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in ViewBag.servicio)
+        {
+            <tr>
+                <td class="imagen">
+                   <img src=" @item.Imagen"/> 
+                </td>
+                <td class="mudanza">
+                    @item.Nombre
+                </td>
+                <td class="mostrar">
+                    @item.Mostrar
+                </td>
+                <td class="desc">
+                    @item.Descripcion
+                </td>
+                <td class="Funciones">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

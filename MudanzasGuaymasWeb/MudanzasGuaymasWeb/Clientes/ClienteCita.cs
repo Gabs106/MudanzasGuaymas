@@ -13,7 +13,7 @@ namespace MudanzasGuaymasWeb.Clientes
 {
     public class ClienteCita
     {
-        private string BASE_URL = "http://localhost:49727/Services/Operaciones/SrvPreCita.svc/";
+        private string BASE_URL = "http://mudanzasguaymasservices.azurewebsites.net/Services/Operaciones/SrvPreCita.svc/";
 
         public preCita encontrarUno(string id)
         {

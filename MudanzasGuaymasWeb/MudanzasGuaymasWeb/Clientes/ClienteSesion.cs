@@ -11,7 +11,7 @@ namespace MudanzasGuaymasWeb.Clientes
     {
         public string encriptar(string password)
         {
-            string BASE_URL = "http://localhost:49727/Services/Seguridad/SrvSesion.svc/";
+            string BASE_URL = "http://mudanzasguaymasservices.azurewebsites.net/Services/Seguridad/SrvSesion.svc/";
             var synClient = new WebClient();
             string url = string.Format(BASE_URL + "encriptar/{0}", password);
             var content = synClient.DownloadString(url);
@@ -20,7 +20,7 @@ namespace MudanzasGuaymasWeb.Clientes
         }
         public SrvUsuario.Usuario TraerPorCorreo(string email)
         {
-            string BASE = "http://localhost:49727/Services/Seguridad/SrvSesion.svc/";
+            string BASE = "http://mudanzasguaymasservices.azurewebsites.net/Services/Seguridad/SrvSesion.svc/";
             var synClient = new WebClient();
             string url = string.Format(BASE + "porCorreo/{0}", email);
             var content = synClient.DownloadString(url);

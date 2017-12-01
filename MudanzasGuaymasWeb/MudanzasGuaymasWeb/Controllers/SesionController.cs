@@ -59,7 +59,7 @@ namespace MudanzasGuaymasWeb.Controllers
                     usuario = result;
                 }
             }
-            string recupera = "http://localhost:57255/Sesion/Recuperacion/?llave="+usuario.Llave+"&id="+usuario.Id; 
+            string recupera = "http://mudanzasguaymasweb.azurewebsites.net/Sesion/Recuperacion/?llave=" + usuario.Llave+"&id="+usuario.Id; 
             MailMessage m;
             m = new MailMessage();
             m.To.Add(new MailAddress(email));
@@ -67,16 +67,16 @@ namespace MudanzasGuaymasWeb.Controllers
             m.Subject = "Recuperar Contraseña";
             m.Body = "Url de recuperacion ingrese aqui para recuperar su contraseña: <a href="+recupera+">Recupera tu contraseña aqui</a>";
             m.IsBodyHtml = true;
-            SmtpClient cliente = new SmtpClient("smtp.live.com",587);
+            SmtpClient cliente = new SmtpClient("smtp.sendgrid.net", 587);
             using (cliente)
             {
-                cliente.Credentials = new System.Net.NetworkCredential("mudanzasGuaymas@gmail.com", "Chingayamaye");
+                cliente.Credentials = new System.Net.NetworkCredential("azure_88e8f74614e6581f9e5031b9294a7ca0@azure.com", "FloresFletes123");
                 cliente.EnableSsl = true;
                 cliente.Send(m);
             }
         }
         //Clientes
-        private string BASE_URL = "http://localhost:49727/Services/Seguridad/SrvSesion.svc/";
+        private string BASE_URL = "http://mudanzasguaymasservices.azurewebsites.net/Services/Seguridad/SrvSesion.svc/";
 
         public bool Loguear(string email, string password)
         {

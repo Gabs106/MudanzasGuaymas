@@ -1,0 +1,471 @@
+﻿@media screen and (max-width: 1200px) and (min-width: 721px) {
+    #menuMovil {
+        display: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    body {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    #wrapperMain {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 2000px;
+    }
+
+    #wrapperHeader {
+        width: 100%;
+        height: 110px;
+        display: block;
+        float: none;
+        clear: both;
+        margin: 0 auto;
+        text-align: left;
+        padding: 5px 0 0 0;
+        position: relative;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+        #wrapperHeader p {
+            height: 45px;
+            display: block;
+            float: right;
+            clear: none;
+            overflow: hidden;
+            padding: 0 0 0 20%;
+            line-height: 25px;
+            font-style: italic;
+            font-weight: 300;
+            font-size: 12px;
+            text-align: right;
+            margin: 0;
+            margin-right: 28px;
+            margin-top: -80px;
+        }
+
+        #wrapperHeader img {
+            width: 22%;
+            display: block;
+            float: left;
+            clear: none;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            top: 0;
+            z-index: 99;
+            left: 0;
+        }
+
+        #wrapperHeader nav {
+            width: 72%;
+            height: auto;
+            float: right;
+            clear: none;
+            margin-top: 80px;
+        }
+
+        #wrapperHeader ul {
+            font-size: .5em;
+            margin: 0;
+            padding: 0;
+            display: block;
+            float: none;
+            clear: both;
+            height: 38px;
+        }
+
+        #wrapperHeader li {
+            display: inline-block;
+            position: relative;
+            margin: 0 4px;
+            line-height: 38px;
+            text-transform: uppercase;
+            height: 38px;
+        }
+
+            #wrapperHeader li a {
+                font-weight: 900;
+            }
+
+                #wrapperHeader li a:hover {
+                    color: #e94a4f;
+                    background: url("https://animagehub.com/wp-content/uploads/2016/10/triangle-vector-1.png") bottom center no-repeat;
+                }
+
+    #wrapperBanner .background {
+        background: rgba(226,226,226,1);
+        background: -moz-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+        background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(50%, rgba(219,219,219,1)), color-stop(51%, rgba(209,209,209,1)), color-stop(100%, rgba(254,254,254,1)));
+        background: -webkit-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+        background: -o-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+        background: linear-gradient(135deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=1 );
+    }
+
+    #wrapperBanner .banner {
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+        #wrapperBanner .banner img {
+            width: 100%;
+        }
+
+    #wrapperBanner .raya {
+        width: 100%;
+        height: 7px;
+        background: black;
+    }
+
+    #wrapperBanner h2 {
+        margin: 0;
+        font-size: 40px;
+        color: white;
+        text-align: center;
+    }
+
+    #wrapperBanner .slogan {
+        background: #e94a4f;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        position: relative;
+    }
+
+        #wrapperBanner .slogan img {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: -8%;
+            transform: rotate(180deg);
+        }
+
+        #wrapperBanner .slogan p {
+            color: white;
+            text-align: center;
+        }
+
+    #wrapperServicios {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 40px;
+        position: relative;
+    }
+
+    .fondoAmarillo {
+        background-color: #fef8e9;
+        position: absolute;
+        bottom: 0;
+        left: 0px;
+        width: 100%;
+        height: 90%;
+        z-index: -10;
+    }
+
+    #wrapperServicios article {
+        display: inline-block;
+        width: 365px;
+        height: 510px;
+        margin: 20px 14px;
+        background-color: white;
+        position: relative;
+    }
+
+    #wrapperServicios .imagen {
+        width: 365px;
+        height: 250px;
+    }
+
+    #wrapperServicios .marco {
+        height: 18px;
+        width: 100%;
+        background: #e94a4f;
+        margin-top: -5px;
+    }
+
+    .fondoAmarillo img {
+        position: absolute;
+        bottom: 51%;
+        width: 100%;
+        height: 99%;
+        left: 0;
+    }
+
+    #wrapperServicios article h4 {
+        text-align: justify;
+        height: 200px;
+        width: 325px;
+        display: inline-grid;
+        margin-top: 0px;
+        padding-top: 0px;
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1.75rem;
+        text-decoration: none;
+        color: #215e7f;
+    }
+
+    #wrapperServicios article h2 {
+        color: #e94a4f;
+        font-weight: 100;
+        font-style: italic;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    #wrapperServicios span {
+        font-weight: bold;
+    }
+
+    #wrapperServicios h1 {
+        color: #e94a4f;
+        font-size: 2em;
+    }
+
+    #wrapperServicios h4 {
+        text-align: justify;
+        font-size: 1em;
+        text-align: center;
+    }
+
+    #wrapperServicios h1 img {
+        display: none;
+        width: 40px;
+        height: 40px;
+    }
+
+    #wrapperServicios h6 {
+        font-size: 18px;
+        position: absolute;
+        bottom: 0;
+        right: 75px;
+        color: #FF001E;
+        width: 100px;
+    }
+
+    .wrapperPresentacion {
+        width: 90%;
+        text-align: center;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 60px;
+    }
+
+        .wrapperPresentacion h2 {
+            color: #e94a4f;
+            font-size: 2em;
+        }
+
+        .wrapperPresentacion h4 {
+            text-align: justify;
+            font-size: 1.0em;
+        }
+
+        .wrapperPresentacion p {
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .wrapperPresentacion img {
+            width: 20%;
+            margin: 0 0 0 0;
+            border-radius: 10px;
+        }
+
+    .separador {
+        width: 100%;
+        height: 10px;
+        padding: 0;
+        display: block;
+        float: none;
+        clear: both;
+        background: url("separator.png") repeat-x;
+        margin: 0px auto;
+    }
+
+    #wrapperPaquetes {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 60px;
+    }
+
+        #wrapperPaquetes article {
+            display: inline-block;
+            width: 350px;
+            height: 570px;
+            margin: 0 22px;
+            background-color: white;
+            position: relative;
+            margin: 20px;
+        }
+
+        #wrapperPaquetes img {
+            width: 350px;
+            height: 250px;
+        }
+
+        #wrapperPaquetes article h4 {
+            text-align: center;
+            display: inline-grid;
+        }
+
+        #wrapperPaquetes article h2 {
+            color: #FF001E;
+            margin: 0;
+        }
+
+        #wrapperPaquetes .descripcion {
+            top: 348px;
+            height: 136px;
+            padding: 10px;
+            bottom: 0;
+            left: 0;
+            background: rgb(240, 244, 233);
+        }
+
+            #wrapperPaquetes .descripcion p {
+                font-family: 'Montserrat', sans-serif;
+                font-style: italic;
+                height: 80px;
+                text-align: justify;
+                padding: 0px 16px;
+            }
+
+            #wrapperPaquetes .descripcion:hover {
+            }
+
+        #wrapperPaquetes h1 {
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            color: #FF001E;
+            font-style: italic;
+        }
+
+            #wrapperPaquetes h1 img {
+                display: none;
+                width: 40px;
+                height: 40px;
+            }
+
+        #wrapperPaquetes h6 {
+            margin-bottom: unset;
+            font-size: 14px;
+        }
+
+    #wrapperPost {
+        width: 100%;
+    }
+
+        #wrapperPost article .articulo img {
+            width: 50%;
+            float: left
+        }
+
+        #wrapperPost article .articulo h2 {
+            width: 46%;
+            float: left;
+            margin-left: 2%;
+            font-size: 1.4em;
+        }
+
+        #wrapperPost article .articulo p {
+            width: 46%;
+            float: right;
+            margin-left: 2%;
+            font-size: 1em;
+        }
+
+            #wrapperPost article .articulo p a {
+                background-color: #e94a4f;
+                color: white;
+                padding: 10px 20px;
+                border: 2px groove;
+                border-color: #e94a4f;
+            }
+
+                #wrapperPost article .articulo p a:hover {
+                    background-color: white;
+                    color: #e94a4f;
+                    padding: 10px 20px;
+                    border: 2px groove;
+                    border-color: #e94a4f;
+                }
+
+    .Controles p {
+        display: inline-block;
+    }
+
+    .Controles {
+        position: absolute;
+        left: 40px;
+        bottom: 0;
+        text-align: center;
+    }
+
+    a:hover {
+        color: red;
+    }
+
+    #wrapperNosotros {
+        padding: 50px 50px;
+    }
+
+        #wrapperNosotros h2 {
+            font-size: 3em;
+            text-align: center;
+        }
+
+        #wrapperNosotros p {
+            font-size: 1.2em;
+            font-style: italic;
+            text-align: justify;
+            margin-bottom: 7%;
+            display: inline-block;
+            width: 68%;
+            float: right;
+        }
+
+        #wrapperNosotros img {
+            float: right;
+            width: 15%;
+            margin: 0 7%;
+        }
+
+    footer {
+        background: #e94a4f;
+        position: relative;
+        height: 200px;
+        width: 100%;
+    }
+
+        footer img {
+            position: absolute;
+            width: 100%;
+            top: -126%;
+            left: -1px;
+            padding: 0;
+            margin: 0;
+            height: 500px;
+            z-index: -10;
+        }
+
+        footer .redesSociales a img {
+            filter: hue-rotate(180deg);
+        }
+
+        footer p {
+            font-size: 13px;
+            width: 100%;
+            padding-left: 0%;
+        }
+}

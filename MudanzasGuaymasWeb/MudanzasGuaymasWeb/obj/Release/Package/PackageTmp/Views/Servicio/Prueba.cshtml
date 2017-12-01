@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Prueba";
+}
+@using (Html.BeginForm("imagenServidor", "Servicio", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<h2>Prueba</h2>
+<input name="id" id="Text1" type="text" />
+
+<input type="file" name="image" class="col-md-10" />
+<input id="Submit1" type="submit" value="submit" />
+}

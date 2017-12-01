@@ -13,3 +13,18 @@ C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\ob
 C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\Newtonsoft.Json.dll
 C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\Newtonsoft.Json.xml
 C:\Users\Gabriel\source\repos\MudanzasGuaymasSolucion\MudanzasGuaymasServices\obj\Debug\MudanzasGuaymasServices.csprojResolveAssemblyReference.cache
+D:\Kevin Nax\Documentos\GitHub\MudanzasGuaymas\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\MudanzasGuaymasServices.dll.config
+D:\Kevin Nax\Documentos\GitHub\MudanzasGuaymas\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\MudanzasGuaymasServices.dll
+D:\Kevin Nax\Documentos\GitHub\MudanzasGuaymas\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\MudanzasGuaymasServices.pdb
+D:\Kevin Nax\Documentos\GitHub\MudanzasGuaymas\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\EntityFramework.dll
+D:\Kevin Nax\Documentos\GitHub\MudanzasGuaymas\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\EntityFramework.SqlServer.dll
+D:\Kevin Nax\Documentos\GitHub\MudanzasGuaymas\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Kevin Nax\Documentos\GitHub\MudanzasGuaymas\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\Newtonsoft.Json.dll
+D:\Kevin Nax\Documentos\GitHub\MudanzasGuaymas\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\EntityFramework.xml
+D:\Kevin Nax\Documentos\GitHub\MudanzasGuaymas\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\EntityFramework.SqlServer.xml
+D:\Kevin Nax\Documentos\GitHub\MudanzasGuaymas\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Kevin Nax\Documentos\GitHub\MudanzasGuaymas\MudanzasGuaymasSolucion\MudanzasGuaymasServices\bin\Newtonsoft.Json.xml
+D:\Kevin Nax\Documentos\GitHub\MudanzasGuaymas\MudanzasGuaymasSolucion\MudanzasGuaymasServices\obj\Debug\MudanzasGuaymasServices.csprojResolveAssemblyReference.cache
+D:\Kevin Nax\Documentos\GitHub\MudanzasGuaymas\MudanzasGuaymasSolucion\MudanzasGuaymasServices\obj\Debug\MudanzasGuaymasServices.csproj.CoreCompileInputs.cache
+D:\Kevin Nax\Documentos\GitHub\MudanzasGuaymas\MudanzasGuaymasSolucion\MudanzasGuaymasServices\obj\Debug\MudanzasGuaymasServices.dll
+D:\Kevin Nax\Documentos\GitHub\MudanzasGuaymas\MudanzasGuaymasSolucion\MudanzasGuaymasServices\obj\Debug\MudanzasGuaymasServices.pdb
