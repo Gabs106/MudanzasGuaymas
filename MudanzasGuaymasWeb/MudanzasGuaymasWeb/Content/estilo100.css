@@ -1,7 +1,7 @@
 ﻿/********************\
   $Reset ☰
 \********************/
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 721px) {
     a {
         text-decoration: none;
         color: black;
@@ -192,7 +192,7 @@
     #wrapperServicios article h4 {
         text-align: justify;
         height: 200px;
-        width: 325px;
+        width: 100%;
         display: inline-grid;
         margin-top: 0px;
         padding-top: 0px;
@@ -249,7 +249,7 @@
 
         .wrapperPresentacion h2 {
             color: #e94a4f;
-            font-size: 3em;
+            font-size: 2em;
         }
 
         .wrapperPresentacion h4 {
@@ -401,6 +401,7 @@
         left: 40px;
         bottom: 0;
         text-align: center;
+        font-size: .9em;
     }
 
     a:hover {
@@ -453,3 +454,12 @@
             filter: hue-rotate(180deg);
         }
 }
+@media screen and (max-width: 721px) and (min-width: 450px) 
+    {
+        #wrapperServicios .imagen {
+            width: 60%;
+            margin:0 20%;
+            height: 250px;
+        }
+
+   }

@@ -1,4 +1,4 @@
-﻿@media screen and (max-width: 1200px) and (min-width: 720px) {
+﻿@media screen and (max-width: 1200px) and (min-width: 721px) {
     #menuMovil {
         display: none;
     }
@@ -466,6 +466,6 @@
         footer p {
             font-size: 13px;
             width: 100%;
-            padding-left: 2%;
+            padding-left: 0%;
         }
 }

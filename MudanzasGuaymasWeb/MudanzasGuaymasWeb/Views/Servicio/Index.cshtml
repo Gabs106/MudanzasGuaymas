@@ -26,15 +26,15 @@
     </p>
     <table class="table">
         <tr>
-            <th colspan="2">
+            <th colspan="1" class="Hidden">
                 @Html.DisplayNameFor(model => model.Nombre)
             </th>
 
-            <th>
+            <th class="Hidden">
                 @Html.DisplayNameFor(model => model.Mostrar)
             </th>
 
-            <th>
+            <th class="Hidden">
                 @Html.DisplayNameFor(model => model.Descripcion)
             </th>
             <th></th>
@@ -43,19 +43,19 @@
         @foreach (var item in ViewBag.servicio)
         {
             <tr>
-                <td >
+                <td class="imagen">
                    <img src=" @item.Imagen"/> 
                 </td>
-                <td>
+                <td class="mudanza">
                     @item.Nombre
                 </td>
-                <td>
+                <td class="mostrar">
                     @item.Mostrar
                 </td>
-                <td>
+                <td class="desc">
                     @item.Descripcion
                 </td>
-                <td>
+                <td class="Funciones">
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.Id })
                 </td>

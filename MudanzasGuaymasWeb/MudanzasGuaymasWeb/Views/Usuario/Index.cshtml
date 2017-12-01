@@ -12,8 +12,8 @@
         </div>
         <div class="raya"></div>
         <div class="slogan">
-            <h2>Registrarse</h2>
-            <P>Ingrese su informacion!!</P>
+            <h2>Usuarios</h2>
+            <P>Usuarios registrados!!</P>
             <img src="~/Content/edge-candy.svg" />
         </div>
     </div>
@@ -25,18 +25,18 @@
     <p>
         @Html.ActionLink("Create New", "Agregar")
     </p>
-    <table class="table">
-        <tr>
-            <th>
+    <table class="tabla usuarioTabla">
+        <tr class="Hidden">
+            <th class="Hidden">
                 @Html.DisplayNameFor(model => model.Apellido)
             </th>
-            <th>
+            <th class="Hidden">
                 @Html.DisplayNameFor(model => model.Nombre)
             </th>
-            <th>
+            <th class="Hidden">
                 @Html.DisplayNameFor(model => model.Email)
             </th>
-            <th>
+            <th class="Hidden">
                 @Html.DisplayNameFor(model => model.Telefono)
             </th>
             <th></th>
@@ -44,22 +44,21 @@
 
         @foreach (var item in ViewBag.usuario)
         {
-            <tr>
-                <td>
+            <tr class="todoItem">
+                <td class="apellido">
                     @item.Apellido
                 </td>
-                <td>
+                <td class="nombre">
                     @item.Nombre
                 </td>
-                <td>
+                <td class="email">
                     @item.Email
                 </td>
-                <td>
+                <td class="Hidden">
                     @item.Telefono
                 </td>
-                <td>
+                <td class="Funciones">
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.Id })
                 </td>
             </tr>
