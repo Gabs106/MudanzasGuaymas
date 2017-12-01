@@ -1,4 +1,4 @@
-﻿@media screen and (min-width: 720px) {
+﻿@media screen and (min-width: 1200px) {
     #wrapperAgenda {
         width: 100%;
         background: #ea4e4e;
@@ -57,7 +57,7 @@
         }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1200px) {
 
     #wrapperAgenda {
         width: 100%;
@@ -117,3 +117,22 @@
             display: inline-block;
         }
 }
+
+.instrucciones {
+    width: 90%;
+    margin: 40px 5%;
+}
+.instrucciones p{
+   font-size:2em;
+}
+    .instrucciones div {
+        width: 100%;
+        margin: 2%;
+    }
+    .instrucciones span {
+        width: 90%;
+    }
+    .instrucciones img {
+        width: 5%;
+        display: inline-grid;
+    }

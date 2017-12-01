@@ -20,7 +20,7 @@
 </section>
 <h2></h2>
 <a href="@Url.Action("Index", "Cita")">
-    Citas
+    <p>    Ir a las Citas</p>
 </a>
 <div id="wrapperAgenda">
 
@@ -66,6 +66,8 @@
                         </table>
                         <a href="@Url.Action("Details", "Cita",new {id = item.Id}, null)"><img src="~/Content/iconos/edit schedule.png" /> </a>
                         <a href="@Url.Action("Eliminar", "Cita",new {id = item.Id}, null)"><img src="~/Content/iconos/delete.png" /> </a>
+                        <a href="@Url.Action("Regresar", "Cita",new {id = item.Id}, null)"><img src="~/Content/iconos/historyicon.png" /> </a>
+                       
                     </div>
                 }
             }

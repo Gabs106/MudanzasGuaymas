@@ -26,7 +26,8 @@
             @if (Session["usuario"] == null)
             {
                 <div class="nav__item"> <img src="~/Content/iconos/Usuarios2.png" /> @Html.ActionLink("Login", "Login", "Sesion")</div>
-                    <div class="nav__item"><img src="~/Content/iconos/Registrar.png" /> @Html.ActionLink("Registrarse", "Registrarse", "Sesion")</div>
+                    <div class="nav__item">
+                        <img src="~/Content/iconos/registrarse.png" /> @Html.ActionLink("Registrarse", "Registrarse", "Sesion")</div>
             }
             else
             {

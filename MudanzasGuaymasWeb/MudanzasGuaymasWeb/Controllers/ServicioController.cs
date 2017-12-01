@@ -92,10 +92,11 @@ namespace MudanzasGuaymasWeb.Controllers
                 {
                     string ID = id.ToString();
                     Servicio servicio = CS.encontrarUno(ID);
+                    CS.eliminar(servicio);
                     TempData["msg"] = "<script>alert('Se ha eliminado con exito');</script>";
                 }
             }
-            return RedirectToAction("Home", "Index");
+            return RedirectToAction("Index", "Home");
         }
         public ActionResult Details(int id)
         {

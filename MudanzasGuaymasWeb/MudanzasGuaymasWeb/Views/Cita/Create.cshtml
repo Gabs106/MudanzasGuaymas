@@ -56,7 +56,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Fecha, htmlAttributes: new { @class = "LabelEstilo" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Fecha, new { htmlAttributes = new { @class = "datepicker BotonEstilo", @type = "datetime-local" } })
+                        @Html.EditorFor(model => model.Fecha, new { htmlAttributes = new { @class = "datepicker BotonEstilo", @type = "datetime-local", @required = true} })
                         @Html.ValidationMessageFor(model => model.Fecha, "", new { @class = "text-danger" })
                     </div>
                 </div>

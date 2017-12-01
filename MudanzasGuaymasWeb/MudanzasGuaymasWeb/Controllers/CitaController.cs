@@ -194,6 +194,31 @@ namespace MudanzasGuaymasWeb.Controllers
             }
 
         }
+        public RedirectToRouteResult Regresar(string id)
+        {
+            if (Session["usuario"] != null)
+            {
+
+                if (Session["usuario"].Equals("Admin"))
+                {
+                    preCita cita = c.encontrarUno(id);
+                    cita.Terminado = false;
+                    TempData["msg"] = "<script>alert('Usted a Terminado con la cita.');</script>";
+                    c.Editar(cita);
+                    return RedirectToAction("Index", "Cita");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+        }
         public RedirectToRouteResult Eliminar(string id)
         {
             if (Session["usuario"] != null)
@@ -241,6 +266,11 @@ namespace MudanzasGuaymasWeb.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
+        }
+        public RedirectToRouteResult editar(SrvPreCita.preCita cita)
+        {
+            c.Editar(cita);
+            return RedirectToAction("Index", "Cita");
         }
     }
 }

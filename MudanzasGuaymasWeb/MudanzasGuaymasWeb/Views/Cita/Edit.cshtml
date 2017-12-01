@@ -22,7 +22,7 @@
     <div class="Formulario2">
         
 
-        @using (Html.BeginForm())
+        @using (Html.BeginForm("editar","Cita"))
         {
             @Html.AntiForgeryToken()
             <h4>Editar Cita</h4>
@@ -58,7 +58,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Fecha, htmlAttributes: new { @class = "LabelEstilo" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Fecha, new { htmlAttributes = new { @class = "BotonEstilo" } })
+                        @Html.EditorFor(model => model.Fecha, new { htmlAttributes = new { @class = "BotonEstilo", @type = "datetime-local", @required = true } })
                         @Html.ValidationMessageFor(model => model.Fecha, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -71,9 +71,9 @@
 
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "LabelEstilo" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @class = "BotonEstilo", @type="number" }  })
                         @Html.ValidationMessageFor(model => model.Total, "", new { @class = "text-danger" })
                     </div>
                 </div>

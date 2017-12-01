@@ -19,8 +19,8 @@
     </div>
 </section>
 <h2></h2>
-<a href="@Url.Action("Historial", "Cita")">
-    <img class="historial" src="~/Content/iconos/historyicon.png" />
+<a  href="@Url.Action("Historial", "Cita")">
+   <p>    Ir al historial Historial</p>
 </a>
 <div id="wrapperAgenda">
 
@@ -112,9 +112,32 @@
                         </table>
                         <a href="@Url.Action("Confirmar", "Cita",new {id = item.Id}, null)"><img src="~/Content/iconos/confirm.png" /> </a>
                         <a href="@Url.Action("Eliminar", "Cita",new {id = item.Id}, null)"><img src="~/Content/iconos/cancel.png" /> </a>
+                        <a href="@Url.Action("Details", "Cita",new {id = item.Id}, null)"><img src="~/Content/iconos/edit schedule.png" /> </a>
                     </div>
                     }
                 }
             </div>
         </div>
+</div>
+
+<div class="instrucciones">
+    <p>Instrucciones</p>
+    <div>
+        <img src="~/Content/iconos/confirm.png" /> <span>Sirve Para confirmar Las citas a los usuarios.</span>
+    </div>
+    <div>
+        <img src="~/Content/iconos/cancel.png" /> <span>Elimina la cita antes de confirmarla.</span>
+    </div>
+    <div>
+        <img src="~/Content/iconos/edit schedule.png" /> <span>Permite ver detalles de la cita.</span>
+    </div>
+    <div>
+        <img src="~/Content/iconos/history.png" /> <span>Marca como terminada una cita y la envia a la pestaña historial.</span>
+    </div>
+    <div>
+        <img src="~/Content/iconos/delete.png" /> <span>Elimina la cita que se encuentra en el historial.</span>
+    </div>
+    <div>
+        <img src="~/Content/iconos/historyicon.png" /> <span>Permite al usuario regresar una cita que se encuentra en el historial.</span>
+    </div>
 </div>

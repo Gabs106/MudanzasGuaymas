@@ -72,8 +72,11 @@ namespace MudanzasGuaymasWeb.Controllers
             {
                 cliente.Credentials = new System.Net.NetworkCredential("mudanzasGuaymas@gmail.com", "Chingayamaye");
                 cliente.EnableSsl = true;
+                cliente.UseDefaultCredentials = false;
                 cliente.Send(m);
+                TempData["msg"] = "<script>alert('Revise su correo electronico');</script>";
             }
+            RedirectToAction("Index", "Home");
         }
         //Clientes
         private string BASE_URL = "http://localhost:49727/Services/Seguridad/SrvSesion.svc/";
@@ -117,6 +120,10 @@ namespace MudanzasGuaymasWeb.Controllers
             SrvUsuario.Usuario usuario = c.encontrarUno(id);
             if (llave.Equals(usuario.Llave))
             {
+                Random r = new Random();
+                int azar = r.Next(1, 200000000);
+                usuario.Llave = azar.ToString();
+                c.editar(usuario);
                 return View(usuario);
             }
             else
@@ -130,7 +137,9 @@ namespace MudanzasGuaymasWeb.Controllers
         {
             SrvUsuario.Usuario user = c.encontrarUno(usuario.Id.ToString());
             user.Password = s.encriptar(usuario.Password);
+            
             c.editar(user);
+
             TempData["msg"] = "<script>alert('Su contraseña ha sido cambiada');</script>";
             return RedirectToAction("Index", "Home");
         }

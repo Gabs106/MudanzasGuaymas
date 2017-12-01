@@ -19,8 +19,25 @@ namespace MudanzasGuaymasWeb.Controllers
         // GET: Usuario
         public ActionResult Index()
         {
-            ViewBag.usuario = CU.verTodos();
-            return View();
+            if (Session["usuario"] != null)
+            {
+
+                if (Session["usuario"].Equals("Admin"))
+                {
+                    ViewBag.usuario = CU.verTodos();
+                    return View();
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
         }
         public ActionResult Agregar()
         {
@@ -29,11 +46,28 @@ namespace MudanzasGuaymasWeb.Controllers
         }
         public RedirectToRouteResult Delete(int id)
         {
-            string ID = id.ToString();
-            Usuario usuario = CU.encontrarUno(ID);
-            eliminar(usuario);
-            TempData["msg"] = "<script>alert('El usuario: " + usuario.Nombre+" "+usuario.Apellido + " ha sido Eliminado');</script>";
-            return RedirectToAction("Index", "Home");
+            if (Session["usuario"] != null)
+            {
+
+                if (Session["usuario"].Equals("Admin"))
+                {
+                    string ID = id.ToString();
+                    Usuario usuario = CU.encontrarUno(ID);
+                    eliminar(usuario);
+                    TempData["msg"] = "<script>alert('El usuario: " + usuario.Nombre + " " + usuario.Apellido + " ha sido Eliminado');</script>";
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
         }
         public ActionResult Details(int id)
         {
@@ -76,7 +110,7 @@ namespace MudanzasGuaymasWeb.Controllers
             else
             {
                 Random r = new Random();
-                int azar = r.Next(1000, 9999);
+                int azar = r.Next(1, 100000000);
                 usuario.Llave = azar.ToString();
                 usuario.Tipo = "normal";
                 CU.subir(usuario);
